@@ -1,0 +1,54 @@
+{{ with (index site.Data site.Language.Lang).footer }}
+{{ if .enable }}
+<footer id="footer">
+    <div class="container">
+        <div class="row wow fadeInUp" data-wow-duration="500ms">
+            {{ range .items }}
+            <div class="col-{{ .twelfths }}">
+                <h4>{{ .title | markdownify }}</h4>
+                {{ with .links }}
+                <ul>
+                    {{ range . }}
+                    <li><a href="{{ .link }}">{{ .title | markdownify }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+                {{ with .pages }}
+                <ul>
+                    {{ range first 4 (where site.RegularPages "Section" "==" .)}}
+                    <li class="caption">
+                        <a href="#">{{ .Title }}</a><br>
+                        {{ .Date.Format "2006-01-02" }}
+                    </li>
+                    {{ end }}
+                </ul>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            <div class="col-12 text-center">
+                <div class="copyright">
+                    <a href="{{ site.Home.Permalink }}">
+                        <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" height="42"/>
+                    </a>
+                    <br>
+                    <p>{{ .copyright | markdownify }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{{ end }}
+{{ end }}
+
+{{ range site.Params.plugins.js }}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
+
+{{ $script := resources.Get "js/script.js" | minify | fingerprint "sha384" }}
+<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+
+{{ with site.Params.cloudflare_token }}
+<script async src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
+{{ end }}
+

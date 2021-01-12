@@ -1,0 +1,33 @@
+### FEATURES
+enable: true
+name: Key Assets
+title: Breaking the rules
+
+body: >
+  Your digital identity belongs to you, first and foremost.
+  Severing the corporate hold over your digital access demands rethinking how we should secure our online accounts.
+
+items:
+  - title: Authority Isolation
+    icon: fa-globe
+    body: >
+      Online services fail and can leak your credentials.
+      Spectre insulates the damage by forcing a completely unique identity on each of your services.
+
+  - title: Stateless Algorithm
+    icon: fa-function
+    body: >
+      Independence from external control is only possible by eliminating data dependency.
+      Spectre doesn't save your passwords, it computes them from nothing, on demand.
+
+  - title: Disaster Proof
+    icon: fa-wine-glass-crack
+    body: >
+      Data loss, destruction, confiscation, and identity ransoming are real threats.
+      Spectre is completely immune: reinstall on a new device and recovery is instant.
+
+  - title: Free Forever
+    icon: fa-universal-access
+    body: >
+      Free means freedom.  Free means equality.  Free means power to the people.
+      Spectre is open-source, licensed free-software and available gratis, forever.

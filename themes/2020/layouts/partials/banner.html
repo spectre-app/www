@@ -1,0 +1,65 @@
+{{ with (index site.Data site.Language.Lang).banner }}
+{{ if .enable }}
+<section id="banner" style='background-image: url("{{ .background | absURL }}")'>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 align-self-center">
+                <h2>{{ .title | markdownify }}</h2>
+                <p>{{ .content | markdownify }}</p>
+
+                {{ with .platforms }}
+                {{ range .links }}
+                <p class="os-{{ .platform }}"><a href="{{ .link }}" class="btn btn-main">
+                    <span class="fa-brands fa-lg {{ .icon }}"></span> Download Spectre</a></p>
+                {{ end }}
+
+                <div class="caption">
+                    <ul>
+                        {{ range .links }}
+                        <li><a href="{{ .link }}" class="fa-brands fa-xl {{ .icon }}" title="{{ .title }}"></a></li>
+                        {{ end }}
+                    </ul>
+                    {{ .note | markdownify }}
+                </div>
+                {{ end }}
+            </div>
+
+            {{ with .demo }}
+            <div class="col-6 text-center" style='background-image: url("{{ .background | absURL }}")'>
+                <h5>{{ .note | markdownify }}</h5>
+
+                <form class="box">
+                    {{ with .fullName }}
+                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                        <input id="fullName" type="text" placeholder="{{ .placeholder }}"/>
+                    </label>
+                    {{ end }}
+                    <i class="fa-solid fa-xs fa-fw fa-xmark"></i>
+                    {{ with .masterPassword }}
+                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                        <input id="masterPassword" type="password" placeholder="{{ .placeholder }}"/>
+                    </label>
+                    {{ end }}
+                    <i class="fa-solid fa-xs fa-fw fa-down"></i>
+
+                    {{ with .siteName }}
+                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                        <input id="siteName" type="text" placeholder="{{ .placeholder }}"/>
+                    </label>
+                    {{ end }}
+                    <i class="fa-solid fa-xs fa-fw fa-equals"></i>
+                    {{ with .sitePassword }}
+                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                        <button id="sitePassword" class="btn-fixed"><i class="fa-solid fa-copy"></i>
+                            {{ .placeholder }}
+                        </button>
+                    </label>
+                    {{ end }}
+                </form>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{end}}
+{{end}}

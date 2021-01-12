@@ -1,0 +1,25 @@
+### ABOUT
+enable: true
+name: Key Principles
+title: No password trap
+
+
+items:
+  - icon: fa-hand-fist
+    title: Independence
+    body: >
+      Liberty means breaking dependency on unreliable actors.
+      You shouldn't be forced to trust far-away corporations that see your identity as a commodity.
+
+  - icon: fa-shield-cross
+    title: Impervious
+    body: >
+      Sustainable security has no loopholes or caveats.
+      It doesn't have terms of use, require backups, or expect blind trust.
+      It's algorithmically immune to authority.
+
+  - icon: fa-badge-check
+    title: Free Forever
+    body: >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos.

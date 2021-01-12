@@ -1,0 +1,49 @@
+### FOOTER
+enable: true
+
+copyright: "Copyright &copy; 2011 [Maarten Billemont](https://lhunath.com)"
+
+items:
+  - title: Site Map
+    twelfths: 2
+    links:
+      - title: About
+        link: #
+      - title: Customers
+        link: #
+      - title: Pricing
+        link: #
+      - title: Careers
+        link: #
+      - title: Contact Us
+        link: #
+      - title: Blog
+        link: #
+      - title: Terms
+        link: #
+      - title: Privacy
+        link: #
+
+  - title: Resources
+    twelfths: 3
+    links:
+      - title: White Paper
+        link: #
+      - title: Knowledgebase
+        link: #
+      - title: Press Kit
+        link: #
+
+  - title: From the blog
+    twelfths: 5
+    pages: blog
+
+  - title: Stay Connected
+    twelfths: 2
+    links:
+      - title: Blog
+        link: #
+      - title: Twitter
+        link: #
+      - title: Matrix
+        link: #

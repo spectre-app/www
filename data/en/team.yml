@@ -1,0 +1,14 @@
+### TEAM
+enable: false
+title: Our Team
+
+item:
+  - name: Maarten Billemont
+    image: images/team/maarten.jpg
+    designation: Founder
+    body: >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+    social:
+      - icon: fa-twitter
+        link: "#"
+

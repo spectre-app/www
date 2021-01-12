@@ -1,0 +1,12 @@
+### TESTIMONIAL
+enable: false
+background: images/backgrounds/bg-testimonial.jpg
+
+items:
+  - name: Maarten Billemont
+    image: images/client/client-1.jpg
+    date: Dec 26, 2018
+    body: >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Praesentium minima ex, quia error, deserunt voluptatibus repellendus?
+      Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!

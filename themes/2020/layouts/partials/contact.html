@@ -1,0 +1,50 @@
+{{ with (index site.Data site.Language.Lang).contact }}
+{{ if .enable }}
+<section id="contact">
+    <div class="container">
+        <h1>{{ .name | markdownify }}</h1>
+        <h2>{{ .title | markdownify }}</h2>
+
+        <div class="row">
+            {{ with .info }}
+            <div class="col contact-info">
+                <h3>{{ .title | markdownify }}</h3>
+                <p> {{ .body | markdownify }} </p>
+
+                <div class="contact-details">
+                    {{ range .links }}
+                    <div class="con-info clearfix">
+                        <i class="fa-solid fa-fw {{ .icon }}"></i>
+                        <label>{{ .label | markdownify }}</label>
+                        <a href="{{ .link }}">{{ .title | markdownify }}</a>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ with .form }}
+            {{ if .enable }}
+            <div class="col wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                <form method="post" action="{{ .form_action }}" role="form">
+                    {{ range .fields }}
+                    <div class="form-group">
+                        {{ if eq .type "textarea" }}
+                        <textarea rows="6" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}"></textarea>
+                        {{ else }}
+                        <input type="{{ .type }}" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}">
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    <div id="cf-submit">
+                        <button>{{ .submit }}</button>
+                    </div>
+                </form>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

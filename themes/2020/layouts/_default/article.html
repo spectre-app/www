@@ -1,0 +1,8 @@
+<article class="col-4 wow fadeInUp" data-wow-duration="500ms">
+    <img src="{{ .Params.image | absURL }}">
+
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Summary }}</p>
+
+    <a class="btn btn-transparent" href="{{ .Permalink }}">Read</a>
+</article>

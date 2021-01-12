@@ -1,0 +1,40 @@
+### CONTACT
+enable: true
+name: Contact
+title: Join the *beta* program
+
+info:
+  title: Contact Details
+  body: >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Ipsam, vero, provident, eum eligendi blanditiis ex explicabo vitae nostrum
+    facilis asperiores dolorem illo officiis ratione vel fugiat dicta laboriosam labore adipisci.
+
+  links:
+    - icon: fa-at
+      label: Email
+      title: support@spectre.app
+      link: "mailto:support@spectre.app"
+    - icon: fa-question
+      label: Support
+      title: Knowledge Base & Support Desk
+      link: "https://support.spectre.app"
+
+
+form:
+  enable: true
+  form_action: #" #contact form works with https://formspree.i
+  fields:
+    - name: name
+      type: text
+      label: Your Name
+    - name: email
+      type: email
+      label: Your Email
+    - name: subject
+      type: text
+      label: Subject
+    - name: message
+      type: textarea
+      label: Message
+  submit: Submit

@@ -1,0 +1,36 @@
+# Spectre website
+baseURL: "https://spectre.app/"
+languageCode: "en-us"
+title: "Spectre"
+theme: "2020"
+
+params:
+  logo: "images/logo.png"
+  description: "Spectre is a stateless, decentralized, offline and deterministic identity platform."
+  author: "Maarten Billemont"
+
+languages:
+  en:
+    weight: 1
+    home: "Home"
+
+    menu:
+      main:
+        - name: "About"
+          url: "/#about"
+          weight: 1
+        - name: "Usage"
+          url: "/#usage"
+          weight: 2
+        - name: "Features"
+          url: "/#features"
+          weight: 3
+        - name: "Blog"
+          url: "/blog"
+          weight: 4
+        - name: "Support"
+          url: "https://support.spectre.app"
+          weight: 5
+        - name: "Contact"
+          url: "/#contact"
+          weight: 7

@@ -1,0 +1,22 @@
+{{ with (index site.Data site.Language.Lang).about }}
+{{ if .enable }}
+<section id="about">
+    <div class="container">
+        <h1>{{ .name | markdownify }}</h1>
+        <h2>{{ .title | markdownify }}</h2>
+
+        <div class="row">
+            {{ range .items }}
+            <div class="col-4">
+                <div class="box">
+                    <i class="fa-duotone {{ .icon }}"></i>
+                    <h3>{{ .title | markdownify }}</h3>
+                    <p>{{ .body | markdownify }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

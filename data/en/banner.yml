@@ -1,0 +1,66 @@
+### BANNER
+enable: true
+background: "images/backgrounds/hero_dots.png"
+
+
+title: |
+  Reclaim control,
+  forget your passwords
+content: >
+  The road to digital independence is stateless cryptography.
+
+platforms:
+  note: >
+    Available across multiple platforms.
+
+  links:
+    - platform: windows
+      title: Windows
+      icon: fa-windows
+      link: https://masterpassword.app/masterpassword-gui.jar
+
+    - platform: macos
+      title: macOS
+      icon: fa-apple
+      link: https://apps.apple.com/app/master-password/id662763204?ls=1&ct=homepage
+
+    - platform: linux
+      title: Linux
+      icon: fa-linux
+      link: https://masterpassword.app/masterpassword-gui.jar
+
+    - platform: ios
+      title: iPhone / iPad
+      icon: fa-app-store-ios
+      link: https://apps.apple.com/app/master-password/id510296984?ls=1&ct=homepage
+
+    - platform: android
+      title: Android
+      icon: fa-android
+      link: https://masterpassword.app/masterpassword-android.apk
+
+
+demo:
+  background: "images/backgrounds/shield.png"
+  note: >
+    Calculate your site's password using the *Spectre* algorithm.
+
+  fullName:
+    title: Your Full Name
+    icon: fa-user-large
+    placeholder: Robert Lee Mitchell
+
+  masterPassword:
+    title: Your Master Password
+    icon: fa-user-lock
+    placeholder: •••••••••••••••••••••••
+
+  siteName:
+    title: Site Domain
+    icon: fa-globe
+    placeholder: twitter.com
+
+  sitePassword:
+    title: Site Password
+    icon: fa-lock
+    placeholder: PozoLalv0_Yelo

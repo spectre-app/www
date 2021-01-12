@@ -1,0 +1,28 @@
+<head>
+	<meta charset="utf-8">
+	<title>{{ .Title }}</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+	{{ with site.Params.author }}
+	<meta name="author" content="{{ . }}">{{ end }}
+	{{ hugo.Generator }}
+	<link rel="shortcut icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon">
+	<link rel="icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon">
+
+	<link rel="stylesheet" href="{{ "plugins/bootstrap/bootstrap.min.css" | absURL }}">
+	<link rel="stylesheet" href="{{ "plugins/fontawesome/all.min.css" | absURL }}">
+	<link rel="stylesheet" href="{{ "plugins/magnific-popup/magnific-popup.min.css" | absURL }}">
+        <script src="{{ "plugins/bootstrap/bootstrap.min.js" | absURL }}"></script>
+        <script src="{{ "plugins/jquery/jquery.min.js" | absURL }}"></script>
+        <script src="{{ "plugins/magnific-popup/jquery.magnific-popup.min.js" | absURL }}"></script>
+        <script src="{{ "plugins/lozad/lozad.min.js" | absURL }}"></script>
+        <script src="{{ "plugins/ua-parser/ua-parser.min.js" | absURL }}"></script>
+
+	{{ range site.Params.plugins.css }}
+	<link rel="stylesheet" href="{{ .link | absURL }}">
+	{{ end }}
+
+	{{ $styles := resources.Get "css/style.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+</head>
