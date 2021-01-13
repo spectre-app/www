@@ -28,13 +28,11 @@
             <div class="col wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                 <form method="post" action="{{ .form_action }}" role="form">
                     {{ range .fields }}
-                    <div class="form-group">
-                        {{ if eq .type "textarea" }}
-                        <textarea rows="6" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}"></textarea>
-                        {{ else }}
-                        <input type="{{ .type }}" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}">
-                        {{ end }}
-                    </div>
+                    {{ if eq .type "textarea" }}
+                    <textarea rows="6" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}"></textarea>
+                    {{ else }}
+                    <input type="{{ .type }}" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}">
+                    {{ end }}
                     {{ end }}
                     <div id="cf-submit">
                         <button>{{ .submit }}</button>
