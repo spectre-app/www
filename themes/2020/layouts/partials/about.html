@@ -9,7 +9,11 @@
             {{ range .items }}
             <div class="col-4">
                 <div class="box">
-                    <i class="fa-duotone {{ .icon }}"></i>
+                    {{ if in .icon "." }}
+                    <i class="fa-duotone fa-fw" style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
+                    {{ else }}
+                    <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                    {{ end }}
                     <h3>{{ .title | markdownify }}</h3>
                     <p>{{ .body | markdownify }}</p>
                 </div>

@@ -11,7 +11,7 @@
 
                 {{ with .platforms }}
                 {{ range .links }}
-                <p class="os-{{ .platform }}"><a href="{{ .link }}" class="btn btn-main">
+                <p class="os-{{ .platform }}"><a href="{{ .link }}" class="btn cta">
                     <span class="fa-brands fa-lg {{ .icon }}"></span> Download Spectre</a></p>
                 {{ end }}
 
@@ -30,7 +30,7 @@
             <div class="col-6 text-center demo">
                 <h5>{{ .note | markdownify }}</h5>
 
-                <form class="box">
+                <form class="box cta">
                     {{ with .fullName }}
                     <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
                         <input id="fullName" type="text" placeholder="{{ .placeholder }}"/>

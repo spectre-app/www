@@ -20,33 +20,18 @@ jQuery(function ($) {
     });
 
     /*	Animated page scroll. */
-    var html_body = $('html, body');
     $('nav a, .page-scroll').on('click', function () {
-        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                html_body.animate({
-                    scrollTop: target.offset().top - 50
-                }, 1500, 'easeInOutExpo');
+        if (location.hostname === this.hostname &&
+            location.pathname === this.pathname.replace(/^(?=[^\/]|$)/,
+                location.pathname.replace(/[^\/]*$/, ""))) {
+            let target = $(this.hash)[0] || $('[name=' + this.hash.slice(1) + ']')[0];
+            if (target) {
+                $('html').animate({
+                    scrollTop: $(target).offset().top - $("#navigation").height() / 2
+                }, 600);
+                location.hash = this.hash
                 return false;
             }
-        }
-    });
-
-    /*	easeInOutExpo animator. */
-    jQuery.extend(jQuery.easing, {
-        easeInOutExpo: function (x, t, b, c, d) {
-            if (t === 0) {
-                return b;
-            }
-            if (t === d) {
-                return b + c;
-            }
-            if ((t /= d / 2) < 1) {
-                return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
-            }
-            return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
         }
     });
 

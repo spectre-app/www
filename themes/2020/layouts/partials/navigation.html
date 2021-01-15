@@ -1,3 +1,5 @@
+{{ with (index site.Data site.Language.Lang).navigation }}
+{{ if .enable }}
 <section id="navigation" class="sticky-top">
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-dark">
@@ -36,8 +38,10 @@
 					{{ end }}
 				</select>
 				{{ end }}
-				<a class="btn btn-main page-scroll" href="#banner">Get It</a>
+				<a class="btn cta page-scroll" href="#banner">{{ .cta | markdownify }}</a>
 			</div>
 		</nav>
 	</div>
 </section>
+{{end}}
+{{end}}

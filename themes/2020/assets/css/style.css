@@ -166,7 +166,7 @@ button, a.btn {
 
     color: var(--control-text);
 
-    border: none;
+    border: 2px solid transparent;
     border-radius: var(--group-size);
     background: var(--control-fill);
 }
@@ -174,6 +174,10 @@ button, a.btn {
 button:hover, a.btn:hover {
     color: var(--active-text);
     background: var(--body-focus);
+}
+
+section:target .cta {
+    border-color: var(--control-contrast) !important;
 }
 
 form button {
@@ -186,7 +190,7 @@ form button:hover {
     background: var(--body-focus);
 }
 
-input, textarea, button, a, label, :focus, :hover, :active {
+input, textarea, button, a, label, :target, :focus, :hover, :active {
     outline: none;
     transition: all .1s ease-in 0s;
 }
@@ -339,8 +343,12 @@ a.btn-fixed, button.btn-fixed {
     background: none,
     radial-gradient(62vh 150vh at 0 -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
     radial-gradient(62vh 150vh at 100% -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-    url("/images/banner.svg") no-repeat center;
-    background-size: contain;
+    url("/images/banner.svg") no-repeat center/contain;
+}
+
+.fa-fw::after {
+    content: " ";
+    white-space: pre;
 }
 
 #banner #banner-particles {
@@ -352,7 +360,7 @@ a.btn-fixed, button.btn-fixed {
     left: 0;
 }
 
-#banner .btn-main {
+#banner .btn.cta {
     margin-top: 2em;
     padding: 1em 4em;
     font-weight: 600;
@@ -379,8 +387,7 @@ a.btn-fixed, button.btn-fixed {
     position: relative;
     height: 100%;
     padding: 5% 10%;
-    background: url("/images/shield.svg") no-repeat center;
-    background-size: contain;
+    background: url("/images/shield.svg") no-repeat center/contain;
 }
 
 #banner .demo h5 {
@@ -395,8 +402,9 @@ a.btn-fixed, button.btn-fixed {
     background: var(--panel-contrast);
 
     /* Firefox-compatible blur through SVG */
-    background: linear-gradient(to right, rgba(42, 73, 89, 0.4), rgba(42, 73, 89, 0.4)), url("/images/shield-blur.svg") no-repeat center, var(--body-fill);
-    background-size: 168% 135%;
+    background: none,
+    linear-gradient(to right, rgba(42, 73, 89, 0.4), rgba(42, 73, 89, 0.4)),
+    url("/images/shield-blur.svg") no-repeat center/168% 135%, var(--body-fill);
 
     /* Generic background blur */
     /*background: rgba(42, 73, 89, 0.4);*/
