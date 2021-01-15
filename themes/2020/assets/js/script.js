@@ -53,4 +53,72 @@ jQuery(function ($) {
     /*	OS detection. */
     $('html').attr('data-os', UAParser().os.name);
 
+    /*	Particles. */
+    tsParticles.load("banner-particles", {
+        "fpsLimit": 20,
+        "interactivity": {
+            "events": {
+                "onDiv": {
+                    "selectors": "#banner .demo",
+                    "enable": true,
+                    "mode": "repulse"
+                },
+            },
+            "modes": {
+                "repulse": {
+                    "speed": 0.02
+                }
+            }
+        },
+        "particles": {
+            "color": {
+                "value": "#3E8989"
+            },
+            "links": {
+                "color": {
+                    "value": "#3E8989"
+                },
+                "distance": 300,
+                "enable": true,
+                "frequency": 0.7,
+                "opacity": 1,
+                "width": 1,
+            },
+            "move": {
+                "enable": true,
+                "speed": 0.2
+            },
+            "number": {
+                "density": {
+                    "enable": true
+                },
+                "value": 5
+            },
+            "shape": {
+                "options": {
+                    "character": [
+                        {
+                            "fill": true,
+                            "font": "Font Awesome 6 Brands",
+                            "style": "",
+                            "value": [
+                                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+                                "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+                            ],
+                            "weight": "400"
+                        }
+                    ],
+                },
+                "type": ["character", "circle"],
+            },
+            "size": {
+                "random": {
+                    "enable": true,
+                    "minimumValue": 4
+                },
+                "value": 20
+            },
+            "reduceDuplicates": true,
+        }
+    });
 });
