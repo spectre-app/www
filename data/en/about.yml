@@ -1,25 +1,35 @@
 ### ABOUT
 enable: true
 name: Key Principles
-title: No password trap
+title: Not a password trap
 
 
 items:
   - icon: fa-hand-fist
     title: Independence
     body: >
-      Liberty means breaking dependency on unreliable actors.
-      You shouldn't be forced to trust far-away corporations that see your identity as a commodity.
+      More than ever, online&nbsp;liberty requires breaking&nbsp;dependency on unreliable&nbsp;actors
+      or corporate and state entities.
+
+
+      Your identity is safe only when its sole&nbsp;gatekeeper is you
+      and it cannot be held hostage in a cloud&nbsp;account or behind a regulatory&nbsp;wall.
 
   - icon: fa-shield-cross
     title: Impervious
     body: >
       Sustainable security has no loopholes or caveats.
-      It doesn't have terms of use, require backups, or expect blind trust.
-      It's algorithmically immune to authority.
+      It&nbsp;doesn't come with terms&nbsp;on&nbsp;use, require&nbsp;backups, or expect blind&nbsp;trust.
 
-  - icon: fa-badge-check
+
+      *Spectre* achieves stateless identity management, vastly reducing the attack&nbsp;surface,
+      making you immune to&nbsp;loss, confiscation, decryption and&nbsp;leaks.
+
+  - icon: free-software.svg
     title: Free Forever
     body: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Velit, nihil, libero, perspiciatis eos provident laborum eum dignissimos.
+      Free&nbsp;means&nbsp;freedom. Free&nbsp;means&nbsp;equality. Free&nbsp;means&nbsp;power to the people.
+      Free&nbsp;means&nbsp;transparent and auditable. Free&nbsp;means&nbsp;available, always.
+
+
+      *Spectre* is open-source, licensed Free&nbsp;Software and available&nbsp;gratis, forever.

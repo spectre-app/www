@@ -6,7 +6,7 @@ title: |
   Reclaim control,
   forget your passwords
 content: >
-  The road to digital independence is stateless cryptography.
+  Goodbye password managers, hello cryptographic digital independence.
 
 platforms:
   note: >
@@ -41,7 +41,7 @@ platforms:
 
 demo:
   note: >
-    Calculate your site's password using the *Spectre* algorithm.
+    Calculate your site's password using the *Spectre* algorithm:
 
   fullName:
     title: Your Full Name
