@@ -1,6 +1,5 @@
 ### BANNER
 enable: true
-background: "images/backgrounds/hero_dots.png"
 
 
 title: |
@@ -41,7 +40,6 @@ platforms:
 
 
 demo:
-  background: "images/backgrounds/shield.png"
   note: >
     Calculate your site's password using the *Spectre* algorithm.
 

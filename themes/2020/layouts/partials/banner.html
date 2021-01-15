@@ -1,7 +1,8 @@
 {{ with (index site.Data site.Language.Lang).banner }}
 {{ if .enable }}
-<section id="banner" style='background-image: url("{{ .background | absURL }}")'>
+<section id="banner">
     <div class="container">
+
         <div class="row justify-content-center">
             <div class="col-6 align-self-center">
                 <h2>{{ .title | markdownify }}</h2>
@@ -25,7 +26,7 @@
             </div>
 
             {{ with .demo }}
-            <div class="col-6 text-center" style='background-image: url("{{ .background | absURL }}")'>
+            <div class="col-6 text-center demo">
                 <h5>{{ .note | markdownify }}</h5>
 
                 <form class="box">

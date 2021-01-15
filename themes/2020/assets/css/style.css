@@ -187,8 +187,8 @@ form button:hover {
 }
 
 input, textarea, button, a, label, :focus, :hover, :active {
-    transition: all .1s ease-in 0s;
     outline: none;
+    transition: all .1s ease-in 0s;
 }
 
 section {
@@ -204,6 +204,7 @@ section.lit {
         padding: 4em 0;
     }
 }
+
 @media (max-width: 480px) {
     section {
         padding: 1em 0;
@@ -303,11 +304,11 @@ a.btn-fixed, button.btn-fixed {
  *================================================================*/
 
 #navigation {
+    margin-top: -80px;
     padding: var(--join-size);
 }
 
 #navigation .container {
-    position: relative;
     border: 1px solid var(--body-fill);
     border-radius: var(--join-size);
     background: rgba(var(--body-fill-rgb), 0.9);
@@ -334,9 +335,12 @@ a.btn-fixed, button.btn-fixed {
     position: relative;
     display: flex;
     align-items: center;
-    height: calc(100vh - 86px);
-    background-position: top center;
-    background-size: cover;
+    height: 100vh;
+    background: none,
+    radial-gradient(62vh 150vh at 0 -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    radial-gradient(62vh 150vh at 100% -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("/images/banner.svg") no-repeat center;
+    background-size: contain;
 }
 
 #banner .btn-main {
@@ -362,15 +366,33 @@ a.btn-fixed, button.btn-fixed {
     padding: var(--join-size);
 }
 
-#banner .col-6 + .col-6 {
-    padding: 0% 9% 2% 10%;
-    background-repeat: no-repeat;
-    background-position: center;
+#banner .demo {
+    position: relative;
+    height: 100%;
+    padding: 5% 10%;
+    background: url("/images/shield.svg") no-repeat center;
     background-size: contain;
 }
 
-#banner .box {
+#banner .demo h5 {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-top: -2em;
+}
+
+#banner .demo .box {
+    border: 1px solid var(--panel-contrast);
     background: var(--panel-contrast);
+
+    /* Firefox-compatible blur through SVG */
+    background: linear-gradient(to right, rgba(42, 73, 89, 0.4), rgba(42, 73, 89, 0.4)), url("/images/shield-blur.svg") no-repeat center, var(--body-fill);
+    background-size: 168% 135%;
+
+    /* Generic background blur */
+    /*background: rgba(42, 73, 89, 0.4);*/
+    /*-webkit-backdrop-filter: blur(15px);*/
+    /*backdrop-filter: blur(15px);*/
 }
 
 /*=================================================================
