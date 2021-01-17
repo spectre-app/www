@@ -2,8 +2,9 @@
 enable: true
 
 
-title: |
-  Reclaim control,
+title: >
+  Reclaim control,\
+
   forget your passwords
 content: >
   Goodbye password managers, hello cryptographic digital independence.

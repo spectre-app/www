@@ -4,30 +4,34 @@ name: Key Assets
 title: Breaking the rules
 
 body: >
-  Your digital identity belongs to you, first and foremost.
-  Severing the corporate hold over your digital access demands rethinking how we should secure our online accounts.
+  Your digital&nbsp;identity belongs to&nbsp;you, first and&nbsp;foremost.
+
+
+  Severing the corporate&nbsp;hold over your digital&nbsp;access demands rethinking how we&nbsp;should secure our&nbsp;online&nbsp;accounts.
 
 items:
   - title: Authority Isolation
     icon: fa-globe
     body: >
-      Online services fail and can leak your credentials.
-      Spectre insulates the damage by forcing a completely unique identity on each of your services.
+      *Spectre*&nbsp;cryptographically insulates your&nbsp;sites from each&nbsp;other.\
+
+      When online&nbsp;services fail and leak your&nbsp;login, this ensures the&nbsp;damage does&nbsp;not affect your other&nbsp;accounts.
 
   - title: Stateless Algorithm
     icon: fa-function
     body: >
-      Independence from external control is only possible by eliminating data dependency.
-      Spectre doesn't save your passwords, it computes them from nothing, on demand.
+      *Spectre*&nbsp;doesn't save&nbsp;any&nbsp;passwords: it&nbsp;computes them from&nbsp;nothing, on&nbsp;demand.
+      Independence&nbsp;from external&nbsp;control is only possible by eliminating&nbsp;data&nbsp;dependency.
 
   - title: Disaster Proof
     icon: fa-wine-glass-crack
     body: >
-      Data loss, destruction, confiscation, and identity ransoming are real threats.
-      Spectre is completely immune: reinstall on a new device and recovery is instant.
+      Data&nbsp;loss, destruction, confiscation, and identity&nbsp;ransoming are real&nbsp;threats.\
 
-  - title: Free Forever
+      *Spectre*&nbsp;is completely&nbsp;immune: borrow a&nbsp;friend's&nbsp;device or&nbsp;reinstall on&nbsp;a&nbsp;fresh&nbsp;new&nbsp;device and recovery is&nbsp;instant &mdash; even&nbsp;offline!
+
+  - title: An Identity Platform
     icon: fa-universal-access
     body: >
-      Free means freedom.  Free means equality.  Free means power to the people.
-      Spectre is open-source, licensed free-software and available gratis, forever.
+      *Spectre*&nbsp;doesn't&nbsp;stop at&nbsp;passwords. Using&nbsp;our algorithm, you&nbsp;can eradicate the&nbsp;privacy&nbsp;invasion that is "security&nbsp;questions"
+      or&nbsp;isolate your&nbsp;identity with&nbsp;cryptographically generated&nbsp;login&nbsp;names.
