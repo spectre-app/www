@@ -47,17 +47,17 @@ demo:
   fullName:
     title: Your Full Name
     icon: fa-user-large
-    placeholder: Robert Lee Mitchell
+    placeholder: eg. Robert Lee Mitchell
 
   masterPassword:
     title: Your Master Password
     icon: fa-user-lock
-    placeholder: •••••••••••••••••••••••
+    placeholder: eg. banana colored duckling
 
   siteName:
     title: Site Domain
     icon: fa-globe
-    placeholder: twitter.com
+    placeholder: eg. twitter.com
 
   sitePassword:
     title: Site Password
