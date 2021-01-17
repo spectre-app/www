@@ -1,5 +1,6 @@
 {{ with (index site.Data site.Language.Lang).banner }}
 {{ if .enable }}
+<script src="{{ `js/banner.js` | absURL }}"></script>
 <section id="banner">
     <div id="banner-particles"></div>
     <div class="container">
@@ -32,33 +33,44 @@
 
                 <form class="box cta">
                     {{ with .fullName }}
-                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
-                        <input id="fullName" type="text" placeholder="{{ .placeholder }}"/>
+                    <label id="fullName"><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                        <input type="text" placeholder="{{ .placeholder }}" autocomplete="name"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-xmark"></i>
                     {{ with .masterPassword }}
-                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
-                        <input id="masterPassword" type="password" placeholder="{{ .placeholder }}"/>
+                    <label id="masterPassword">
+                        <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                        {{ .title | markdownify }}
+                        <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
+                        <input type="password" placeholder="{{ .placeholder }}" autocomplete="current-password"/>
                     </label>
                     {{ end }}
 
-                    <hr />
+                    <hr/>
                     <i class="fa-solid fa-xs fa-fw fa-down"></i>
 
                     {{ with .siteName }}
-                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
-                        <input id="siteName" type="text" placeholder="{{ .placeholder }}"/>
+                    <label id="siteName">
+                        <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                        {{ .title | markdownify }}
+                        <input type="text" placeholder="{{ .placeholder }}"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-equals"></i>
                     {{ with .sitePassword }}
-                    <label><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
-                        <button id="sitePassword" class="btn-fixed"><i class="fa-solid fa-copy"></i>
-                            {{ .placeholder }}
+                    <label id="sitePassword">
+                        <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                        {{ .title | markdownify }}
+                        <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
+                        <button type="button" class="btn-fixed"><i class="fa-solid fa-copy"></i>
+                            <input type="text" value="{{ .placeholder }}" readonly />
                         </button>
                     </label>
                     {{ end }}
+
+                    <p class="info"></p>
+                    <p class="error"></p>
                 </form>
             </div>
             {{ end }}

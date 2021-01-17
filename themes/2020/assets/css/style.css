@@ -175,6 +175,15 @@ button:hover, a.btn:hover {
     background: var(--body-focus);
 }
 
+button input[type] {
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
 section:target .cta {
     border-color: var(--control-contrast) !important;
 }
@@ -256,12 +265,33 @@ a.btn-fixed, button.btn-fixed {
     font-family: "Source Code Pro", monospace;
 }
 
+.error, .info {
+    margin: 0.5em;
+    font-size: smaller;
+    color: #DC3545;
+    background: #6A1A21;
+    border-radius: var(--internal-size);
+}
+
+.info {
+    color: #198754;
+    background: #0C4128;
+}
+
 .box {
+    position: relative;
     margin: auto;
     padding: 2em;
     border-radius: var(--join-size);
     background: var(--panel-fill);
     box-shadow: 0 0 var(--join-size) var(--shadow);
+}
+
+.box .error, .box .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .box > hr {
