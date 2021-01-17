@@ -1,4 +1,4 @@
-jQuery(function ($) {
+$(function() {
     "use strict";
 
     /*	Close navbar when link clicked. */
@@ -40,7 +40,12 @@ jQuery(function ($) {
 
     /*	Particles. */
     tsParticles.load("banner-particles", {
-        "fpsLimit": 20,
+        "fpsLimit": 10,
+        "autoPlay": true,
+        "detectRetina": true,
+        "pauseOnBlur": true,
+        "pauseOnOutsideViewport": true,
+
         "interactivity": {
             "events": {
                 "onDiv": {
@@ -55,7 +60,9 @@ jQuery(function ($) {
                 }
             }
         },
+
         "particles": {
+            "reduceDuplicates": true,
             "color": {
                 "value": "#3E8989"
             },
@@ -71,7 +78,7 @@ jQuery(function ($) {
             },
             "move": {
                 "enable": true,
-                "speed": 0.2
+                "speed": 0.1
             },
             "number": {
                 "density": {
@@ -103,7 +110,6 @@ jQuery(function ($) {
                 },
                 "value": 20
             },
-            "reduceDuplicates": true,
         }
     });
 });

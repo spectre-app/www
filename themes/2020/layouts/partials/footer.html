@@ -9,7 +9,7 @@
                 {{ with .links }}
                 <ul>
                     {{ range . }}
-                    <li><a href="{{ .link }}">{{ .title | markdownify }}</a></li>
+                    <li><a href="{{ .link }}" class="page-scroll">{{ .title | markdownify }}</a></li>
                     {{ end }}
                 </ul>
                 {{ end }}
