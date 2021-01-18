@@ -7,7 +7,7 @@
 
         <div class="row">
             {{ with .info }}
-            <div class="col contact-info">
+            <div class="col-sm contact-info">
                 <h3>{{ .title | markdownify }}</h3>
                 <p> {{ .body | markdownify }} </p>
 
@@ -25,7 +25,7 @@
 
             {{ with .form }}
             {{ if .enable }}
-            <div class="col wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="col-sm wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                 <form method="post" action="{{ .form_action }}" role="form">
                     {{ range .fields }}
                     {{ if eq .type "textarea" }}

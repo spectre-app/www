@@ -8,25 +8,14 @@
 		{{ range $index, $item := .items }}
 		{{ with $item }}
 		<div class="row align-items-center">
-			{{ if (mod $index 2) }}
-			<div class="col-6 end">
+			<div class="col-sm-6 order-sm-2">
+				{{ partial .partial . }}
+			</div>
+			<div class="col-sm-6 {{ if (mod $index 2) }}order-sm-1 end{{ else }}order-sm-3{{ end }}">
 				<header>{{ printf "%02d" (add $index 1) }}</header>
 				<h3>{{ .title | markdownify }}</h3>
 				<p>{{ .body | markdownify }}</p>
 			</div>
-			<div class="col-6">
-				{{ partial .partial . }}
-			</div>
-			{{ else }}
-			<div class="col-6">
-				{{ partial .partial . }}
-			</div>
-			<div class="col-6">
-				<header>{{ printf "%02d" (add $index 1) }}</header>
-				<h3>{{ .title | markdownify }}</h3>
-				<p>{{ .body | markdownify }}</p>
-			</div>
-			{{ end }}
 		</div>
 		{{ end }}
 		{{ end }}

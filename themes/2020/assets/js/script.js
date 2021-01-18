@@ -35,6 +35,8 @@ $(function() {
         }
     });
 
+    $('[title]').tooltip()
+
     /*	OS detection. */
     $('html').attr('data-os', UAParser().os.name);
 

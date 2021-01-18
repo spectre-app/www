@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row wow fadeInUp" data-wow-duration="500ms">
             {{ range .items }}
-            <div class="col-{{ .twelfths }}">
+            <div class="col-sm-{{ .twelfths }}">
                 <h4>{{ .title | markdownify }}</h4>
                 {{ with .links }}
                 <ul>

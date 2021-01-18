@@ -1,7 +1,7 @@
 ### FEATURES
 enable: true
 name: Key Assets
-title: Breaking the rules
+title: Breaking the&nbsp;rules
 
 body: >
   Your digital&nbsp;identity belongs to&nbsp;you, first and&nbsp;foremost.
@@ -13,7 +13,7 @@ items:
   - title: Authority Isolation
     icon: fa-globe
     body: >
-      *Spectre*&nbsp;cryptographically insulates your&nbsp;sites from each&nbsp;other.\
+      *Spectre* cryptographically insulates your&nbsp;sites from each&nbsp;other.\
 
       When online&nbsp;services fail and leak your&nbsp;login, this ensures the&nbsp;damage does&nbsp;not affect your other&nbsp;accounts.
 
@@ -28,7 +28,7 @@ items:
     body: >
       Data&nbsp;loss, destruction, confiscation, and identity&nbsp;ransoming are real&nbsp;threats.\
 
-      *Spectre*&nbsp;is completely&nbsp;immune: borrow a&nbsp;friend's&nbsp;device or&nbsp;reinstall on&nbsp;a&nbsp;fresh&nbsp;new&nbsp;device and recovery is&nbsp;instant &mdash; even&nbsp;offline!
+      *Spectre*&nbsp;is completely&nbsp;immune: borrow a&nbsp;friend's&nbsp;device or&nbsp;reinstall&nbsp;on a&nbsp;fresh new&nbsp;device and recovery is&nbsp;instant &mdash; even&nbsp;offline!
 
   - title: An Identity Platform
     icon: fa-universal-access

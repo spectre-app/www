@@ -42,7 +42,7 @@ platforms:
 
 demo:
   note: >
-    Calculate your site's password using the *Spectre* algorithm:
+    Calculate your&nbsp;site's&nbsp;password using the&nbsp;*Spectre*&nbsp;algorithm:
 
   fullName:
     title: Your Full Name

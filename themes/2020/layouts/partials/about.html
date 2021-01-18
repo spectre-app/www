@@ -7,7 +7,7 @@
 
         <div class="row">
             {{ range .items }}
-            <div class="col-4">
+            <div class="col-md-6 col-lg-4 my-1 my-lg-0">
                 <div class="box">
                     {{ if in .icon "." }}
                     <i class="fa-duotone fa-fw" style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>

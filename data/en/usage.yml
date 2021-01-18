@@ -1,23 +1,23 @@
 ############################# usage ###################################
 enable: true
 name: Usage
-title: Your identity, no strings
+title: Your&nbsp;identity, no&nbsp;strings
 
 items:
   - title: Sign in from anywhere
     partial: "usage-account.html"
     body: >
-      Sign into any *Spectre* app from anywhere to access your passwords immediately.
+      Sign&nbsp;into any *Spectre*&nbsp;app from anywhere to access your&nbsp;passwords immediately.
 
 
-      No Internet connection required: *Spectre* does not upload or download your passwords from the cloud.
-      We do not hold any account or records on you.
+      No&nbsp;Internet&nbsp;connection required: *Spectre*&nbsp;does not upload or download your&nbsp;passwords from the&nbsp;cloud.
+      You&nbsp;do not have an&nbsp;account with us and we hold no&nbsp;records on our&nbsp;users.
 
   - title: Enter your site's domain
     partial: "usage-service.html"
     body: >
-      Tell *Spectre* who you need a password for and it's there, on the spot.
+      Tell&nbsp;*Spectre* who you need a&nbsp;password for and it's&nbsp;there, on&nbsp;the&nbsp;spot.
 
 
-      *Spectre* cryptographically computes your site's passwords from your sign-in identity.
-      It works from any device, even that of a friend, or brand new phone.
+      *Spectre*&nbsp;cryptographically computes your&nbsp;site's&nbsp;passwords from your&nbsp;sign-in&nbsp;identity.
+      It&nbsp;works from any device, even that of a&nbsp;friend, or a&nbsp;brand&nbsp;new&nbsp;phone.

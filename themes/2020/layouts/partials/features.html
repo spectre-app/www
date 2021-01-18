@@ -3,20 +3,22 @@
 <section id="features" class="lit">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-5">
+            <div class="col-lg-5">
                 <h1>{{ .name | markdownify }}</h1>
                 <h2>{{ .title | markdownify }}</h2>
                 <p>{{ .body | markdownify }}</p>
             </div>
 
-            <div class="col row">
+            <div class="col-sm">
+                <div class="row">
                 {{ range .items }}
-                <div class="col-6">
+                <div class="col-sm-6">
                     <i class="fa-duotone fa-fw fa-pull-left {{ .icon }}"></i>
                     <h3 class="media-heading">{{ .title | markdownify }}</h3>
                     <p>{{ .body | markdownify }}</p>
                 </div>
                 {{ end }}
+                </div>
             </div>
         </div>
     </div>

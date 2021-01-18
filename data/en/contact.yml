@@ -1,24 +1,24 @@
 ### CONTACT
 enable: true
 name: Contact
-title: Join the *beta* program
+title: Join the *beta*&nbsp;program
 
 info:
   title: Contact Details
   body: >
-    For a limited time only, *Spectre* is launching a public beta program.
+    For a&nbsp;limited&nbsp;time only, *Spectre* is launching a&nbsp;public beta&nbsp;program.
 
 
-    Beta participants will have full and unlimited access to all of *Spectre*'s capabilities,
-    and are invited to contribute feedback on their experience.
+    Beta participants will have full and unlimited&nbsp;access to all of *Spectre*'s capabilities,
+    and are&nbsp;invited to&nbsp;contribute feedback on their&nbsp;experience.
 
 
-    The algorithm is mature and already in use by thousands of people world-wide.
-    Although we have thoroughly tested the software, beta participants must be prepared for the possibility
-    of encountering bugs during their use of the application.
+    The algorithm is&nbsp;mature and&nbsp;already in&nbsp;use by&nbsp;thousands of&nbsp;people world-wide.
+    Although we have thoroughly&nbsp;tested the&nbsp;software, beta&nbsp;participants must be&nbsp;prepared for the&nbsp;possibility
+    of encountering&nbsp;bugs during their use of&nbsp;the&nbsp;application.
 
 
-    If you're interested, feel free to reach out.
+    If you're interested, feel&nbsp;free to&nbsp;reach&nbsp;out.
 
   links:
     - icon: fa-at
@@ -27,7 +27,7 @@ info:
       link: "mailto:support@spectre.app"
     - icon: fa-question
       label: Support
-      title: Knowledge Base & Support Desk
+      title: Knowledge&nbsp;Base & Support&nbsp;Desk
       link: "https://support.spectre.app"
 
 

@@ -217,9 +217,9 @@ section.lit {
     }
 }
 
-@media (max-width: 480px) {
-    section {
-        padding: 1em 0;
+@media (max-width: 576px) {
+    .box {
+        padding: 1em;
     }
 }
 
@@ -285,6 +285,12 @@ a.btn-fixed, button.btn-fixed {
     border-radius: var(--join-size);
     background: var(--panel-fill);
     box-shadow: 0 0 var(--join-size) var(--shadow);
+}
+
+@media (max-width: 576px) {
+    .box {
+        padding: 1em;
+    }
 }
 
 .box .error, .box .info {
@@ -368,7 +374,7 @@ a.btn-fixed, button.btn-fixed {
     position: relative;
     display: flex;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background: none,
     radial-gradient(62vh 150vh at 0 -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
     radial-gradient(62vh 150vh at 100% -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
@@ -413,17 +419,9 @@ a.btn-fixed, button.btn-fixed {
 }
 
 #banner .demo {
-    position: relative;
-    height: 100%;
     padding: 5% 10%;
+    margin: 3em 0;
     background: url("/images/shield.svg") no-repeat center/contain;
-}
-
-#banner .demo h5 {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-top: -2em;
 }
 
 #banner .demo .box {
@@ -439,6 +437,14 @@ a.btn-fixed, button.btn-fixed {
     /*background: rgba(42, 73, 89, 0.4);*/
     /*-webkit-backdrop-filter: blur(15px);*/
     /*backdrop-filter: blur(15px);*/
+}
+
+#banner .demo .box h5 {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 100%;
+    margin: 0.5em;
 }
 
 /*=================================================================
@@ -480,6 +486,13 @@ a.btn-fixed, button.btn-fixed {
     width: 320px;
     margin: 4em auto;
     text-align: center;
+}
+
+@media (max-width: 576px) {
+    #usage .box {
+        width: auto;
+        margin: 1em;
+    }
 }
 
 #usage .end {
