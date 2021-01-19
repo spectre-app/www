@@ -63,9 +63,8 @@
                         <i class="fa-duotone fa-fw {{ .icon }}"></i>
                         {{ .title | markdownify }}
                         <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
-                        <button type="button" class="btn-fixed" title="Copy the password">
-                            <i class="fa-solid fa-copy"></i>
-                            <input type="text" value="{{ .placeholder }}" readonly/>
+                        <button type="button" class="fa-solid fa-copy" title="Copy Password">
+                            <input class="code" value="{{ .placeholder }}" readonly/>
                         </button>
                     </label>
                     {{ end }}

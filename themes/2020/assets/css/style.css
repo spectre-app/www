@@ -159,7 +159,6 @@ textarea {
 }
 
 button, a.btn {
-    cursor: pointer;
     display: inline-block;
     width: auto;
 
@@ -170,18 +169,13 @@ button, a.btn {
     background: var(--control-fill);
 }
 
+button, a.btn, button *, a.btn * {
+    cursor: pointer;
+}
+
 button:hover, a.btn:hover {
     color: var(--active-text);
     background: var(--body-focus);
-}
-
-button input[type] {
-    width: auto !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    border-radius: 0 !important;
 }
 
 section:target .cta {
@@ -261,7 +255,7 @@ a.btn-transparent:focus {
     background: var(--control-fill);
 }
 
-a.btn-fixed, button.btn-fixed {
+.code {
     font-family: "Source Code Pro", monospace;
 }
 
@@ -270,6 +264,8 @@ a.btn-fixed, button.btn-fixed {
     font-size: smaller;
     color: #DC3545;
     background: #6A1A21;
+    color: var(--active-text);
+    background: var(--body-fill);
     border-radius: var(--internal-size);
 }
 
@@ -338,6 +334,12 @@ a.btn-fixed, button.btn-fixed {
     color: var(--active-text);
 }
 
+/* Ensure empty fixed-width font-awesome icons still take their fixed size. */
+.fa-fw::after {
+    content: " ";
+    white-space: pre;
+}
+
 /*=================================================================
   Navigation
  *================================================================*/
@@ -381,9 +383,16 @@ a.btn-fixed, button.btn-fixed {
     url("/images/banner.svg") no-repeat center/contain;
 }
 
-.fa-fw::after {
-    content: " ";
-    white-space: pre;
+#banner button * {
+    pointer-events: none;
+}
+#banner button input[readonly] {
+    width: calc(100% - 3ex);
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
 }
 
 #banner #banner-particles {
@@ -488,7 +497,7 @@ a.btn-fixed, button.btn-fixed {
     text-align: center;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     #usage .box {
         width: auto;
         margin: 1em;

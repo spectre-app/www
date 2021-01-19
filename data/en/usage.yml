@@ -21,3 +21,21 @@ items:
 
       *Spectre*&nbsp;cryptographically computes your&nbsp;site's&nbsp;passwords from your&nbsp;sign-in&nbsp;identity.
       It&nbsp;works from any device, even that of a&nbsp;friend, or a&nbsp;brand&nbsp;new&nbsp;phone.
+
+  - title: Upgrade your account&nbsp;security
+    partial: "usage-upgrade.html"
+    body: >
+      First time using *Spectre* for this&nbsp;site?\
+
+      Change your old account&nbsp;password into *Spectre*'s generated password.
+
+
+      From now on, forget your old password, your&nbsp;site is securely protected by&nbsp;*Spectre*.
+
+  - title: Log in securely
+    partial: "usage-login.html"
+    body: >
+      Just log&nbsp;in with your site's *Spectre*&nbsp;password, that's&nbsp;it.
+
+
+      Don't worry about trying to remember&nbsp;it &mdash; just get&nbsp;it straight from&nbsp;*Spectre*.
