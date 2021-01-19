@@ -3,7 +3,7 @@
 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by/4.0/ or see LICENSE. */
 
-importScripts("./pbkdf2.js");
+importScripts("pbkdf2.js");
 
 // This is the scrypt function
 // It returns a promise which will resolve asynchronously

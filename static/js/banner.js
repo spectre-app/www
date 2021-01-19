@@ -10,43 +10,61 @@ function spinner(element, delta) {
 }
 
 $(function () {
+    let demo = $('#banner .demo');
+    let fullName = demo.find('#fullName');
+    let fullNameInput = fullName.find('input');
+    let masterPassword = demo.find('#masterPassword');
+    let masterPasswordInput = masterPassword.find('input');
+    let masterPasswordSpinner = masterPassword.find('.fa-spin');
+    let siteName = demo.find('#siteName');
+    let siteNameInput = siteName.find('input');
+    let sitePassword = demo.find('#sitePassword');
+    let sitePasswordSpinner = sitePassword.find('.fa-spin');
+    let sitePasswordButton = sitePassword.find('button');
+    let sitePasswordInput = sitePasswordButton.find('input')
+    let infoMessage = demo.find('.info');
+    let errorMessage = demo.find('.error');
+
     mpw = new Worker("./js/mpw-js/mpw.js");
     mpw.onmessage = function (msg) {
-        $('#banner .error').text(msg.data.error || null);
-        $('#banner #sitePassword input').val(msg.data.sitePassword || null);
+        errorMessage.text(msg.data.error || null);
+        sitePasswordInput.val(msg.data.result || null);
 
-        spinner($('#banner #masterPassword .fa-spin'), -1);
-        spinner($('#banner #sitePassword .fa-spin'), -1);
+        spinner(masterPasswordSpinner, -1);
+        spinner(sitePasswordSpinner, -1);
     };
 
-    $('#banner #fullName, #banner #masterPassword').on('focusout', function () {
-        $('#banner .error').text(null);
-        spinner($('#banner #masterPassword .fa-spin'), +1);
-        spinner($('#banner #sitePassword .fa-spin'), +1);
+    $([fullName[0], masterPassword[0]]).on('focusout', function () {
+        $('#banner .demo .error').text(null);
+        spinner(masterPasswordSpinner, +1);
+        spinner(sitePasswordSpinner, +1);
 
         mpw.postMessage({
-            "fullName": $('#banner #fullName input')[0].value,
-            "masterPassword": $('#banner #masterPassword input')[0].value,
-            "siteName": $('#banner #siteName input')[0].value,
+            "fullName": fullNameInput[0].value,
+            "masterPassword": masterPasswordInput[0].value,
+            "serviceName": siteNameInput[0].value,
         });
     });
 
-    $('#banner #siteName').on('input', function () {
-        $('#banner .error').text(null);
-        spinner($('#banner #sitePassword .fa-spin'), +1);
+    siteName.on('input', function () {
+        errorMessage.text(null);
+        spinner(sitePasswordSpinner, +1);
 
         mpw.postMessage({
-            "siteName": $('#banner #siteName input')[0].value,
+            "serviceName": siteNameInput[0].value,
         });
     });
 
-    $('#banner #sitePassword button').on('click', function () {
-        $('#banner #sitePassword input')[0].select();
+    sitePasswordButton.on('click', function () {
+        sitePasswordInput.select()
         document.execCommand('copy');
-        $('#banner .info').text("Password Copied!");
-        $('#banner .info').fadeIn().fadeOut({duration: 2000});
+
+        sitePasswordButton.attr("title", "Copied!").tooltip("_fixTitle").tooltip("show");
+        setTimeout(function () {
+            sitePasswordButton.tooltip("hide").attr("title", "Copy Password").tooltip("_fixTitle");
+        }, 1000);
     });
 
-    $('#banner #masterPassword .fa-spin').fadeOut();
-    $('#banner #sitePassword .fa-spin').fadeOut();
+    masterPasswordSpinner.fadeOut();
+    sitePasswordSpinner.fadeOut();
 });

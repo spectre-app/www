@@ -3,306 +3,224 @@
 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by/4.0/ or see LICENSE. */
 
-importScripts("./scrypt.js");
+importScripts("scrypt.js");
 
-// JS Web Crypto implementation of http://masterpasswordapp.com/algorithm.html
-class MPW {
-    constructor(name, password, version = MPW.VERSION) {
-        // The algorithm version
-        this.version = version;
-
-        // Store name on the object, this is not used at all internally
-        this.name = name;
-
-        // Check for valid algorithm versions
-        if (version >= 0 && version <= MPW.VERSION) {
-            // Calculate the master key which will be used to calculate
-            // the password seed
-            this.key = MPW.calculateKey(name, password, version);
-        } else {
-            this.key = Promise.reject(new Error(`Unsupported algorithm version: ${version}.`));
-        }
-    }
-
-    // calculateKey takes ~ 1450.000ms to complete
-    static calculateKey(name, password, version = MPW.VERSION) {
-        if (!name || !name.length) {
-            return Promise.reject(new Error("Missing full name."));
-        }
-
-        if (!password || !password.length) {
-            return Promise.reject(new Error("Missing master password."));
-        }
-
-        try {
-            // Cache the number of characters in name for older buggy
-            // versions of MPW
-            let nameCharLength = name.length;
-
-            // Convert password string to a Uint8Array w/ UTF-8
-            password = MPW.txtencoder.encode(password);
-
-            // Convert name string to a Uint8Array w/ UTF-8
-            name = MPW.txtencoder.encode(name);
-
-            // Convert MPW.NS string to a Uint8Array w/ UTF-8
-            let NS = MPW.txtencoder.encode(MPW.NS);
-
-            // Create salt array and a DataView representing it
-            var salt = new Uint8Array(
-                NS.length
-                + 4/*sizeof(uint32)*/ + name.length
-            );
-            let saltView = new DataView(salt.buffer, salt.byteOffset, salt.byteLength);
-            let i = 0;
-
-            // Set salt[0,] to NS
-            salt.set(NS, i);
-            i += NS.length;
-
-            if (version < 3) {
-                // Set data[i,i+4] to nameCharLength UINT32 in big-endian form
-                saltView.setUint32(i, nameCharLength, false/*big-endian*/);
-                i += 4/*sizeof(uint32)*/;
-            } else {
-                // Set salt[i,i+4] to name.length UINT32 in big-endian form
-                saltView.setUint32(i, name.length, false/*big-endian*/);
-                i += 4/*sizeof(uint32)*/;
-            }
-
-            // Set salt[i,] to name
-            salt.set(name, i);
-            i += name.length;
-        } catch (e) {
-            return Promise.reject(e);
-        }
-
-        // Derive the master key w/ scrypt
-        // why is buflen 64*8==512 and not 32*8==256 ?
-        let key = scrypt(password, salt, 32768/*= n*/, 8/*= r*/, 2/*= p*/, 64/*= buflen*/);
-
-        // If the Web Crypto API is supported import the key, otherwise return
-        return crypto.subtle
-            ? key.then(
-                // Import the key into WebCrypto to use later with sign while
-                // being non-extractable
-                key => crypto.subtle.importKey("raw", key, {
-                    name: "HMAC",
-                    hash: {
-                        name: "SHA-256"
-                    }
-                }, false/*not extractable*/, ["sign"])/*= key*/
-            )
-            : key;
-    }
-
-    // calculateSeed takes ~ 3.000ms to complete + the time of calculateKey once
-    calculateSeed(site, counter = 1, context = null, NS = MPW.NS) {
-        if (!site || !site.length) {
-            return Promise.reject(new Error("Missing site name."));
-        }
-
-        if (counter < 1 || counter > 4294967295/*Math.pow(2, 32) - 1*/) {
-            return Promise.reject(new Error(`Invalid counter value: ${counter}.`));
-        }
-
-        try {
-            // Cache the number of characters in site for older buggy
-            // versions of MPW
-            let siteCharLength = site.length;
-
-            // Convert salt string to a Uint8Array w/ UTF-8
-            site = MPW.txtencoder.encode(site);
-
-            // Convert NS string to a Uint8Array w/ UTF-8
-            NS = MPW.txtencoder.encode(NS);
-
-            if (context) {
-                // Convert context string to a Uint8Array w/ UTF-8
-                context = MPW.txtencoder.encode(context);
-            }
-
-            // Create data array and a DataView representing it
-            var data = new Uint8Array(
-                NS.length
-                + 4/*sizeof(uint32)*/ + site.length
-                + 4/*sizeof(int32)*/
-                + (context
-                ? 4/*sizeof(uint32)*/ + context.length
-                : 0)
-            );
-            let dataView = new DataView(data.buffer, data.byteOffset, data.byteLength);
-            let i = 0;
-
-            // Set data[0,] to NS
-            data.set(NS, i);
-            i += NS.length;
-
-            if (this.version < 2) {
-                // Set data[i,i+4] to siteCharLength UINT32 in big-endian form
-                dataView.setUint32(i, siteCharLength, false/*big-endian*/);
-                i += 4/*sizeof(uint32)*/;
-            } else {
-                // Set data[i,i+4] to site.length UINT32 in big-endian form
-                dataView.setUint32(i, site.length, false/*big-endian*/);
-                i += 4/*sizeof(uint32)*/;
-            }
-
-            // Set data[i,] to site
-            data.set(site, i);
-            i += site.length;
-
-            // Set data[i,i+4] to counter INT32 in big-endian form
-            dataView.setInt32(i, counter, false/*big-endian*/);
-            i += 4/*sizeof(int32)*/;
-
-            if (context) {
-                // Set data[i,i+4] to context.length UINT32 in big-endian form
-                dataView.setUint32(i, context.length, false/*big-endian*/);
-                i += 4/*sizeof(uint32)*/;
-
-                // Set data[i,] to context
-                data.set(context, i);
-                i += context.length;
-            }
-        } catch (e) {
-            return Promise.reject(e);
-        }
-
-        // If the Web Crypto API is supported use it, otherwise rely on crypto-js
-        if (crypto.subtle) {
-            return this.key.then(
-                // Sign data using HMAC-SHA-256 w/ this.key
-                key => crypto.subtle.sign({
-                    name: "HMAC",
-                    hash: {
-                        name: "SHA-256"
-                    }
-                }, key, data)/*= seed*/
-            ).then(
-                // Convert the seed to Uint8Array from ArrayBuffer
-                seed => new Uint8Array(seed)/*= seed*/
-            );
-        } else {
-            return this.key.then(function (key) {
-                // Create crypto-js WordArrays from Uint8Arrays data and key
-                data = CryptoJS.lib.WordArray.create(data);
-                key = CryptoJS.lib.WordArray.create(key);
-
-                // Sign data using HMAC-SHA-256 w/ key
-                return CryptoJS.HmacSHA256(data, key)/*= seed*/;
-            }).then(function (hash) {
-                // Create seed array and a DataView representing it
-                let seed = new Uint8Array(hash.words.length * 4/*sizeof(int32)*/);
-                let seedView = new DataView(seed.buffer, seed.byteOffset, seed.byteLength);
-
-                // Loop over hash.words which are INT32
-                for (let i = 0; i < hash.words.length; i++) {
-                    // Set seed[i*4,i*4+4] to hash.words[i] INT32 in big-endian form
-                    seedView.setInt32(i * 4/*sizeof(int32)*/, hash.words[i], false/*big-endian*/);
-                }
-
-                // Return the seed Uint8Array
-                return seed;
-            });
-        }
-    }
-
-    // generate takes ~ 0.200ms to complete + the time of calculateSeed
-    generate(site, counter = 1, context = null, template = "long", NS = MPW.NS) {
-        // Does the requested template exist?
-        if (!(template in MPW.templates)) {
-            return Promise.reject(new Error(`Unsupported result template: ${template}.`));
-        }
-
-        // Calculate the seed
-        let seed = this.calculateSeed(site, counter, context, NS);
-
-        if (this.version < 1) {
-            // Convert seed from host byte order to network byte
-            // to be compatible with v0 of MPW
-            // Follows the implementation at https://github.com/...
-            // Lyndir/MasterPassword/blob/master/MasterPassword/...
-            // Java/masterpassword-algorithm/src/main/java/com/...
-            // lyndir/masterpassword/MasterKeyV0.java#L105
-            seed = seed.then(function (seedBytes) {
-                var seed = new Uint16Array(seedBytes.length);
-
-                for (var i = 0; i < seed.length; i++) {
-                    seed[i] = (seedBytes[i] > 127 ? 0x00ff : 0x0000) | (seedBytes[i] << 8);
-                }
-
-                return seed;
-            });
-        }
-
-        return seed.then(function (seed) {
-            // Find the selected template array
-            template = MPW.templates[template];
-
-            // Select the specific template based on seed[0]
-            template = template[seed[0] % template.length];
-
-            // Split the template string (e.g. xxx...xxx)
-            return template.split("").map(function (c, i) {
-                // Use MPW.passchars to map the template string (e.g. xxx...xxx)
-                // to characters (e.g. c -> bcdfghjklmnpqrstvwxyz)
-                let chars = MPW.passchars[c];
-
-                // Select the character using seed[i + 1]
-                return chars[seed[i + 1] % chars.length];
-            }).join("");
-        })/*= password*/;
-    }
-
-    // generate a password with the password namespace
-    generatePassword(site, counter = 1, template = "long") {
-        return this.generate(site, counter, null, template, MPW.PasswordNS);
-    }
-
-    // generate a username with the login namespace
-    generateLogin(site, counter = 1, template = "name") {
-        return this.generate(site, counter, null, template, MPW.LoginNS);
-    }
-
-    // generate a security answer with the answer namespace
-    generateAnswer(site, counter = 1, context = "", template = "phrase") {
-        return this.generate(site, counter, context, template, MPW.AnswerNS);
-    }
-
-    invalidate() {
-        // Replace this.key w/ a Promise.reject
-        // Preventing all future access
-        this.key = Promise.reject(new Error("invalid state."));
-    }
-
-    static test() {
-        // Pretty simple test here
-        return new MPW("user", "password").generate("example.com", 1, null, "long", MPW.NS).then(function (password) {
-            console.assert(password === "ZedaFaxcZaso9*", `Self-test failed; expected: ZedaFaxcZaso9*; got: ${password}`);
-            return password === "ZedaFaxcZaso9*"
-                ? Promise.resolve()
-                : Promise.reject(new Error(`Self-test failed; expected: ZedaFaxcZaso9*; got: ${password}.`));
-        });
+class MPWError extends Error {
+    constructor(cause, ...params) {
+        super(...params)
+        this.name = "MPWError"
+        this.cause = cause
     }
 }
 
-// A TextEncoder in UTF-8 to convert strings to `Uint8Array`s
-MPW.txtencoder = new TextEncoder;
+class MPW {
+    constructor(fullName, masterPassword, algorithmVersion = MPW.versions.current) {
+        this.fullName = fullName;
+        this.algorithmVersion = algorithmVersion;
+        this.key = MPW.masterKey(fullName, masterPassword, algorithmVersion);
 
-// The latest version of MPW supported
-MPW.VERSION = 3;
+    }
 
-// The namespace used in calculateKey
-MPW.NS = "com.lyndir.masterpassword";
+    result(serviceName, resultType, keyCounter, keyScope, keyContext = null) {
+        return MPW.serviceResult(this.key, serviceName, resultType, keyCounter, keyScope, keyContext);
+    }
 
-// The namespaces used in calculateSeed
-MPW.PasswordNS = "com.lyndir.masterpassword";
-MPW.LoginNS = "com.lyndir.masterpassword.login";
-MPW.AnswerNS = "com.lyndir.masterpassword.answer";
+    authenticate(serviceName, resultType = "long", keyCounter = 1, keyContext = null) {
+        return this.result(this.key, serviceName, resultType, keyCounter, MPW.scopes.authentication, keyContext);
+    }
 
-// The templates that passwords may be created from
-// The characters map to MPW.passchars
+    login(serviceName, resultType = "name", keyCounter = 1, keyContext = null) {
+        return this.result(this.key, serviceName, resultType, keyCounter, MPW.scopes.identification, keyContext);
+    }
+
+    answer(serviceName, resultType = "phrase", keyCounter = 1, keyContext = null) {
+        return this.result(this.key, serviceName, resultType, keyCounter, MPW.scopes.recovery, keyContext);
+    }
+
+    invalidate() {
+        this.key = Promise.reject(new MPWError("invalidate", "Master key unavailable."));
+    }
+
+    static masterKey(fullName, masterPassword, algorithmVersion = MPW.versions) {
+        if (!crypto.subtle) {
+            return Promise.reject(new MPWError(
+                "internal", `Cryptography unavailable.`));
+        } else if (algorithmVersion < MPW.versions.first || algorithmVersion > MPW.versions.last) {
+            return Promise.reject(new MPWError(
+                "algorithmVersion", `Unsupported algorithm version: ${algorithmVersion}.`));
+        } else if (!fullName || !fullName.length) {
+            return Promise.reject(new MPWError(
+                "fullName", `Missing full name.`));
+        } else if (!masterPassword || !masterPassword.length) {
+            return Promise.reject(new MPWError(
+                "masterPassword", `Missing master password.`));
+        }
+
+        try {
+            let masterPasswordBytes = MPW.encoder.encode(masterPassword);
+            let fullNameBytes = MPW.encoder.encode(fullName);
+            let keyScope = MPW.encoder.encode(MPW.scopes.authentication);
+
+            // Populate salt: scope | #fullName | fullName
+            let keySalt = new Uint8Array(keyScope.length + 4/*sizeof(uint32)*/ + fullNameBytes.length);
+            let keySaltView = new DataView(keySalt.buffer, keySalt.byteOffset, keySalt.byteLength);
+
+            let kS = 0;
+            keySalt.set(keyScope, kS);
+            kS += keyScope.length;
+
+            if (algorithmVersion < 3) {
+                // V0, V1, V2 incorrectly used the character length instead of the byte length.
+                keySaltView.setUint32(kS, fullName.length, false/*big-endian*/);
+                kS += 4/*sizeof(uint32)*/;
+            } else {
+                keySaltView.setUint32(kS, fullNameBytes.length, false/*big-endian*/);
+                kS += 4/*sizeof(uint32)*/;
+            }
+
+            keySalt.set(fullNameBytes, kS);
+            kS += fullNameBytes.length;
+
+            // Derive master key from master password and user salt.
+            return scrypt(masterPasswordBytes, keySalt, 32768, 8, 2, 64).then(keyData =>
+                // Make key available to WebCrypto for later use.
+                crypto.subtle.importKey("raw", keyData, {
+                    name: "HMAC",
+                    hash: {
+                        name: "SHA-256"
+                    }
+                }, false/*not extractable*/, ["sign"]).then(cryptoKey =>
+                    ({keyCrypto: cryptoKey, keyAlgorithm: algorithmVersion})
+                )
+            );
+        } catch (e) {
+            return Promise.reject(e);
+        }
+    }
+
+    static serviceKey(masterKey, serviceName, keyCounter = 1, keyScope = MPW.scopes.authentication, keyContext = null) {
+        return masterKey.then(masterKey => {
+                if (!crypto.subtle) {
+                    return Promise.reject(new MPWError(
+                        "internal", `Cryptography unavailable.`));
+                } else if (!masterKey) {
+                    return Promise.reject(new MPWError(
+                        "masterKey", `Missing master password.`));
+                } else if (!serviceName || !serviceName.length) {
+                    return Promise.reject(new MPWError(
+                        "serviceName", `Missing service name.`));
+                } else if (keyCounter < 1 || keyCounter > 4294967295/*Math.pow(2, 32) - 1*/) {
+                    return Promise.reject(new MPWError(
+                        "keyCounter", `Invalid counter value: ${keyCounter}.`));
+                }
+
+                try {
+                    let serviceNameBytes = MPW.encoder.encode(serviceName);
+                    let keyScopeBytes = MPW.encoder.encode(keyScope);
+                    let keyContextBytes = keyContext && MPW.encoder.encode(keyContext);
+
+                    // Populate salt: keyScope | #serviceName | serviceName | keyCounter | #keyContext | keyContext
+                    let keySalt = new Uint8Array(
+                        keyScopeBytes.length
+                        + 4/*sizeof(uint32)*/ + serviceNameBytes.length
+                        + 4/*sizeof(int32)*/
+                        + (keyContextBytes ? 4/*sizeof(uint32)*/ + keyContextBytes.length : 0)
+                    );
+                    let keySaltView = new DataView(keySalt.buffer, keySalt.byteOffset, keySalt.byteLength);
+
+                    let kS = 0;
+                    keySalt.set(keyScopeBytes, kS);
+                    kS += keyScopeBytes.length;
+
+                    if (masterKey.keyAlgorithm < 2) {
+                        // V0, V1 incorrectly used the character length instead of the byte length.
+                        keySaltView.setUint32(kS, serviceName.length, false/*big-endian*/);
+                        kS += 4/*sizeof(uint32)*/;
+                    } else {
+                        keySaltView.setUint32(kS, serviceNameBytes.length, false/*big-endian*/);
+                        kS += 4/*sizeof(uint32)*/;
+                    }
+
+                    keySalt.set(serviceNameBytes, kS);
+                    kS += serviceNameBytes.length;
+
+                    keySaltView.setInt32(kS, keyCounter, false/*big-endian*/);
+                    kS += 4/*sizeof(int32)*/;
+
+                    if (keyContextBytes) {
+                        keySaltView.setUint32(kS, keyContextBytes.length, false/*big-endian*/);
+                        kS += 4/*sizeof(uint32)*/;
+
+                        keySalt.set(keyContextBytes, kS);
+                        kS += keyContextBytes.length;
+                    }
+
+                    // Derive service key from master key and service salt.
+                    return crypto.subtle.sign({
+                        name: "HMAC",
+                        hash: {
+                            name: "SHA-256"
+                        }
+                    }, masterKey.keyCrypto, keySalt).then(keyData =>
+                        ({keyData: new Uint8Array(keyData), keyAlgorithm: masterKey.keyAlgorithm})
+                    );
+                } catch (e) {
+                    return Promise.reject(e);
+                }
+            }
+        )
+    }
+
+    static serviceResult(masterKey, serviceName, resultType = "long", keyCounter = 1, keyScope = MPW.scopes.authentication, keyContext = null) {
+        return this.serviceKey(masterKey, serviceName, keyCounter, keyScope, keyContext).then(serviceKey => {
+                if (!(resultType in MPW.templates)) {
+                    return Promise.reject(new MPWError(
+                        "resultType", `Unsupported result template: ${resultType}.`));
+                }
+
+                let serviceKeyBytes = serviceKey.keyData
+                if (serviceKey.keyAlgorithm < 1) {
+                    // V0 incorrectly converts bytes into 16-bit big-endian numbers.
+                    let serviceKeyV0Bytes = new Uint16Array(serviceKeyBytes.length);
+                    for (let sK = 0; sK < serviceKeyV0Bytes.length; sK++) {
+                        serviceKeyV0Bytes[sK] = (serviceKeyBytes[sK] > 127 ? 0x00ff : 0x0000) | (serviceKeyBytes[sK] << 8);
+                    }
+                    serviceKeyBytes = serviceKeyV0Bytes
+                }
+
+                // key byte 0 selects the template from the available result templates.
+                let resultTemplates = MPW.templates[resultType];
+                let resultTemplate = resultTemplates[serviceKeyBytes[0] % resultTemplates.length];
+
+                // key byte 1+ selects a character from the template's character class.
+                return resultTemplate.split("").map(function (characterClass, rT) {
+                    let characters = MPW.characters[characterClass];
+                    return characters[serviceKeyBytes[rT + 1] % characters.length];
+                }).join("");
+            }
+        );
+    }
+
+    static test() {
+        return new MPW("Robert Lee Mitchell", "banana colored duckling")
+            .authenticate("masterpasswordapp.com").then(password =>
+                password === "Jejr5[RepuSosp" ? Promise.resolve() :
+                    Promise.reject("Internal consistency test failed.")
+            );
+    }
+}
+
+MPW.encoder = new TextEncoder();
+MPW.versions = {
+    first: 0,
+    last: 3,
+    current: this.last,
+};
+MPW.scopes = {
+    authentication: "com.lyndir.masterpassword",
+    identification: "com.lyndir.masterpassword.login",
+    recovery: "com.lyndir.masterpassword.answer",
+};
 MPW.templates = {
     maximum: [
         "anoxxxxxxxxxxxxxxxxx",
@@ -353,12 +271,9 @@ MPW.templates = {
         "cvcc cvc cvccvcv cvc",
         "cvc cvccvcvcv cvcv",
         "cv cvccv cvc cvcvccv"
-    ]
+    ],
 };
-
-// The password character mapping
-// c in template becomes bcdfghjklmnpqrstvwxyz
-MPW.passchars = {
+MPW.characters = {
     V: "AEIOU",
     C: "BCDFGHJKLMNPQRSTVWXYZ",
     v: "aeiou",
@@ -368,32 +283,27 @@ MPW.passchars = {
     n: "0123456789",
     o: "@&%?,=[]_:-+*$#!'^~;()/.",
     x: "AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz0123456789!@#$%^&*()",
-    " ": " "
+    ' ': " "
 };
 
 mpw = null;
-onmessage = function (e) {
-    if (!mpw || e.data["fullName"]) {
-        mpw = new MPW(e.data["fullName"], e.data["masterPassword"], e.data["algorithmVersion"] || MPW.VERSION);
+onmessage = function (msg) {
+    if (!mpw || msg.data.fullName) {
+        mpw = new MPW(msg.data.fullName, msg.data.masterPassword, msg.data.algorithmVersion || MPW.versions.current);
     }
 
-    mpw.key.then(function () {
-        mpw.generatePassword(e.data["siteName"], e.data["keyCounter"] || 1, e.data["resultType"] || "long")
-            .then(function (sitePassword) {
+    mpw.result(msg.data.serviceName, msg.data.resultType || "long",
+        msg.data.keyCounter || 1, msg.data.keyScope || MPW.scopes.authentication, msg.data.keyContext)
+        .then(
+            result =>
                 postMessage({
                     "success": true,
-                    "sitePassword": sitePassword
-                });
-            }, function (error) {
+                    "result": result
+                }),
+            error =>
                 postMessage({
                     "success": false,
                     "error": error.message
-                });
-            });
-    }, function (error) {
-        postMessage({
-            "success": false,
-            "error": error.message
-        });
-    });
+                })
+        );
 };
