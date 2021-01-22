@@ -298,12 +298,15 @@ onmessage = function (msg) {
             result =>
                 postMessage({
                     "success": true,
-                    "result": result
+                    "result": result,
                 }),
-            error =>
+            error => {
+                console.error(error);
                 postMessage({
                     "success": false,
-                    "error": error.message
+                    "error": error.message,
+                    "cause": error.cause,
                 })
+            }
         );
 };

@@ -16,55 +16,62 @@ $(function () {
     let masterPassword = demo.find('#masterPassword');
     let masterPasswordInput = masterPassword.find('input');
     let masterPasswordSpinner = masterPassword.find('.fa-spin');
-    let siteName = demo.find('#siteName');
-    let siteNameInput = siteName.find('input');
-    let sitePassword = demo.find('#sitePassword');
-    let sitePasswordSpinner = sitePassword.find('.fa-spin');
-    let sitePasswordButton = sitePassword.find('button');
-    let sitePasswordInput = sitePasswordButton.find('input')
-    let infoMessage = demo.find('.info');
-    let errorMessage = demo.find('.error');
+    let serviceName = demo.find('#serviceName');
+    let serviceNameInput = serviceName.find('input');
+    let servicePassword = demo.find('#servicePassword');
+    let servicePasswordSpinner = servicePassword.find('.fa-spin');
+    let servicePasswordButton = servicePassword.find('button');
+    let servicePasswordInput = servicePasswordButton.find('input')
+    let infoMessage = demo.find('p.info');
+    let errorMessage = demo.find('p.error');
 
     mpw = new Worker("./js/mpw-js/mpw.js");
     mpw.onmessage = function (msg) {
         errorMessage.text(msg.data.error || null);
-        sitePasswordInput.val(msg.data.result || null);
+        servicePasswordInput.val(msg.data.result || null);
+        demo.find(`#${msg.data.cause}`).addClass("error")
 
         spinner(masterPasswordSpinner, -1);
-        spinner(sitePasswordSpinner, -1);
+        spinner(servicePasswordSpinner, -1);
     };
 
     $([fullName[0], masterPassword[0]]).on('focusout', function () {
-        $('#banner .demo .error').text(null);
+        errorMessage.text(null);
+        fullName.removeClass("error");
+        masterPassword.removeClass("error");
+        serviceName.removeClass("error");
         spinner(masterPasswordSpinner, +1);
-        spinner(sitePasswordSpinner, +1);
+        spinner(servicePasswordSpinner, +1);
 
         mpw.postMessage({
             "fullName": fullNameInput[0].value,
             "masterPassword": masterPasswordInput[0].value,
-            "serviceName": siteNameInput[0].value,
+            "serviceName": serviceNameInput[0].value,
         });
     });
 
-    siteName.on('input', function () {
+    serviceName.on('input', function () {
         errorMessage.text(null);
-        spinner(sitePasswordSpinner, +1);
+        fullName.removeClass("error");
+        masterPassword.removeClass("error");
+        serviceName.removeClass("error");
+        spinner(servicePasswordSpinner, +1);
 
         mpw.postMessage({
-            "serviceName": siteNameInput[0].value,
+            "serviceName": serviceNameInput[0].value,
         });
     });
 
-    sitePasswordButton.on('click', function () {
-        sitePasswordInput.select()
+    servicePasswordButton.on('click', function () {
+        servicePasswordInput.select()
         document.execCommand('copy');
 
-        sitePasswordButton.attr("title", "Copied!").tooltip("_fixTitle").tooltip("show");
+        servicePasswordButton.attr("title", "Copied!").tooltip("_fixTitle").tooltip("show");
         setTimeout(function () {
-            sitePasswordButton.tooltip("hide").attr("title", "Copy Password").tooltip("_fixTitle");
+            servicePasswordButton.tooltip("hide").attr("title", "Copy Password").tooltip("_fixTitle");
         }, 1000);
     });
 
     masterPasswordSpinner.fadeOut();
-    sitePasswordSpinner.fadeOut();
+    servicePasswordSpinner.fadeOut();
 });

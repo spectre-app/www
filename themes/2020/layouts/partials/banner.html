@@ -50,16 +50,16 @@
                     <hr/>
                     <i class="fa-solid fa-xs fa-fw fa-down"></i>
 
-                    {{ with .siteName }}
-                    <label id="siteName">
+                    {{ with .serviceName }}
+                    <label id="serviceName">
                         <i class="fa-duotone fa-fw {{ .icon }}"></i>
                         {{ .title | markdownify }}
                         <input type="text" placeholder="{{ .placeholder }}"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-equals"></i>
-                    {{ with .sitePassword }}
-                    <label id="sitePassword">
+                    {{ with .servicePassword }}
+                    <label id="servicePassword">
                         <i class="fa-duotone fa-fw {{ .icon }}"></i>
                         {{ .title | markdownify }}
                         <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
