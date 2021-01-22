@@ -41,77 +41,77 @@ $(function() {
     $('html').attr('data-os', UAParser().os.name);
 
     /*	Particles. */
-    tsParticles.load("banner-particles", {
-        "fpsLimit": 10,
-        "autoPlay": true,
-        "detectRetina": true,
-        "pauseOnBlur": true,
-        "pauseOnOutsideViewport": true,
-
-        "interactivity": {
-            "events": {
-                "onDiv": {
-                    "selectors": "#banner .demo",
-                    "enable": true,
-                    "mode": "repulse"
-                },
-            },
-            "modes": {
-                "repulse": {
-                    "speed": 0.02
-                }
-            }
-        },
-
-        "particles": {
-            "reduceDuplicates": true,
-            "color": {
-                "value": "#3E8989"
-            },
-            "links": {
-                "color": {
-                    "value": "#3E8989"
-                },
-                "distance": 300,
-                "enable": true,
-                "frequency": 0.7,
-                "opacity": 1,
-                "width": 1,
-            },
-            "move": {
-                "enable": true,
-                "speed": 0.1
-            },
-            "number": {
-                "density": {
-                    "enable": true
-                },
-                "value": 5
-            },
-            "shape": {
-                "options": {
-                    "character": [
-                        {
-                            "fill": true,
-                            "font": "Font Awesome 6 Brands",
-                            "style": "",
-                            "value": [
-                                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-                                "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
-                            ],
-                            "weight": "400"
-                        }
-                    ],
-                },
-                "type": ["character", "circle"],
-            },
-            "size": {
-                "random": {
-                    "enable": true,
-                    "minimumValue": 4
-                },
-                "value": 20
-            },
-        }
-    });
+    // tsParticles.load("banner-particles", {
+    //     "fpsLimit": 10,
+    //     "autoPlay": true,
+    //     "detectRetina": true,
+    //     "pauseOnBlur": true,
+    //     "pauseOnOutsideViewport": true,
+    //
+    //     "interactivity": {
+    //         "events": {
+    //             "onDiv": {
+    //                 "selectors": "#banner .demo",
+    //                 "enable": true,
+    //                 "mode": "repulse"
+    //             },
+    //         },
+    //         "modes": {
+    //             "repulse": {
+    //                 "speed": 0.02
+    //             }
+    //         }
+    //     },
+    //
+    //     "particles": {
+    //         "reduceDuplicates": true,
+    //         "color": {
+    //             "value": "#3E8989"
+    //         },
+    //         "links": {
+    //             "color": {
+    //                 "value": "#3E8989"
+    //             },
+    //             "distance": 300,
+    //             "enable": true,
+    //             "frequency": 0.7,
+    //             "opacity": 1,
+    //             "width": 1,
+    //         },
+    //         "move": {
+    //             "enable": true,
+    //             "speed": 0.1
+    //         },
+    //         "number": {
+    //             "density": {
+    //                 "enable": true
+    //             },
+    //             "value": 5
+    //         },
+    //         "shape": {
+    //             "options": {
+    //                 "character": [
+    //                     {
+    //                         "fill": true,
+    //                         "font": "Font Awesome 6 Brands",
+    //                         "style": "",
+    //                         "value": [
+    //                             "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+    //                             "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+    //                         ],
+    //                         "weight": "400"
+    //                     }
+    //                 ],
+    //             },
+    //             "type": ["character", "circle"],
+    //         },
+    //         "size": {
+    //             "random": {
+    //                 "enable": true,
+    //                 "minimumValue": 4
+    //             },
+    //             "value": 20
+    //         },
+    //     }
+    // });
 });
