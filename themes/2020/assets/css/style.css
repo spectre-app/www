@@ -11,7 +11,7 @@
 
 :root {
     --body-fill-rgb: 14, 51, 69;
-    --body-fill: rgb(var(--body-fill-rgb));
+    --body-fill: /* #0E3345 */ rgb(var(--body-fill-rgb));
     --body-contrast: #123749;
     --body-text: #87A4A9;
     --body-focus: #41A0A0;
@@ -260,12 +260,7 @@ a.btn-transparent:focus {
 }
 
 .error, .info {
-    margin: 0.5em;
-    font-size: smaller;
-    color: #DC3545;
-    background: #6A1A21;
-    color: var(--active-text);
-    background: var(--body-fill);
+    color: #BB2D3B;
     border-radius: var(--internal-size);
 }
 
@@ -289,11 +284,15 @@ a.btn-transparent:focus {
     }
 }
 
-.box .error, .box .info {
+.box p.error, .box p.info {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    margin: 0.5em;
+    font-size: smaller;
+    color: var(--active-text);
+    background: var(--body-fill);
 }
 
 .box > hr {
@@ -386,6 +385,7 @@ a.btn-transparent:focus {
 #banner button * {
     pointer-events: none;
 }
+
 #banner button input[readonly] {
     width: calc(100% - 3ex);
     padding: 0;
