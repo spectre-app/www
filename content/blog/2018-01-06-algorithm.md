@@ -7,9 +7,9 @@ description: >
   Exploring the Spectre algorithm, we find that at the core stands the principle of statelessness.
 ---
 
-# The key principle: statelessness
+## Statelessness
 
-At the core of the Master Password solution is the principle of statelessness. State is the technical term for "what
+At the core of the Spectre solution is the principle of statelessness. State is the technical term for "what
 needs to be saved". In most tasks, state is used to ensure you don't need to redo your work. You write a document and
 save it to disk so you needn't rewrite it every time you need it. But not all state is reproducible. When you save your
 sites' passwords on your computer, be it in a program or elsewhere, you depend on that information whenever you need to
@@ -19,16 +19,16 @@ vulnerability: private state must be protected from any and all attack vectors. 
 risks and dependencies, we need to free ourselves from state. Stateless operation implies that the computer or program
 can give you what you need based on nothing more than inputs you can give it.
 
-# The Master Password solution
+## The Spectre solution
 
-Master Password solves the password problem in a stateless manner while continuing to guarantee and to some extent even
-enforce good security for your sites. Master Password implements its solution in three distinct phases:
+Spectre solves the password problem in a stateless manner while continuing to guarantee and to some extent even
+enforce good security for your sites. Spectre implements its solution in three distinct phases:
 
 1. Your Master Key
 2. Your Site Key
 3. Your Site Password
 
-# Phase 1: Your identity
+### Phase 1: Your identity
 
 Your identity is defined by your master key. This key unlocks all of your doors. Your master key is the cryptographic
 result of two components:
@@ -52,7 +52,7 @@ dkLen     = 64
 We employ the SCRYPT cryptographic function to derive a 64-byte cryptographic key from the user's name and master
 password using a fixed set of parameters.
 
-# Phase 2: Your site key
+### Phase 2: Your site key
 
 Your site key is a derivative from your master key when it is used to unlock the door to a specific site. Your site key
 is the result of two components:
@@ -74,11 +74,11 @@ seed    = scope . LEN(<site name>) . <site name> . <counter>
 We employ the HMAC-SHA-256 cryptographic function to derive a 64-byte cryptographic site key from the from the site name
 and master key scoped to a given counter value.
 
-# Phase 3: Your site password
+### Phase 3: Your site password
 
 Your site password is an identifier derived from your site key in compliance with the site’s password policy. The
 purpose of this step is to render the site’s cryptographic key into a format that the site’s password input will accept.
-Master Password declares several site password formats and uses these pre-defined password “templates” to render the
+Spectre declares several site password formats and uses these pre-defined password “templates” to render the
 site key legible.
 
 ```
@@ -93,9 +93,9 @@ We resolve a template to use for the password from the site key’s first byte. 
 translate site key bytes into password characters. The result is a site password in the form defined by the site
 template scoped to our site key. This password is then used to authenticate the user for his account at this site.
 
-# Key Scopes
+### Key Scopes
 
-The Master Password algorithm defines several key scopes. These scopes are used to scope the key generation to a
+The Spectre algorithm defines several key scopes. These scopes are used to scope the key generation to a
 specific purpose.
 
 Three purposes are defined:
@@ -121,13 +121,13 @@ Three purposes are defined:
 | Identification | `com.lyndir.masterpassword.login`  |
 | Recovery       | `com.lyndir.masterpassword.answer` |
 
-# Output Templates
+### Output Templates
 
 In an effort to enforce increased password entropy, a common consensus has developed among account administrators that
 passwords should adhere to certain arbitrary password policies. These policies enforce certain rules which must be
-honoured for an account password to be deemed acceptable. As a result of these enforcement practices, Master Password’s
+honoured for an account password to be deemed acceptable. As a result of these enforcement practices, Spectre’s
 site key output must necessarily adhere to these types of policies. Since password policies are governed by site
-administrators and not standardized, Master Password defines several password templates to make a best-effort attempt at
+administrators and not standardized, Spectre defines several password templates to make a best-effort attempt at
 generating site passwords that conform to these policies while also keeping its output entropy as high as possible under
 the constraints.
 
@@ -154,7 +154,7 @@ the constraints.
 | Phrase           | `cvcc cvc cvccvcv cvc` | `cvc cvccvcvcv cvcv`   |
 |                  | `cv cvccv cvc cvcvccv` |                        |
 
-A Master Password template is a string of characters, where each character identifies a certain character class. As
+A Spectre template is a string of characters, where each character identifies a certain character class. As
 such, the template specifies that the output password should be formed by substituting each of the template’s character
 class characters by a chosen character from that character class.
 

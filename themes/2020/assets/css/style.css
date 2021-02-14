@@ -2,7 +2,7 @@
   External Dependencies
  *================================================================*/
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;0,700;1,400;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;1,400;1,900&display=swap");
 
 /*=================================================================
@@ -37,7 +37,7 @@
 
 body {
     /*font: 100 1em "Source Sans Pro", sans-serif;*/
-    font: 300 1em/1.4 "Raleway", sans-serif;
+    font: 300 1em/1.4 "Montserrat", sans-serif;
     -webkit-font-smoothing: antialiased;
 
     color: var(--body-text);
@@ -45,13 +45,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font: 138%/1.2 "Poppins", sans-serif;
+    font: 1em "Poppins", sans-serif;
 
     color: var(--active-text);
 }
 
 h1 {
-    font-size: 1em;
+    font-size: 1.2em;
     font-variant: all-small-caps;
 
     color: var(--body-focus);
@@ -59,7 +59,11 @@ h1 {
 
 h2 {
     margin-bottom: 1em;
-    font-size: 263%;
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.5em;
 }
 
 h4 {
@@ -90,15 +94,6 @@ hr {
     opacity: 1;
     border: none;
     background: var(--highlight);
-}
-
-ul {
-    padding: 0;
-    list-style: none;
-}
-
-li {
-    padding: 0.25em 0;
 }
 
 label {
@@ -195,6 +190,26 @@ form button:hover {
 input, textarea, button, a, label, :target, :focus, :hover, :active {
     outline: none;
     transition: all .1s ease-in 0s;
+}
+
+blockquote {
+    padding: 1em;
+    border-left: 1ex solid var(--panel-contrast);
+    background: var(--panel-fill);
+    border-radius: var(--internal-size);
+    color: var(--active-text);
+}
+
+blockquote *:last-child {
+    margin-bottom: 0;
+}
+
+blockquote *:first-child {
+    margin-top: 0;
+}
+
+strong, b, em, i {
+    color: var(--active-text);
 }
 
 section {
@@ -359,6 +374,10 @@ a.btn-transparent:focus {
     margin-right: auto;
 }
 
+#navigation .navbar-brand {
+    font: 500 1em "Poppins", sans-serif;
+}
+
 @supports ( (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) ) {
     #navigation .container {
         background: rgba(var(--body-fill-rgb), 0.1);
@@ -509,10 +528,6 @@ a.btn-transparent:focus {
 }
 
 /*=================================================================
- SECTION: CTA
- *================================================================*/
-
-/*=================================================================
  SECTION: CONTACT
  *================================================================*/
 
@@ -521,8 +536,67 @@ a.btn-transparent:focus {
 }
 
 /*=================================================================
-  SECTION: TEAM
+ SECTION: DOCUMENT
  *================================================================*/
+
+#document {
+    font-size: 1.1em;
+}
+
+#document header {
+    background: var(--body-contrast);
+    margin: 1em auto 4em;
+    border-radius: var(--internal-size);
+    text-align: center;
+}
+
+#document img {
+    max-width: 38%;
+    max-height: 25em;
+    margin: 0.2em 1em;
+    float: right;
+    border-radius: var(--join-size);
+    box-shadow: 0 0 8px var(--shadow);
+    border: 1px solid var(--highlight);
+}
+
+#document header img {
+    max-width: 100%;
+    float: none;
+}
+
+#document h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#document h2 {
+    text-align: center;
+    margin: 1em 0 0.5em;
+}
+
+#document h2::after {
+    content: "";
+    width: 4ex;
+    height: 2px;
+    display: block;
+    margin: 0.2em auto 0;
+    background: var(--control-contrast);
+}
+
+#document h3 {
+    padding: 0.2em 2ex;
+    margin: 1em 0 0.5em;
+    border-bottom: 1px solid var(--highlight);
+}
+
+#document ul:not(.list-inline), #document dl:not(.list-inline) {
+    list-style: square;
+    padding: 1ex 4ex;
+    color: var(--active-text);
+    background: var(--panel-fill);
+    border-radius: var(--internal-size);
+}
 
 /*=================================================================
   SECTION: BLOG

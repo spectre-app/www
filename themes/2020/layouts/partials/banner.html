@@ -17,7 +17,7 @@
                 {{ end }}
 
                 <div class="caption">
-                    <ul>
+                    <ul class="list-inline">
                         {{ range .links }}
                         <li><a href="{{ .link }}" class="fa-brands fa-xl {{ .icon }}" title="{{ .title }}"></a></li>
                         {{ end }}
@@ -34,7 +34,7 @@
 
                     {{ with .fullName }}
                     <label id="fullName"><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
-                        <input type="text" placeholder="{{ .placeholder }}" autocomplete="name" autofocus/>
+                        <input type="text" placeholder="{{ .placeholder }}" autocomplete="name"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-xmark"></i>

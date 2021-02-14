@@ -19,8 +19,6 @@ items:
         link: /#contact
       - title: Support
         link: https://support.spectre.app
-      - title: Privacy
-        link: /privacy
 
   - title: Resources
     twelfths: 3
@@ -31,6 +29,12 @@ items:
         link: #
       - title: Press Kit
         link: #
+      - title: Privacy Policy
+        link: /policy/privacy/
+      - title: Code of Conduct
+        link: /policy/coc/
+      - title: Liability
+        link: /policy/disclaimer/
 
   - title: From the blog
     twelfths: 5

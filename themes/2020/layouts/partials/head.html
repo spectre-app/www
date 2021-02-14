@@ -10,15 +10,15 @@
 	<link rel="shortcut icon" href="{{ site.Params.icon | absURL }}" type="image/x-icon">
 	<link rel="icon" href="{{ site.Params.icon | absURL }}" type="image/x-icon">
 
-	<link rel="stylesheet" href="{{ "plugins/bootstrap/bootstrap.min.css" | absURL }}">
-	<link rel="stylesheet" href="{{ "plugins/fontawesome/all.min.css" | absURL }}">
-	<link rel="stylesheet" href="{{ "plugins/magnific-popup/magnific-popup.min.css" | absURL }}">
-        <script src="{{ "plugins/bootstrap/bootstrap.bundle.min.js" | absURL }}"></script>
-        <script src="{{ "plugins/jquery/jquery.min.js" | absURL }}"></script>
-        <script src="{{ "plugins/magnific-popup/jquery.magnific-popup.min.js" | absURL }}"></script>
-        <script src="{{ "plugins/lozad/lozad.min.js" | absURL }}"></script>
-        <script src="{{ "plugins/ua-parser/ua-parser.min.js" | absURL }}"></script>
-        <script src="{{ "plugins/tsparticles/tsparticles.min.js" | absURL }}"></script>
+	<link rel="stylesheet" href="{{ `plugins/bootstrap/bootstrap.min.css` | absURL }}">
+	<link rel="stylesheet" href="{{ `plugins/fontawesome/all.min.css` | absURL }}">
+	<link rel="stylesheet" href="{{ `plugins/magnific-popup/magnific-popup.min.css` | absURL }}">
+        <script src="{{ `plugins/bootstrap/bootstrap.bundle.min.js` | absURL }}"></script>
+        <script src="{{ `plugins/jquery/jquery.min.js` | absURL }}"></script>
+        <script src="{{ `plugins/magnific-popup/jquery.magnific-popup.min.js` | absURL }}"></script>
+        <script src="{{ `plugins/lozad/lozad.min.js` | absURL }}"></script>
+        <script src="{{ `plugins/ua-parser/ua-parser.min.js` | absURL }}"></script>
+        <script src="{{ `plugins/tsparticles/tsparticles.min.js` | absURL }}"></script>
 
 	{{ range site.Params.plugins.css }}
 	<link rel="stylesheet" href="{{ .link | absURL }}">
