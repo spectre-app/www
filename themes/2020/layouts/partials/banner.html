@@ -36,14 +36,14 @@
                 <form class="box cta">
                     <h5>{{ .note | markdownify }}</h5>
 
-                    {{ with .fullName }}
-                    <label id="fullName"><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                    {{ with .userName }}
+                    <label id="userName"><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
                         <input type="text" placeholder="{{ .placeholder }}" autocomplete="name"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-xmark"></i>
-                    {{ with .masterPassword }}
-                    <label id="masterPassword">
+                    {{ with .userSecret }}
+                    <label id="userSecret">
                         <i class="fa-duotone fa-fw {{ .icon }}"></i>
                         {{ .title | markdownify }}
                         <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
@@ -54,16 +54,16 @@
                     <hr/>
                     <i class="fa-solid fa-xs fa-fw fa-down"></i>
 
-                    {{ with .serviceName }}
-                    <label id="serviceName">
+                    {{ with .siteName }}
+                    <label id="siteName">
                         <i class="fa-duotone fa-fw {{ .icon }}"></i>
                         {{ .title | markdownify }}
                         <input type="text" placeholder="{{ .placeholder }}"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-equals"></i>
-                    {{ with .servicePassword }}
-                    <label id="servicePassword">
+                    {{ with .sitePassword }}
+                    <label id="sitePassword">
                         <i class="fa-duotone fa-fw {{ .icon }}"></i>
                         {{ .title | markdownify }}
                         <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>

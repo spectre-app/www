@@ -155,7 +155,7 @@ Spectre was built extremely intentionally and has been securing people's lives s
 But what really matters is our wishlist.  Let's take an honest look:
 
 I don't want to have to remember a ton of things
-: Spectre asks you to remember one single master password to rule them all. Oh, and, your name.
+: Spectre asks you to remember one single personal secret. Oh, and, your name.
 
 I don't want anyone else having control over my passwords
 : Your passwords exist nowhere. They are pure math. A spectre, almost.
@@ -165,7 +165,7 @@ I don't want to be dependant on anyone for access to my own passwords
 Trust us, or don't, it's up to you.
 
 I don't want anyone able to find, steal or discover my secrets
-: Don't tell anyone your master password, done.  
+: Don't tell anyone your personal secret, done.  
 Since Spectre doesn't save or send your passwords anywhere, there's really nothing to steal or find.  
 Spectre uses extremely high entropy encoding algorithms making your passwords extremely resiliant to guesses, discovery or attacks.
 
@@ -178,8 +178,8 @@ I don't want to have to do any work when creating a new account
 
 I don't want to worry about ever forgetting or losing my passwords again
 : It's math. The solution doesn't disappear just because you forgot it.  
-Even if you were to lose everything you have and hold, get Spectre, enter your name and master password, and it's got your passwords, all of them, instantly, no Internet, just math.
-But uh – don't forget your master password. Without it, you're not you.  You're the clone.
+Even if you were to lose everything you have and hold, get Spectre, enter your full name and personal secret, and it's got your passwords, all of them, instantly, no Internet, just math.
+But uh – don't forget your personal secret. Without it, you're not you.  You're the clone.
 
 I want passwords that are *scientifically* good passwords
 : Spectre's passwords are cryptographically generated from uniform one-way hashing algorithms encoded into password policies designed to find the perfect balance between maximum entropy and maximum usability.
@@ -190,7 +190,7 @@ Spectre's passwords are immune to prior knowledge bases guesses since there is n
 Spectre's passwords are extremely high entropy, making them maximally hardened against random guesses.
 
 I want passwords that my relatives can inherit should anything happen to me
-: Pass your master password on in your last will and testament.
+: Pass your personal secret on in your last will and testament.
 
 I want passwords known exclusively by myself and the site I use them for
 : Exactly.

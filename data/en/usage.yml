@@ -14,7 +14,7 @@ items:
       You&nbsp;do not have an&nbsp;account with us and we hold no&nbsp;records on our&nbsp;users.
 
   - title: Enter your site's domain
-    partial: "usage-service.html"
+    partial: "usage-site.html"
     body: >
       Tell&nbsp;*Spectre* who you need a&nbsp;password for and&nbsp;it's&nbsp;there, on&nbsp;the&nbsp;spot.
 

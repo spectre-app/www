@@ -24,55 +24,55 @@ can give you what you need based on nothing more than inputs you can give it.
 Spectre solves the password problem in a stateless manner while continuing to guarantee and to some extent even
 enforce good security for your sites. Spectre implements its solution in three distinct phases:
 
-1. Your Master Key
+1. Your User Key
 2. Your Site Key
 3. Your Site Password
 
 ### Phase 1: Your identity
 
-Your identity is defined by your master key. This key unlocks all of your doors. Your master key is the cryptographic
+Your identity is defined by your user key. This key unlocks all of your doors. Your user key is the cryptographic
 result of two components:
 
-1. Your <name> (identification)
-2. Your <master password> (authentication)
+1. Your full name: `user-name` (identification)
+2. Your personal secret: `user-secret` (authentication)
 
-Your master password is your personal secret and your name scopes that secret to your identity. Together, they create a
+Your secret is a personal mnemonic and your name scopes that secret to your identity. Together, they create a
 cryptographic identifier that is unique to your person.
 
 ```
-masterKey = SCRYPT1( key, seed, N, r, p, dkLen )
-key       = <master password>
-seed      = scope . LEN(<name>) . <name>
-N         = 32768
-r         = 8
-p         = 2
-dkLen     = 64
+user-key  = SCRYPT1( key, seed, N, r, p, dkLen )
+  key     = user-secret
+  seed    = scope . LEN( user-name ) . user-name
+  N       = 32768
+  r       = 8
+  p       = 2
+  dkLen   = 64
 ```
 
-We employ the SCRYPT cryptographic function to derive a 64-byte cryptographic key from the user's name and master
-password using a fixed set of parameters.
+We employ the SCRYPT cryptographic function to derive a 64-byte cryptographic key from the user's name and secret
+using a fixed set of parameters.
 
 ### Phase 2: Your site key
 
-Your site key is a derivative from your master key when it is used to unlock the door to a specific site. Your site key
+Your site key is a derivative from your user key when it is used to unlock the door to a specific site. Your site key
 is the result of two components:
 
-1. Your <site name> (identification)
-2. Your <master key> (authentication)
-3. Your <site counter>
+1. Your user key: `user-key` (authentication)
+2. The site's domain: `site-name` (identification)
+3. The site's password counter: `site-counter`
 
-Your master key ensures only your identity has access to this key and your site name scopes the key to your site. The
+Your user key ensures only your identity has access to this site key and the domain name scopes the key to the site. The
 site counter ensures you can easily create new keys for the site should a key become compromised. Together, they create
 a cryptographic identifier that is unique to your account at this site.
 
 ```
-siteKey = HMAC-SHA-25612( key, seed )
-key     = <master key>
-seed    = scope . LEN(<site name>) . <site name> . <counter>
+site-key = HMAC-SHA-25612( key, seed )
+  key    = user-key
+  seed   = scope . LEN( site-name ) . site-name . site-counter
 ```
 
-We employ the HMAC-SHA-256 cryptographic function to derive a 64-byte cryptographic site key from the from the site name
-and master key scoped to a given counter value.
+We employ the HMAC-SHA-256 cryptographic function to derive a 64-byte cryptographic site key from the site name
+and user key scoped to a given counter value.
 
 ### Phase 3: Your site password
 

@@ -53,22 +53,22 @@ demo:
   note: >
     Calculate your&nbsp;site's&nbsp;password using the&nbsp;*Spectre*&nbsp;algorithm:
 
-  fullName:
+  userName:
     title: Your Full Name
     icon: fa-user-large
     placeholder: eg. Robert Lee Mitchell
 
-  masterPassword:
-    title: Your Master Password
+  userSecret:
+    title: Your Personal Secret
     icon: fa-user-lock
     placeholder: eg. banana colored duckling
 
-  serviceName:
+  siteName:
     title: Site Domain
     icon: fa-globe
     placeholder: eg. twitter.com
 
-  servicePassword:
+  sitePassword:
     title: Site Password
     icon: fa-lock
     placeholder: PozoLalv0_Yelo

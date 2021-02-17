@@ -14,55 +14,55 @@ class MPWError extends Error {
 }
 
 class MPW {
-    constructor(fullName, masterPassword, algorithmVersion = MPW.versions.current) {
-        this.fullName = fullName;
+    constructor(userName, userSecret, algorithmVersion = MPW.versions.current) {
+        this.userName = userName;
         this.algorithmVersion = algorithmVersion;
-        this.key = MPW.masterKey(fullName, masterPassword, algorithmVersion);
+        this.key = MPW.userKey(userName, userSecret, algorithmVersion);
 
     }
 
-    result(serviceName, resultType, keyCounter, keyScope, keyContext = null) {
-        return MPW.serviceResult(this.key, serviceName, resultType, keyCounter, keyScope, keyContext);
+    result(siteName, resultType, keyCounter, keyScope, keyContext = null) {
+        return MPW.siteResult(this.key, siteName, resultType, keyCounter, keyScope, keyContext);
     }
 
-    authenticate(serviceName, resultType = "long", keyCounter = 1, keyContext = null) {
-        return this.result(this.key, serviceName, resultType, keyCounter, MPW.scopes.authentication, keyContext);
+    authenticate(siteName, resultType = "long", keyCounter = 1, keyContext = null) {
+        return this.result(this.key, siteName, resultType, keyCounter, MPW.scopes.authentication, keyContext);
     }
 
-    login(serviceName, resultType = "name", keyCounter = 1, keyContext = null) {
-        return this.result(this.key, serviceName, resultType, keyCounter, MPW.scopes.identification, keyContext);
+    login(siteName, resultType = "name", keyCounter = 1, keyContext = null) {
+        return this.result(this.key, siteName, resultType, keyCounter, MPW.scopes.identification, keyContext);
     }
 
-    answer(serviceName, resultType = "phrase", keyCounter = 1, keyContext = null) {
-        return this.result(this.key, serviceName, resultType, keyCounter, MPW.scopes.recovery, keyContext);
+    answer(siteName, resultType = "phrase", keyCounter = 1, keyContext = null) {
+        return this.result(this.key, siteName, resultType, keyCounter, MPW.scopes.recovery, keyContext);
     }
 
     invalidate() {
-        this.key = Promise.reject(new MPWError("invalidate", "Master key unavailable."));
+        this.key = Promise.reject(new MPWError("invalidate", "User key unavailable."));
     }
 
-    static masterKey(fullName, masterPassword, algorithmVersion = MPW.versions) {
+    static userKey(userName, userSecret, algorithmVersion = MPW.versions) {
         if (!crypto.subtle) {
             return Promise.reject(new MPWError(
                 "internal", `Cryptography unavailable.`));
         } else if (algorithmVersion < MPW.versions.first || algorithmVersion > MPW.versions.last) {
             return Promise.reject(new MPWError(
                 "algorithmVersion", `Unsupported algorithm version: ${algorithmVersion}.`));
-        } else if (!fullName || !fullName.length) {
+        } else if (!userName || !userName.length) {
             return Promise.reject(new MPWError(
-                "fullName", `Missing full name.`));
-        } else if (!masterPassword || !masterPassword.length) {
+                "userName", `Missing user name.`));
+        } else if (!userSecret || !userSecret.length) {
             return Promise.reject(new MPWError(
-                "masterPassword", `Missing master password.`));
+                "userSecret", `Missing user secret.`));
         }
 
         try {
-            let masterPasswordBytes = MPW.encoder.encode(masterPassword);
-            let fullNameBytes = MPW.encoder.encode(fullName);
+            let userSecretBytes = MPW.encoder.encode(userSecret);
+            let userNameBytes = MPW.encoder.encode(userName);
             let keyScope = MPW.encoder.encode(MPW.scopes.authentication);
 
-            // Populate salt: scope | #fullName | fullName
-            let keySalt = new Uint8Array(keyScope.length + 4/*sizeof(uint32)*/ + fullNameBytes.length);
+            // Populate salt: scope | #userName | userName
+            let keySalt = new Uint8Array(keyScope.length + 4/*sizeof(uint32)*/ + userNameBytes.length);
             let keySaltView = new DataView(keySalt.buffer, keySalt.byteOffset, keySalt.byteLength);
 
             let kS = 0;
@@ -71,18 +71,18 @@ class MPW {
 
             if (algorithmVersion < 3) {
                 // V0, V1, V2 incorrectly used the character length instead of the byte length.
-                keySaltView.setUint32(kS, fullName.length, false/*big-endian*/);
+                keySaltView.setUint32(kS, userName.length, false/*big-endian*/);
                 kS += 4/*sizeof(uint32)*/;
             } else {
-                keySaltView.setUint32(kS, fullNameBytes.length, false/*big-endian*/);
+                keySaltView.setUint32(kS, userNameBytes.length, false/*big-endian*/);
                 kS += 4/*sizeof(uint32)*/;
             }
 
-            keySalt.set(fullNameBytes, kS);
-            kS += fullNameBytes.length;
+            keySalt.set(userNameBytes, kS);
+            kS += userNameBytes.length;
 
-            // Derive master key from master password and user salt.
-            return scrypt(masterPasswordBytes, keySalt, 32768, 8, 2, 64).then(keyData =>
+            // Derive user key from user secret and user salt.
+            return scrypt(userSecretBytes, keySalt, 32768, 8, 2, 64).then(keyData =>
                 // Make key available to WebCrypto for later use.
                 crypto.subtle.importKey("raw", keyData, {
                     name: "HMAC",
@@ -98,31 +98,31 @@ class MPW {
         }
     }
 
-    static serviceKey(masterKey, serviceName, keyCounter = 1, keyScope = MPW.scopes.authentication, keyContext = null) {
-        return masterKey.then(masterKey => {
+    static siteKey(userKey, siteName, keyCounter = 1, keyScope = MPW.scopes.authentication, keyContext = null) {
+        return userKey.then(userKey => {
                 if (!crypto.subtle) {
                     return Promise.reject(new MPWError(
                         "internal", `Cryptography unavailable.`));
-                } else if (!masterKey) {
+                } else if (!userKey) {
                     return Promise.reject(new MPWError(
-                        "masterKey", `Missing master password.`));
-                } else if (!serviceName || !serviceName.length) {
+                        "userKey", `Missing user secret.`));
+                } else if (!siteName || !siteName.length) {
                     return Promise.reject(new MPWError(
-                        "serviceName", `Missing service name.`));
+                        "siteName", `Missing site name.`));
                 } else if (keyCounter < 1 || keyCounter > 4294967295/*Math.pow(2, 32) - 1*/) {
                     return Promise.reject(new MPWError(
                         "keyCounter", `Invalid counter value: ${keyCounter}.`));
                 }
 
                 try {
-                    let serviceNameBytes = MPW.encoder.encode(serviceName);
+                    let siteNameBytes = MPW.encoder.encode(siteName);
                     let keyScopeBytes = MPW.encoder.encode(keyScope);
                     let keyContextBytes = keyContext && MPW.encoder.encode(keyContext);
 
-                    // Populate salt: keyScope | #serviceName | serviceName | keyCounter | #keyContext | keyContext
+                    // Populate salt: keyScope | #siteName | siteName | keyCounter | #keyContext | keyContext
                     let keySalt = new Uint8Array(
                         keyScopeBytes.length
-                        + 4/*sizeof(uint32)*/ + serviceNameBytes.length
+                        + 4/*sizeof(uint32)*/ + siteNameBytes.length
                         + 4/*sizeof(int32)*/
                         + (keyContextBytes ? 4/*sizeof(uint32)*/ + keyContextBytes.length : 0)
                     );
@@ -132,17 +132,17 @@ class MPW {
                     keySalt.set(keyScopeBytes, kS);
                     kS += keyScopeBytes.length;
 
-                    if (masterKey.keyAlgorithm < 2) {
+                    if (userKey.keyAlgorithm < 2) {
                         // V0, V1 incorrectly used the character length instead of the byte length.
-                        keySaltView.setUint32(kS, serviceName.length, false/*big-endian*/);
+                        keySaltView.setUint32(kS, siteName.length, false/*big-endian*/);
                         kS += 4/*sizeof(uint32)*/;
                     } else {
-                        keySaltView.setUint32(kS, serviceNameBytes.length, false/*big-endian*/);
+                        keySaltView.setUint32(kS, siteNameBytes.length, false/*big-endian*/);
                         kS += 4/*sizeof(uint32)*/;
                     }
 
-                    keySalt.set(serviceNameBytes, kS);
-                    kS += serviceNameBytes.length;
+                    keySalt.set(siteNameBytes, kS);
+                    kS += siteNameBytes.length;
 
                     keySaltView.setInt32(kS, keyCounter, false/*big-endian*/);
                     kS += 4/*sizeof(int32)*/;
@@ -155,14 +155,14 @@ class MPW {
                         kS += keyContextBytes.length;
                     }
 
-                    // Derive service key from master key and service salt.
+                    // Derive site key from user key and site salt.
                     return crypto.subtle.sign({
                         name: "HMAC",
                         hash: {
                             name: "SHA-256"
                         }
-                    }, masterKey.keyCrypto, keySalt).then(keyData =>
-                        ({keyData: new Uint8Array(keyData), keyAlgorithm: masterKey.keyAlgorithm})
+                    }, userKey.keyCrypto, keySalt).then(keyData =>
+                        ({keyData: new Uint8Array(keyData), keyAlgorithm: userKey.keyAlgorithm})
                     );
                 } catch (e) {
                     return Promise.reject(e);
@@ -171,31 +171,31 @@ class MPW {
         )
     }
 
-    static serviceResult(masterKey, serviceName, resultType = "long", keyCounter = 1, keyScope = MPW.scopes.authentication, keyContext = null) {
-        return this.serviceKey(masterKey, serviceName, keyCounter, keyScope, keyContext).then(serviceKey => {
+    static siteResult(userKey, siteName, resultType = "long", keyCounter = 1, keyScope = MPW.scopes.authentication, keyContext = null) {
+        return this.siteKey(userKey, siteName, keyCounter, keyScope, keyContext).then(siteKey => {
                 if (!(resultType in MPW.templates)) {
                     return Promise.reject(new MPWError(
                         "resultType", `Unsupported result template: ${resultType}.`));
                 }
 
-                let serviceKeyBytes = serviceKey.keyData
-                if (serviceKey.keyAlgorithm < 1) {
+                let siteKeyBytes = siteKey.keyData
+                if (siteKey.keyAlgorithm < 1) {
                     // V0 incorrectly converts bytes into 16-bit big-endian numbers.
-                    let serviceKeyV0Bytes = new Uint16Array(serviceKeyBytes.length);
-                    for (let sK = 0; sK < serviceKeyV0Bytes.length; sK++) {
-                        serviceKeyV0Bytes[sK] = (serviceKeyBytes[sK] > 127 ? 0x00ff : 0x0000) | (serviceKeyBytes[sK] << 8);
+                    let siteKeyV0Bytes = new Uint16Array(siteKeyBytes.length);
+                    for (let sK = 0; sK < siteKeyV0Bytes.length; sK++) {
+                        siteKeyV0Bytes[sK] = (siteKeyBytes[sK] > 127 ? 0x00ff : 0x0000) | (siteKeyBytes[sK] << 8);
                     }
-                    serviceKeyBytes = serviceKeyV0Bytes
+                    siteKeyBytes = siteKeyV0Bytes
                 }
 
                 // key byte 0 selects the template from the available result templates.
                 let resultTemplates = MPW.templates[resultType];
-                let resultTemplate = resultTemplates[serviceKeyBytes[0] % resultTemplates.length];
+                let resultTemplate = resultTemplates[siteKeyBytes[0] % resultTemplates.length];
 
                 // key byte 1+ selects a character from the template's character class.
                 return resultTemplate.split("").map(function (characterClass, rT) {
                     let characters = MPW.characters[characterClass];
-                    return characters[serviceKeyBytes[rT + 1] % characters.length];
+                    return characters[siteKeyBytes[rT + 1] % characters.length];
                 }).join("");
             }
         );
@@ -288,11 +288,11 @@ MPW.characters = {
 
 mpw = null;
 onmessage = function (msg) {
-    if (!mpw || msg.data.fullName) {
-        mpw = new MPW(msg.data.fullName, msg.data.masterPassword, msg.data.algorithmVersion || MPW.versions.current);
+    if (!mpw || msg.data.userName) {
+        mpw = new MPW(msg.data.userName, msg.data.userSecret, msg.data.algorithmVersion || MPW.versions.current);
     }
 
-    mpw.result(msg.data.serviceName, msg.data.resultType || "long",
+    mpw.result(msg.data.siteName, msg.data.resultType || "long",
         msg.data.keyCounter || 1, msg.data.keyScope || MPW.scopes.authentication, msg.data.keyContext)
         .then(
             result =>
