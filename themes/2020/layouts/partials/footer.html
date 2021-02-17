@@ -49,7 +49,7 @@
 <script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 
 {{ with site.Params.cloudflare_token }}
-<script async src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
 {{ end }}
 
 {{ with site.Params.freshdesk_widget }}
@@ -59,10 +59,10 @@
     };
     !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
 </script>
-<script type='text/javascript' src='https://euc-widget.freshworks.com/widgets/{{ . }}.js' async defer></script>
+<script defer src='https://euc-widget.freshworks.com/widgets/{{ . }}.js'></script>
 {{ end }}
 {{ with site.Params.freshchat_token }}
-<script>
+<script defer>
     function initFreshChat() {
         window.fcWidget.init({
             token: "{{ . }}",
