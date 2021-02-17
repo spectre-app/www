@@ -3,11 +3,12 @@
 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by/4.0/ or see LICENSE. */
 
-importScripts("pbkdf2.js");
+import { pbkdf2 } from 'js/mpw-js/pbkdf2';
+//importScripts("pbkdf2.js");
 
 // This is the scrypt function
 // It returns a promise which will resolve asynchronously
-function scrypt(passphrase, salt, N, r, p, keyLen) {
+export function scrypt(passphrase, salt, N, r, p, keyLen) {
     // https://github.com/golang/crypto/blob/master/scrypt/scrypt.go
     function salsaXOR(tmp, inp, out) {
         let w = [ ];

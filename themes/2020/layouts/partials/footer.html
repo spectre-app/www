@@ -45,8 +45,8 @@
 <script src="{{ .link | absURL }}"></script>
 {{ end }}
 
-{{ $script := resources.Get "js/script.js" | minify | fingerprint "sha384" }}
-<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ $script := resources.Get "js/script.js" | minify | fingerprint }}
+<script defer src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 
 {{ with site.Params.cloudflare_token }}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
@@ -59,10 +59,10 @@
     };
     !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
 </script>
-<script defer src='https://euc-widget.freshworks.com/widgets/{{ . }}.js'></script>
+<script defer src="https://euc-widget.freshworks.com/widgets/{{ . }}.js"></script>
 {{ end }}
 {{ with site.Params.freshchat_token }}
-<script defer>
+<script defer type="module">
     function initFreshChat() {
         window.fcWidget.init({
             token: "{{ . }}",

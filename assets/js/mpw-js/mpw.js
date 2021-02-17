@@ -3,7 +3,8 @@
 International License. To view a copy of this license, visit
 http://creativecommons.org/licenses/by/4.0/ or see LICENSE. */
 
-importScripts("scrypt.js");
+import { scrypt } from 'js/mpw-js/scrypt';
+//importScripts("js/mpw-js/scrypt");
 
 class MPWError extends Error {
     constructor(cause, ...params) {
@@ -214,7 +215,7 @@ MPW.encoder = new TextEncoder();
 MPW.versions = {
     first: 0,
     last: 3,
-    current: this.last,
+    current: 3,
 };
 MPW.scopes = {
     authentication: "com.lyndir.masterpassword",

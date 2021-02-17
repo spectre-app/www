@@ -1,3 +1,5 @@
+import * as params from '@params';
+
 function spinner(element, delta) {
     let spin = Math.max(0, (element.data("spin") || 0) + delta);
     element.data("spin", spin);
@@ -25,7 +27,7 @@ $(function () {
     let infoMessage = demo.find('p.info');
     let errorMessage = demo.find('p.error');
 
-    mpw = new Worker("./js/mpw-js/mpw.js");
+    let mpw = new Worker(params['mpw']);
     mpw.onmessage = function (msg) {
         errorMessage.text(msg.data.error || null);
         sitePasswordInput.val(msg.data.result || null);

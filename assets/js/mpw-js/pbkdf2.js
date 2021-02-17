@@ -5,7 +5,7 @@ http://creativecommons.org/licenses/by/4.0/ or see LICENSE. */
 // Native WebCrypto PBKDF2 is blocked by:
 // - https://bugzilla.mozilla.org/show_bug.cgi?id=1469482
 
-function pbkdf2(password, salt, iter, keyLen, hash) {
+export function pbkdf2(password, salt, iter, keyLen, hash) {
     // https://github.com/golang/crypto/blob/master/pbkdf2/pbkdf2.go
     function pbkdf2_js(password, salt, iter, keyLen, hash) {
         let hashLen = 160 / 8;

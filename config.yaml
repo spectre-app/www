@@ -8,7 +8,9 @@ params:
   logo: "images/logo.png"
   icon: "images/icon.png"
   description: "Spectre is a stateless, decentralized, offline and deterministic identity platform."
-  author: "Maarten Billemont"
+  author:
+    name: "Maarten Billemont"
+    link: "https://lhunath.com"
 
 languages:
   en:

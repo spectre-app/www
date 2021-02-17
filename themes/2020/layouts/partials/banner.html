@@ -1,6 +1,10 @@
 {{ with (index site.Data site.Language.Lang).banner }}
 {{ if .enable }}
-<script src="{{ `js/banner.js` | absURL }}"></script>
+
+{{ $mpw_js := resources.Get "js/mpw-js/mpw.js" | js.Build | minify | fingerprint }}
+{{ $banner_js := resources.Get "js/banner.js" | js.Build (dict "params" (dict "mpw" $mpw_js.Permalink)) | minify | fingerprint }}
+<script defer src="{{ $banner_js.Permalink }}" integrity="{{ $banner_js.Data.Integrity }}"></script>
+
 <section id="banner">
     <div id="banner-particles"></div>
     <div class="container">
