@@ -1,19 +1,19 @@
 {{ if gt site.RegularPages 0}}
 <section id="blog">
-	<div class="container">
-		<h1>{{ "Blog" | markdownify }}</h1>
-		<h2>{{ "What's happening" | markdownify }}</h2>
+    <div class="container">
+        <h1>{{ "Blog" | markdownify }}</h1>
+        <h2>{{ "What's happening" | markdownify }}</h2>
 
-		<div class="row justify-content-center">
-			{{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
-			{{ .Render "article"}}
-			{{ end }}
+        <div class="row justify-content-center">
+            {{ range first 3 (where site.RegularPages "Section" "==" "blog")}}
+            {{ .Render "article"}}
+            {{ end }}
 
-			<hr />
-			<div class="text-center col-12">
-				<a class="btn cta" href="{{ `blog` | absLangURL }}">All Posts</a>
-			</div>
-		</div>
-	</div>
+            <hr />
+            <div class="text-center col-12">
+                <a class="btn cta" href="{{ `blog` | absLangURL }}">All Posts</a>
+            </div>
+        </div>
+    </div>
 </section>
 {{ end }}

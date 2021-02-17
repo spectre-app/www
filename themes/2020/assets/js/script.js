@@ -1,7 +1,7 @@
 $(function() {
     "use strict";
 
-    /*	Close navbar when link clicked. */
+    /* Close navbar when link clicked. */
     $('.navbar-collapse a').click(function () {
         $(".navbar-collapse").collapse('hide');
     });
@@ -19,7 +19,7 @@ $(function() {
         fixedBgPos: true
     });
 
-    /*	Animated page scroll. */
+    /* Animated page scroll. */
     $('nav a, .page-scroll').on('click', function () {
         if (location.hostname === this.hostname &&
             location.pathname === this.pathname.replace(/^(?=[^\/]|$)/,
@@ -37,10 +37,10 @@ $(function() {
 
     $('[title]').tooltip()
 
-    /*	OS detection. */
+    /* OS detection. */
     $('html').attr('data-os', UAParser().os.name);
 
-    /*	Particles. */
+    /* Particles. */
     // tsParticles.load("banner-particles", {
     //     "fpsLimit": 10,
     //     "autoPlay": true,

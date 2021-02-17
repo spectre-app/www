@@ -1,47 +1,47 @@
 {{ with (index site.Data site.Language.Lang).navigation }}
 {{ if .enable }}
 <section id="navigation" class="sticky-top">
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-				{{ if site.Params.logo }}
-				<img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="42">
-				{{ end }}
-				{{ site.Title }}
-			</a>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
+                {{ if site.Params.logo }}
+                <img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="42">
+                {{ end }}
+                {{ site.Title }}
+            </a>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation .collapse">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation .collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-			<div class="collapse navbar-collapse">
-				<ul class="navbar-nav">
-					{{ range site.Menus.main }}
-					<li class="nav-item">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    {{ range site.Menus.main }}
+                    <li class="nav-item">
                         <a class="nav-link" href="{{.URL}}">{{ .Name }}</a>
-					</li>
-					{{ end }}
-				</ul>
+                    </li>
+                    {{ end }}
+                </ul>
 
-				{{- if site.IsMultiLingual }}
-				<select id="select-language" onchange="location = this.value;">
-					{{ $siteLanguages := site.Languages}}
-					{{ $pageLang := .Page.Lang}}
-					{{ range .Page.AllTranslations }}
-					{{ $translation := .}}
-					{{ range $siteLanguages }}
-					{{ if eq $translation.Lang .Lang }}
-					{{ $selected := false }}
-					<option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" {{ if eq $pageLang .Lang}}selected{{end}}>{{ .LanguageName }}</option>
-					{{ end }}
-					{{ end }}
-					{{ end }}
-				</select>
-				{{ end }}
-				<a class="btn cta page-scroll" href="#banner">{{ .cta | markdownify }}</a>
-			</div>
-		</nav>
-	</div>
+                {{- if site.IsMultiLingual }}
+                <select id="select-language" onchange="location = this.value;">
+                    {{ $siteLanguages := site.Languages}}
+                    {{ $pageLang := .Page.Lang}}
+                    {{ range .Page.AllTranslations }}
+                    {{ $translation := .}}
+                    {{ range $siteLanguages }}
+                    {{ if eq $translation.Lang .Lang }}
+                    {{ $selected := false }}
+                    <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" {{ if eq $pageLang .Lang}}selected{{end}}>{{ .LanguageName }}</option>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                </select>
+                {{ end }}
+                <a class="btn cta page-scroll" href="#banner">{{ .cta | markdownify }}</a>
+            </div>
+        </nav>
+    </div>
 </section>
 {{end}}
 {{end}}

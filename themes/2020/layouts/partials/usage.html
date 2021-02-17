@@ -1,25 +1,25 @@
 {{ with (index site.Data site.Language.Lang).usage }}
 {{ if .enable }}
 <section id="usage">
-	<div class="container">
-		<h1>{{ .name | markdownify }}</h1>
-		<h2>{{ .title | markdownify }}</h2>
+    <div class="container">
+        <h1>{{ .name | markdownify }}</h1>
+        <h2>{{ .title | markdownify }}</h2>
 
-		{{ range $index, $item := .items }}
-		{{ with $item }}
-		<div class="row align-items-center">
-			<div class="col-sm-6 order-sm-2">
-				{{ partial .partial . }}
-			</div>
-			<div class="col-sm-6 {{ if (mod $index 2) }}order-sm-1 end{{ else }}order-sm-3{{ end }}">
-				<header>{{ printf "%02d" (add $index 1) }}</header>
-				<h3>{{ .title | markdownify }}</h3>
-				<p>{{ .body | markdownify }}</p>
-			</div>
-		</div>
-		{{ end }}
-		{{ end }}
-	</div>
+        {{ range $index, $item := .items }}
+        {{ with $item }}
+        <div class="row align-items-center">
+            <div class="col-sm-6 order-sm-2">
+                {{ partial .partial . }}
+            </div>
+            <div class="col-sm-6 {{ if (mod $index 2) }}order-sm-1 end{{ else }}order-sm-3{{ end }}">
+                <header>{{ printf "%02d" (add $index 1) }}</header>
+                <h3>{{ .title | markdownify }}</h3>
+                <p>{{ .body | markdownify }}</p>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+    </div>
 </section>
 {{ end }}
 {{ end }}
