@@ -2,6 +2,7 @@
 title: What's a password?
 date: 2021-02-04T18:45:00-05:00
 author: Maarten Billemont
+image: images/blog/2021-02-04-cover.jpg
 description: >
   A primer on passwords, their application, issues, and how to get the most out of them.
 ---

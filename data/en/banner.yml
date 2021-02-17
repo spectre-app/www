@@ -8,36 +8,45 @@ title: >
   forget your passwords
 content: >
   Goodbye password&nbsp;managers, hello&nbsp;cryptographic digital&nbsp;independence.
+cta:
+  title: Join Beta
+  icon: fa-flask
+  link: /#beta
 
-platforms:
-  note: >
-    Available across multiple platforms.
-
-  links:
-    - platform: windows
-      title: Windows
-      icon: fa-windows
-      link: https://masterpassword.app/masterpassword-gui.jar
-
-    - platform: macos
-      title: macOS
-      icon: fa-apple
-      link: https://apps.apple.com/app/master-password/id662763204?ls=1&ct=homepage
-
-    - platform: linux
-      title: Linux
-      icon: fa-linux
-      link: https://masterpassword.app/masterpassword-gui.jar
-
-    - platform: ios
-      title: iPhone / iPad
-      icon: fa-app-store-ios
-      link: https://apps.apple.com/app/master-password/id510296984?ls=1&ct=homepage
-
-    - platform: android
-      title: Android
-      icon: fa-android
-      link: https://masterpassword.app/masterpassword-android.apk
+#platforms:
+#  note: >
+#    Available across multiple platforms.
+#
+#  links:
+#    - platform: windows
+#      cta: Download Spectre
+#      title: Windows
+#      icon: fa-windows
+#      link: https://masterpassword.app/masterpassword-gui.jar
+#
+#    - platform: macos
+#      cta: Download Spectre
+#      title: macOS
+#      icon: fa-apple
+#      link: https://apps.apple.com/app/master-password/id662763204?ls=1&ct=homepage
+#
+#    - platform: linux
+#      cta: Download Spectre
+#      title: Linux
+#      icon: fa-linux
+#      link: https://masterpassword.app/masterpassword-gui.jar
+#
+#    - platform: ios
+#      cta: Download Spectre
+#      title: iPhone / iPad
+#      icon: fa-app-store-ios
+#      link: https://apps.apple.com/app/master-password/id510296984?ls=1&ct=homepage
+#
+#    - platform: android
+#      cta: Download Spectre
+#      title: Android
+#      icon: fa-android
+#      link: https://masterpassword.app/masterpassword-android.apk
 
 
 demo:

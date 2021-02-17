@@ -52,3 +52,23 @@
 <script async src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
 {{ end }}
 
+{{ with site.Params.freshdesk_widget }}
+<script>
+    window.fwSettings={
+        'widget_id': "{{ . }}"
+    };
+    !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+</script>
+<script type='text/javascript' src='https://euc-widget.freshworks.com/widgets/{{ . }}.js' async defer></script>
+{{ end }}
+{{ with site.Params.freshchat_token }}
+<script>
+    function initFreshChat() {
+        window.fcWidget.init({
+            token: "{{ . }}",
+            host: "https://wchat.eu.freshchat.com"
+        });
+    }
+    function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.eu.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
+{{ end }}

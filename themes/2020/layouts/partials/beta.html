@@ -1,17 +1,17 @@
-{{ with (index site.Data site.Language.Lang).contact }}
+{{ with (index site.Data site.Language.Lang).beta }}
 {{ if .enable }}
-<section id="contact">
+<section id="beta">
     <div class="container">
         <h1>{{ .name | markdownify }}</h1>
         <h2>{{ .title | markdownify }}</h2>
 
         <div class="row">
             {{ with .info }}
-            <div class="col-sm contact-info">
+            <div class="col-sm">
                 <h3>{{ .title | markdownify }}</h3>
                 <p> {{ .body | markdownify }} </p>
 
-                <div class="contact-details">
+                <div>
                     {{ range .links }}
                     <div class="con-info clearfix">
                         <i class="fa-solid fa-fw {{ .icon }}"></i>
@@ -26,10 +26,16 @@
             {{ with .form }}
             {{ if .enable }}
             <div class="col-sm wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                <form method="post" action="{{ .form_action }}" role="form">
+                <form method="post" action="{{ .action }}" role="form">
                     {{ range .fields }}
                     {{ if eq .type "textarea" }}
                     <textarea rows="6" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}"></textarea>
+                    {{ else if eq .type "select" }}
+                    <select name="{{ .name }}" id="{{ .name }}">
+                        {{ range .options }}
+                        <option value="{{ .name }}">{{ .label }}</option>
+                        {{ end }}
+                    </select>
                     {{ else }}
                     <input type="{{ .type }}" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}">
                     {{ end }}

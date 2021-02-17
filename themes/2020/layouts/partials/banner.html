@@ -10,10 +10,14 @@
                 <h2>{{ .title | markdownify }}</h2>
                 <p>{{ .content | markdownify }}</p>
 
+                {{ with .cta }}
+                <p><a href="{{ .link }}" class="btn cta"><span class="fa-solid fa-lg {{ .icon }}"></span> {{ .title }}</a></p>
+                {{ end }}
+
                 {{ with .platforms }}
                 {{ range .links }}
                 <p class="os-{{ .platform }}"><a href="{{ .link }}" class="btn cta">
-                    <span class="fa-brands fa-lg {{ .icon }}"></span> Download Spectre</a></p>
+                    <span class="fa-brands fa-lg {{ .icon }}"></span> {{ .cta }}</a></p>
                 {{ end }}
 
                 <div class="caption">

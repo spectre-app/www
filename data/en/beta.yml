@@ -1,0 +1,56 @@
+### BETA
+enable: true
+name: Pre-Release
+title: Join the *beta*&nbsp;program
+
+info:
+  title: Program Details
+  body: >
+    The public pre-release testing program is now open!  
+    
+    Excited about *Spectre*'s mission and objectives?  Eager to get&nbsp;involved and participate&nbsp;in or evaluate our pre-release&nbsp;functionality?
+
+
+    At this point, the program is accepting applications from&nbsp;users with these&nbsp;devices:
+
+    - Apple iPhone, iPad or iPod touch
+
+
+    Beta participants will have full&nbsp;access to all of *Spectre*'s capabilities.  
+    
+    You'll be invited to&nbsp;contribute suggestions and feedback on your&nbsp;experience.
+
+
+    If you're interested, feel&nbsp;free to&nbsp;reach&nbsp;out by completing the form.
+
+  links:
+    - icon: fa-at
+      label: Questions
+      title: support@spectre.app
+      link: "mailto:support@spectre.app"
+
+
+form:
+  enable: true
+  action: "https://script.google.com/macros/s/AKfycbzqPdUDEH3gjuiZmp4ed75B3kDCB_I8WQHoXxTjR55rV6-LXV999-RQXw/exec"
+  fields:
+    - name: name
+      type: text
+      label: Your full name
+    - name: email
+      type: email
+      label: Your e-mail address
+    - name: device
+      type: text
+      label: Make, model and OS version of your testing device
+    - name: series
+      type: select
+      options:
+        - name: beta
+          label: "Beta Series: Contribute to pre-release features"
+        - name: alpha
+          label: "Alpha Series: Early experimental feature testing"
+    - name: notes
+      type: textarea
+      label: Additional information (eg. your interest in the program or relevant prior experience)
+  submit: Submit Application

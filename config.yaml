@@ -32,6 +32,6 @@ languages:
         - name: "Support"
           url: "https://support.spectre.app"
           weight: 5
-        - name: "Contact"
-          url: "/#contact"
+        - name: "Beta"
+          url: "/#beta"
           weight: 7
