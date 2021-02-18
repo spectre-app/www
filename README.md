@@ -2,7 +2,7 @@
 
 Spectre introduces a completely new way of thinking about passwords.
 
-[[TOC]]
+[[_TOC_]]
 
 
 ## Don't store; derive
@@ -45,14 +45,14 @@ Spectre's algorithm and implementation is fully documented and licensed Free Sof
 
 The source is broken down into several components:
 
- - (api)[../api]: The algorithm's reference implementation and API library.  There is a C, Java and W3C interface.
- - (cli)[../cli]: The official command-line interface for POSIX systems.
- - (desktop)[../desktop]: The official cross-platform desktop application.
- - (macos)[../macos]: The official Apple macOS desktop application.
- - (ios)[../ios]: The official Apple iOS mobile application.
- - (android)[../android]: The official Google Android mobile application.
- - (web)[../web]: The official cross-platform web application.
- - (www)[../www]: The Spectre homepage.
+ - [api](https://gitlab.com/spectre.app/api): The algorithm's reference implementation and API library.  There is a C, Java and W3C interface.
+ - [cli](https://gitlab.com/spectre.app/cli): The official command-line interface for POSIX systems.
+ - [desktop](https://gitlab.com/spectre.app/desktop): The official cross-platform desktop application.
+ - [macos](https://gitlab.com/spectre.app/macos): The official Apple macOS desktop application.
+ - [ios](https://gitlab.com/spectre.app/ios): The official Apple iOS mobile application.
+ - [android](https://gitlab.com/spectre.app/android): The official Google Android mobile application.
+ - [web](https://gitlab.com/spectre.app/web): The official cross-platform web application.
+ - [www](https://gitlab.com/spectre.app/www): The Spectre homepage.
 
 
 ## Building and running
