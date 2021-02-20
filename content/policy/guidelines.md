@@ -98,7 +98,7 @@ enforcement officer, not with the public or in any enforcement conversations.
 ### Action
 
 Officers reserve the right to take the following actions pursuant to the
-enforcement of this code of conduct:
+enforcement of these guidelines:
 
  * Issue private warnings to any community members
  * Modify community messages by any community members,
@@ -109,9 +109,9 @@ enforcement of this code of conduct:
 
 ## License
 
-This code of conduct is licensed under the
+These community guidelines are licensed under the
 [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/).
 
-Feel free to share, re-use or adapt these rules of conduct for use in your own
+Feel free to share, re-use or adapt these guidelines for use in your own
 communities.
 
