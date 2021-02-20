@@ -3,6 +3,10 @@ baseURL: "https://spectre.app/"
 languageCode: "en-us"
 title: "Spectre"
 theme: "2020"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 params:
   logo: "images/logo.png"
