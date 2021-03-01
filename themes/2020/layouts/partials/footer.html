@@ -9,7 +9,10 @@
                 {{ with .links }}
                 <ul>
                     {{ range . }}
-                    <li><a href="{{ .link }}" class="page-scroll">{{ .title | markdownify }}</a></li>
+                    <li><a href="{{ .link }}" class="page-scroll">
+                        {{ with .icon }}<i class="fa-duotone fa-fw {{ . }}"></i>{{ end }}
+                        {{ .title | markdownify }}
+                    </a></li>
                     {{ end }}
                 </ul>
                 {{ end }}

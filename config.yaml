@@ -35,8 +35,9 @@ languages:
         - name: "Blog"
           url: "/#blog"
           weight: 4
-        - name: "Support"
-          url: "https://support.spectre.app"
+        - pre: "<i class='fa-duotone fa-fw fa-comments'></i>"
+          name: "Community"
+          url: "https://chat.spectre.app"
           weight: 5
         - name: "Beta"
           url: "/#beta"

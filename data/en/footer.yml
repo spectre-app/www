@@ -4,48 +4,47 @@ enable: true
 copyright: "Copyright &copy; 2011 [Maarten Billemont](https://lhunath.com)"
 
 items:
-  - title: Site Map
+  - title: "Site Map"
     twelfths: 2
     links:
-      - title: About
-        link: /#about
-      - title: Usage
-        link: /#usage
-      - title: Features
-        link: /#features
-      - title: Blog
-        link: /#blog
-      - title: Contact Us
-        link: /#contact
-      - title: Support
-        link: https://support.spectre.app
+      - title: "About"
+        link: "/#about"
+      - title: "Usage"
+        link: "/#usage"
+      - title: "Features"
+        link: "/#features"
+      - title: "Blog"
+        link: "/#blog"
+      - icon: "fa-comments"
+        title: "Community"
+        link: "https://chat.spectre.app"
 
-  - title: Resources
+  - title: "Resources"
     twelfths: 3
     links:
-      - title: White Paper
-        link: #
-      - title: Knowledgebase
-        link: #
-      - title: Press Kit
-        link: #
-      - title: Privacy Policy
-        link: /policy/privacy/
-      - title: Community Guidelines
-        link: /policy/guidelines/
-      - title: Liability
-        link: /policy/disclaimer/
+      - title: "White Paper"
+        link: "/spectre-algorithm.pdf"
+      - title: "Knowledgebase"
+        link: "#"
+      - title: "Press Kit"
+        link: "#"
+      - title: "Privacy Policy"
+        link: "/policy/privacy/"
+      - title: "Community Guidelines"
+        link: "/policy/guidelines/"
+      - title: "Liability"
+        link: "/policy/disclaimer/"
 
-  - title: From the blog
+  - title: "From the blog"
     twelfths: 5
     pages: blog
 
-  - title: Stay Connected
+  - title: "Stay Connected"
     twelfths: 2
     links:
-      - title: Blog
-        link: /blog
-      - title: Twitter
-        link: https://twitter.com/lhunath
-      - title: Matrix
-        link: #
+      - title: "Blog"
+        link: "/blog"
+      - title: "Twitter"
+        link: "https://twitter.com/lhunath"
+      - title: "E-mail"
+        link: "mailto:support@spectre.app"
