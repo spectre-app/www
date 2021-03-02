@@ -1,5 +1,9 @@
 {{ with (index site.Data site.Language.Lang).beta }}
 {{ if .enable }}
+
+{{ $beta_js := resources.Get "js/beta.js" | minify | fingerprint }}
+<script defer src="{{ $beta_js.Permalink }}" integrity="{{ $beta_js.Data.Integrity }}"></script>
+
 <section id="beta">
     <div class="container">
         <h1>{{ .name | markdownify }}</h1>
@@ -40,9 +44,11 @@
                     <input type="{{ .type }}" placeholder="{{ .label }}" name="{{ .name }}" id="{{ .name }}">
                     {{ end }}
                     {{ end }}
-                    <div id="cf-submit">
-                        <button>{{ .submit }}</button>
-                    </div>
+
+                    <button>{{ .submit }}</button>
+
+                    <p class="info"></p>
+                    <p class="error"></p>
                 </form>
             </div>
             {{ end }}

@@ -200,10 +200,10 @@ input, textarea, select, button, a, label, :target, :focus, :hover, :active {
 
 blockquote {
     padding: 1em;
-    border-left: 1ex solid var(--panel-contrast);
-    background: var(--panel-fill);
-    border-radius: var(--internal-size);
     color: var(--active-text);
+    border-left: 1ex solid var(--panel-contrast);
+    border-radius: var(--internal-size);
+    background: var(--panel-fill);
 }
 
 blockquote *:last-child {
@@ -281,8 +281,16 @@ a.btn-transparent:focus {
 }
 
 .error, .info {
+    padding: 0.2em;
+    font-weight: 500;
+    text-align: center;
     color: #BB2D3B;
     border-radius: var(--internal-size);
+    background: #6A1A21;
+}
+
+.error:empty, .info:empty {
+    display: none;
 }
 
 .info {
@@ -307,9 +315,9 @@ a.btn-transparent:focus {
 
 .box p.error, .box p.info {
     position: absolute;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     margin: 0.5em;
     font-size: smaller;
     color: var(--active-text);
@@ -415,9 +423,9 @@ a.btn-transparent:focus {
     width: calc(100% - 3ex);
     padding: 0;
     border: none;
-    box-shadow: none;
-    background: transparent;
     border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 #banner #banner-particles {
@@ -437,8 +445,8 @@ a.btn-transparent:focus {
 }
 
 #banner h1, #banner h2 {
-    text-align: initial;
     margin-bottom: 0.2em;
+    text-align: initial;
 }
 
 #banner ul {
@@ -454,8 +462,8 @@ a.btn-transparent:focus {
 }
 
 #banner .demo {
-    padding: 5% 10%;
     margin: 3em 0;
+    padding: 5% 10%;
     background: url("/images/shield.svg") no-repeat center/contain;
 }
 
@@ -477,8 +485,8 @@ a.btn-transparent:focus {
 #banner .demo .box h5 {
     position: absolute;
     right: 0;
-    left: 0;
     bottom: 100%;
+    left: 0;
     margin: 0.5em;
 }
 
@@ -563,25 +571,25 @@ article h3 {
 }
 
 #document header {
-    background: var(--body-contrast);
     margin: 1em auto 4em;
-    border-radius: var(--internal-size);
     text-align: center;
+    border-radius: var(--internal-size);
+    background: var(--body-contrast);
 }
 
 #document img {
+    float: right;
     max-width: 38%;
     max-height: 25em;
     margin: 0.2em 1em;
-    float: right;
+    border: 1px solid var(--highlight);
     border-radius: var(--join-size);
     box-shadow: 0 0 8px var(--shadow);
-    border: 1px solid var(--highlight);
 }
 
 #document header img {
-    max-width: 100%;
     float: none;
+    max-width: 100%;
 }
 
 #document h1 {
@@ -594,30 +602,30 @@ article h3 {
 
 #document h2::after {
     content: "";
+    display: block;
     width: 4ex;
     height: 2px;
-    display: block;
     margin: 0.2em auto 0;
     background: var(--control-contrast);
 }
 
 #document h3 {
-    padding: 0.2em 2ex;
     margin: 1em 0 0.5em;
+    padding: 0.2em 2ex;
     border-bottom: 1px solid var(--highlight);
 }
 
 #document ul:not(.list-inline), #document dl:not(.list-inline) {
-    list-style: square;
     padding: 1ex 4ex;
+    list-style: square;
     color: var(--active-text);
-    background: var(--panel-fill);
     border-radius: var(--internal-size);
+    background: var(--panel-fill);
 }
 
 #document dl:not(.list-inline) dd {
-    color: var(--body-text);
     padding: 0 1ex;
+    color: var(--body-text);
     border-left: 0.2ex solid var(--panel-contrast);
 }
 

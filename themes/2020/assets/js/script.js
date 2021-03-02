@@ -34,7 +34,8 @@ $(function() {
             }
         }
     });
-
+    
+    /* Tooltips. */
     $('[title]').tooltip()
 
     /* OS detection. */
