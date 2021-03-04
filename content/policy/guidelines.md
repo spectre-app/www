@@ -28,6 +28,10 @@ Respect & Kindness
 : We seek to&nbsp;understand&nbsp;others, assuming their&nbsp;intentions are&nbsp;well,
   before we&nbsp;choose how&nbsp;to&nbsp;express ourselves to&nbsp;them.
 
+Validation & Understanding
+: Our opinions and preferences are the result of our past experience — equally so for those of others.
+  We pause to understand and explicitly validate other perspectives.
+
 Patience & Grace
 : As important as the&nbsp;things we&nbsp;say is the&nbsp;way in&nbsp;which
   we&nbsp;say&nbsp;them.
