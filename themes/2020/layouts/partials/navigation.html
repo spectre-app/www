@@ -3,11 +3,11 @@
 <section id="navigation" class="sticky-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
+            <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
                 {{ if site.Params.logo }}
-                <img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="42">
+                <img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" height="42">
                 {{ end }}
-                {{ site.Title }}
+                {{ site.Params.name }}
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation .collapse">
