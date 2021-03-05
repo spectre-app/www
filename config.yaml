@@ -1,7 +1,7 @@
 # Spectre website
 baseURL: "https://spectre.app/"
 languageCode: "en-us"
-title: "Spectre"
+title: "Spectre: Passwords, Privacy-first"
 theme: "2020"
 markup:
   goldmark:
@@ -11,7 +11,8 @@ markup:
 params:
   logo: "images/logo.png"
   icon: "images/icon.png"
-  description: "Spectre is a stateless, decentralized, offline and deterministic identity platform."
+  description: "Password manager and secure identity platform. Spectre is a free and offline strong random password generator. Privacy-first. Coming to web, iOS, Android, Windows, macOS, Linux."
+  keywords: "password manager,password generator,passwords,free,secure,strong,random,online,offline,privacy,ios,iphone,android,windows,macos,linux"
   author:
     name: "Maarten Billemont"
     link: "https://lhunath.com"

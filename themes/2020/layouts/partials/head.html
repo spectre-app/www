@@ -2,8 +2,11 @@
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="keywords" content="{{ with .Keywords }}{{ . }}{{ else }}{{ with site.Params.keywords }}{{ . }}{{ end }}{{ end }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#3E8989">
+    <meta name="color-scheme" content="dark">
     {{ with site.Params.author }}
     {{ with .name }}<meta name="author" content="{{ . }}">{{ end }}
     {{ with .link }}<link rel="author" href="{{ . }}">{{ end }}
