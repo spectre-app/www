@@ -160,7 +160,26 @@ following details:
 As a result of our zero-PII policy, this information cannot uniquely trace back
 to you.
 
-### Payment
+### <i class="fa-duotone fa-envelope-open-text fa-fw"></i> Updates
+
+*Update e-mails are only sent to members who have registered for an update stream.*
+
+Some of our users are interested in keeping up-to-date on Spectre's development,
+the roadmap, and opportunities for testing out new capabilities and early releases.
+
+#### Personal Information
+
+To facilitate participation in Spectre's update e-mails, the following details
+are submitted to and retained by Spectre:
+
+* E-mail address
+* Given and family name (optional)
+* Device information (optional)
+* User-submitted notes (optional)
+
+This information is expunged when users unsubscribe from future updates.
+
+### <i class="fa-duotone fa-circle-dollar fa-fw"></i> Payment
 
 *Spectre does not share any user or device information with payment providers.*
 
