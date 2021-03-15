@@ -1,12 +1,12 @@
-{{ with (index site.Data site.Language.Lang).banner }}
+{{ with (index site.Data site.Language.Lang).hero }}
 {{ if .enable }}
 
 {{ $mpw_js := resources.Get "js/mpw-js/mpw.js" | js.Build | minify | fingerprint }}
-{{ $banner_js := resources.Get "js/banner.js" | js.Build (dict "params" (dict "mpw" $mpw_js.Permalink)) | minify | fingerprint }}
-<script defer src="{{ $banner_js.Permalink }}" integrity="{{ $banner_js.Data.Integrity }}"></script>
+{{ $hero_js := resources.Get "js/hero.js" | js.Build (dict "params" (dict "mpw" $mpw_js.Permalink)) | minify | fingerprint }}
+<script defer src="{{ $hero_js.Permalink }}" integrity="{{ $hero_js.Data.Integrity }}"></script>
 
-<section id="banner">
-    <div id="banner-particles"></div>
+<section id="hero">
+    <div id="hero-particles"></div>
     <div class="container">
 
         <div class="row justify-content-center">

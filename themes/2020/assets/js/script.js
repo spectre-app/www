@@ -42,7 +42,7 @@ $(function() {
     $('html').attr('data-os', UAParser().os.name);
 
     /* Particles. */
-    // tsParticles.load("banner-particles", {
+    // tsParticles.load("hero-particles", {
     //     "fpsLimit": 10,
     //     "autoPlay": true,
     //     "detectRetina": true,
@@ -52,7 +52,7 @@ $(function() {
     //     "interactivity": {
     //         "events": {
     //             "onDiv": {
-    //                 "selectors": "#banner .demo",
+    //                 "selectors": "#hero .demo",
     //                 "enable": true,
     //                 "mode": "repulse"
     //             },

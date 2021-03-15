@@ -12,7 +12,7 @@ function spinner(element, delta) {
 }
 
 $(function () {
-    let demo = $('#banner .demo');
+    let demo = $('#hero .demo');
     let userName = demo.find('#userName');
     let userNameInput = userName.find('input');
     let userSecret = demo.find('#userSecret');

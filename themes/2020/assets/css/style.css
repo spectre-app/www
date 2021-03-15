@@ -401,10 +401,10 @@ a.btn-transparent:focus {
 }
 
 /*=================================================================
-  SECTION: BANNER
+  SECTION: HERO
  *================================================================*/
 
-#banner {
+#hero {
     position: relative;
     display: flex;
     align-items: center;
@@ -412,14 +412,14 @@ a.btn-transparent:focus {
     background: none,
     radial-gradient(62vh 150vh at 0 -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
     radial-gradient(62vh 150vh at 100% -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-    url("/images/banner.svg") no-repeat center/contain;
+    url("/images/hero.svg") no-repeat center/contain;
 }
 
-#banner button * {
+#hero button * {
     pointer-events: none;
 }
 
-#banner button input[readonly] {
+#hero button input[readonly] {
     width: calc(100% - 3ex);
     padding: 0;
     border: none;
@@ -428,7 +428,7 @@ a.btn-transparent:focus {
     box-shadow: none;
 }
 
-#banner #banner-particles {
+#hero #hero-particles {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -437,37 +437,37 @@ a.btn-transparent:focus {
     left: 0;
 }
 
-#banner .btn.cta {
+#hero .btn.cta {
     margin-top: 2em;
     padding: 1em 4em;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
-#banner h1, #banner h2 {
+#hero h1, #hero h2 {
     margin-bottom: 0.2em;
     text-align: initial;
 }
 
-#banner ul {
+#hero ul {
     display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-#banner ul li a {
+#hero ul li a {
     display: inline-block;
     padding: var(--join-size);
 }
 
-#banner .demo {
+#hero .demo {
     margin: 3em 0;
     padding: 5% 10%;
     background: url("/images/shield.svg") no-repeat center/contain;
 }
 
-#banner .demo .box {
+#hero .demo .box {
     border: 1px solid var(--panel-contrast);
     background: var(--panel-contrast);
 
@@ -482,7 +482,7 @@ a.btn-transparent:focus {
     /*backdrop-filter: blur(15px);*/
 }
 
-#banner .demo .box h5 {
+#hero .demo .box h5 {
     position: absolute;
     right: 0;
     bottom: 100%;
