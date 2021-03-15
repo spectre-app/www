@@ -163,6 +163,7 @@ button, a.btn {
     display: inline-block;
     width: auto;
 
+    font-size: 1em;
     color: var(--control-text);
 
     border: 2px solid transparent;
@@ -355,6 +356,7 @@ a.btn-transparent:focus {
 
 .caption a {
     color: inherit;
+    text-decoration: underline;
 }
 
 .caption a:focus,
@@ -413,6 +415,23 @@ a.btn-transparent:focus {
     radial-gradient(62vh 150vh at 0 -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
     radial-gradient(62vh 150vh at 100% -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
     url("/images/hero.svg") no-repeat center/contain;
+}
+
+#hero .banner {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0.5em;
+    font-size: smaller;
+}
+
+#hero .banner .container {
+    display: flex;
+    align-items: center;
+}
+
+#hero .banner .container > * {
+    margin: 0;
 }
 
 #hero button * {

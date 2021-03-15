@@ -7,6 +7,21 @@
 
 <section id="hero">
     <div id="hero-particles"></div>
+    
+    {{ with .banner }}
+    <div class="banner">
+        <div class="container">
+            <h4>{{ .title | markdownify }}</h4>
+            <p class="flex-grow-1 text-center">{{ .body | markdownify }}</p>
+            {{ with .button }}
+            {{ if .enable }}
+            <a href="{{ .link }}" class="btn btn-transparent">{{ .label }}</a>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
     <div class="container">
 
         <div class="row justify-content-center">
@@ -16,6 +31,15 @@
 
                 {{ with .cta }}
                 <p><a href="{{ .link }}" class="btn cta"><span class="fa-solid fa-lg {{ .icon }}"></span> {{ .title }}</a></p>
+                {{ with .alternative }}
+                <p class="caption">
+                    {{ .title | markdownify }}
+                    <a href="{{ .link }}">
+                        {{ with .icon }}<span class="fa-solid fa-lg {{ . }}"></span>{{ end }}
+                        {{ .label }}
+                    </a>
+                </p>
+                {{ end }}
                 {{ end }}
 
                 {{ with .platforms }}
