@@ -1,0 +1,24 @@
+### CALLOUT
+enable: true
+name: Introduction
+
+callout: |
+  Your entire online access,  
+  gated behind a wall of passwords,  
+  owned and controlled by cloud operators  
+  or trapped in an app.
+
+  Disaster is just *that* day away.  
+  Delete your passwords.
+
+body: |
+  *Spectre* is a completely novel approach to digital access control.
+  
+  Rather than trying to keep hundreds of passwords safe and available in an app,  
+  *Spectre* holds no passwords at all.  
+  
+  When it's time to log in, *Spectre* calculates your site's password for you on‑demand,
+  storing it nowhere, ensuring it can never be lost or stolen.
+  
+  Is that even possible?  
+  It is now.

@@ -17,6 +17,9 @@
                 <p>{{ .body | markdownify }}</p>
             </div>
         </div>
+        {{ if .break }}
+        <hr>
+        {{ end }}
         {{ end }}
         {{ end }}
     </div>

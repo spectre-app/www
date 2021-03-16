@@ -4,23 +4,25 @@ name: Usage
 title: Your&nbsp;identity, no&nbsp;strings
 
 items:
-  - title: Sign in from anywhere
+  - title: Sign in to Spectre
     partial: "usage-account.html"
-    body: >
-      Sign&nbsp;into any *Spectre*&nbsp;app from anywhere to access your&nbsp;passwords immediately.
+    body: |
+      Use any *Spectre* app, on any device, from anywhere, online *or&nbsp;offline*, and access&nbsp;your&nbsp;passwords immediately.
+      Zero setup required.
 
 
-      No&nbsp;Internet&nbsp;connection required: *Spectre*&nbsp;does not upload or download your&nbsp;passwords from the&nbsp;cloud.
-      You&nbsp;do not have an&nbsp;account with us and we hold no&nbsp;records on our&nbsp;users.
+      Don't have your phone or laptop on you?  
+      Borrow that of a friend or colleague, just for a second.
 
-  - title: Enter your site's domain
+  - title: Which password?
     partial: "usage-site.html"
-    body: >
-      Tell&nbsp;*Spectre* who you need a&nbsp;password for and&nbsp;it's&nbsp;there, on&nbsp;the&nbsp;spot.
+    body: |
+      Tell&nbsp;*Spectre* which of your&nbsp;passwords you need and&nbsp;it's&nbsp;there, on&nbsp;the&nbsp;spot.
 
 
-      *Spectre*&nbsp;cryptographically computes your&nbsp;site's&nbsp;passwords from your&nbsp;sign-in&nbsp;identity.
-      It&nbsp;works from any device, even that of a&nbsp;friend, or&nbsp;a&nbsp;brand&nbsp;new&nbsp;phone.
+      *Spectre*&nbsp;cryptographically derives your&nbsp;site's&nbsp;password from your&nbsp;sign-in.  
+      Think of a calculator; they all do math, all the same, `1 + 1 = 2`, every time.
+    break: true
 
   - title: Upgrade your account&nbsp;security
     partial: "usage-upgrade.html"

@@ -1,0 +1,15 @@
+{{ with (index site.Data site.Language.Lang).callout }}
+{{ if .enable }}
+<section id="callout">
+    <div class="container">
+        <h1>{{ .name | markdownify }}</h1>
+
+        <h2>{{ .callout | markdownify }}</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-6">{{ .body | markdownify }}</div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
