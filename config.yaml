@@ -1,6 +1,6 @@
 # Spectre website
 baseURL: "https://spectre.app/"
-languageCode: "en-us"
+languageCode: "en"
 title: "Spectre: Passwords, Privacy-first"
 theme: "2020"
 markup:

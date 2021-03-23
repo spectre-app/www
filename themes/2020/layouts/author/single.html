@@ -12,10 +12,11 @@
                 <div class="content text-center">
                     <figure>
                         {{ if .Params.Image }}
-                        <img class="rounded-circle img-fluid lozad" data-src="{{.Params.Image | relURL }}">
+                        <img class="rounded-circle img-fluid lozad"
+                             data-src="{{.Params.Image | relURL }}">
                         {{else if .Params.Email}}
                         <img class="rounded-circle img-fluid lozad"
-                            data-src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon">
+                             data-src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon">
                         {{ end }}
                         <figcaption>
                             <h5 class="font-weight-bold">
@@ -29,7 +30,7 @@
                     <ul class="list-inline">
                         {{ range .Params.Social }}
                         <li class="list-inline-item"><a class="simple-icon" href="{{ .link | safeURL}}"><i
-                                    class="{{ .icon }}"></i></a></li>
+                                class="{{ .icon }}"></i></a></li>
                         {{ end }}
                     </ul>
                 </div>

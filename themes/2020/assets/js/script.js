@@ -38,6 +38,15 @@ $(function() {
         });
 
         $('html').attr('data-scroll', closestSection);
+        $('#navigation .nav-item').each(function() {
+            if ($(this).find('.nav-link').attr('href').split('#').pop() === closestSection) {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active')
+                }
+            } else {
+                $(this).removeClass('active')
+            }
+        })
     });
 
     /* Animated page scroll. */

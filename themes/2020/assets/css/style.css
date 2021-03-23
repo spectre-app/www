@@ -38,8 +38,8 @@
 body {
     /*font: 100 1em "Source Sans Pro", sans-serif;*/
     font: 300 1em/1.4 "Montserrat", sans-serif;
-    -webkit-font-smoothing: antialiased;
 
+    -webkit-font-smoothing: antialiased;
     color: var(--body-text);
     background: var(--body-fill);
 }
@@ -395,6 +395,15 @@ p.error, p.info {
 
 #navigation .navbar-brand {
     font: 500 1em "Poppins", sans-serif;
+}
+
+#navigation .nav-item {
+    border-bottom: 2px solid transparent;
+    transition: all .38s ease-in 0s;
+}
+
+#navigation .nav-item.active {
+    border-bottom-color: var(--control-contrast);
 }
 
 html #navigation .cta {

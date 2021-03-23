@@ -4,7 +4,7 @@
 
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
     <meta name="keywords" content="{{ with .Keywords }}{{ . }}{{ else }}{{ with site.Params.keywords }}{{ . }}{{ end }}{{ end }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#3E8989">
     <meta name="color-scheme" content="dark">
     {{ with site.Params.author }}
@@ -17,17 +17,9 @@
     <link rel="stylesheet" href="{{ `plugins/bootstrap/bootstrap.min.css` | absURL }}">
     <link rel="stylesheet" href="{{ `plugins/fontawesome/all.min.css` | absURL }}">
     <link rel="stylesheet" href="{{ `plugins/magnific-popup/magnific-popup.min.css` | absURL }}">
-    <script src="{{ `plugins/bootstrap/bootstrap.bundle.min.js` | absURL }}"></script>
-    <script defer src="{{ `plugins/lozad/lozad.min.js` | absURL }}"></script>
-    <script defer src="{{ `plugins/jquery/jquery.min.js` | absURL }}"></script>
-    <script defer src="{{ `plugins/ua-parser/ua-parser.min.js` | absURL }}"></script>
-    <script defer src="{{ `plugins/tsparticles/tsparticles.min.js` | absURL }}"></script>
-    <script defer src="{{ `plugins/magnific-popup/jquery.magnific-popup.min.js` | absURL }}"></script>
-
-    {{ range site.Params.plugins.css }}
-    <link rel="stylesheet" href="{{ .link | absURL }}">
-    {{ end }}
 
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen" integrity="{{ $style.Data.Integrity }}">
+
+    <script defer src="{{ `plugins/jquery/jquery.min.js` | absURL }}"></script>
 </head>

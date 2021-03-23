@@ -44,9 +44,11 @@
 {{ end }}
 {{ end }}
 
-{{ range site.Params.plugins.js }}
-<script src="{{ .link | absURL }}"></script>
-{{ end }}
+<script defer src="{{ `plugins/bootstrap/bootstrap.bundle.min.js` | absURL }}"></script>
+<script defer src="{{ `plugins/lozad/lozad.min.js` | absURL }}"></script>
+<script defer src="{{ `plugins/ua-parser/ua-parser.min.js` | absURL }}"></script>
+<script defer src="{{ `plugins/tsparticles/tsparticles.min.js` | absURL }}"></script>
+<script defer src="{{ `plugins/magnific-popup/jquery.magnific-popup.min.js` | absURL }}"></script>
 
 {{ $script := resources.Get "js/script.js" | minify | fingerprint }}
 <script defer src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
