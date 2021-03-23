@@ -126,6 +126,7 @@ form label {
 }
 
 form input, form textarea, form select, form button {
+    overflow: hidden;
     margin: 0.2em 0;
     font-size: larger;
 }
