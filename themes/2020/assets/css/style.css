@@ -196,7 +196,7 @@ form button:hover {
 
 input, textarea, select, button, a, label, :target, :focus, :hover, :active {
     outline: none;
-    transition: all .1s ease-in 0s;
+    transition: all .38s ease-in 0s;
 }
 
 blockquote {
@@ -392,6 +392,15 @@ a.btn-transparent:focus {
 
 #navigation .navbar-brand {
     font: 500 1em "Poppins", sans-serif;
+}
+
+html #navigation .cta {
+    opacity: 0;
+    transition: all .38s ease-in 0s;
+}
+
+html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
+    opacity: 1;
 }
 
 @supports ( (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) ) {

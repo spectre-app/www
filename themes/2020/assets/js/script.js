@@ -19,6 +19,27 @@ $(function() {
         fixedBgPos: true
     });
 
+    /* Identify scrolled section. */
+    $(window).scroll(function() {
+        let scrolled = $(document).scrollTop()
+        if (scrolled === 0) {
+            $('html').removeAttr('data-scroll');
+            return;
+        }
+
+        let midpoint = scrolled + ($(window).height() / 2);
+        let closestSection, closestDistance = -1;
+        $('section[id]:not([class="sticky-top"])').each(function(){
+            let distance = Math.abs( $(this).position().top + $(this).height() / 2 - midpoint );
+            if (closestDistance < 0 || distance < closestDistance) {
+                closestDistance = distance;
+                closestSection = $(this).attr('id');
+            }
+        });
+
+        $('html').attr('data-scroll', closestSection);
+    });
+
     /* Animated page scroll. */
     $('nav a, .page-scroll').on('click', function () {
         if (location.hostname === this.hostname &&
