@@ -13,7 +13,7 @@
     --body-fill-rgb: 14, 51, 69;
     --body-fill: /* #0E3345 */ rgb(var(--body-fill-rgb));
     --body-contrast: #123749;
-    --body-text: #87A4A9;
+    --body-text: #F0F8FF;
     --body-focus: #41A0A0;
 
     --panel-fill: #173D50;
@@ -26,7 +26,7 @@
     --control-fill: #3E8989;
     --control-contrast: #57CBCC;
 
-    --active-text: #FFFFFF;
+    --active-text: #F0FFFF;
 
     --internal-size: 4px;
     --join-size: 8px;
@@ -60,7 +60,7 @@ h1 {
 
 h2 {
     margin-bottom: 1em;
-    font-size: 2.5em;
+    font-size: 2.4em;
     text-align: center;
 }
 
@@ -405,6 +405,15 @@ p.error, p.info {
 
 #navigation .nav-item.active {
     border-bottom-color: var(--control-contrast);
+}
+
+#navigation .nav-link {
+    color: var(--body-text);
+}
+
+#navigation .nav-item.active .nav-link {
+    font-weight: bold;
+    color: var(--active-text);
 }
 
 html #navigation .cta {
