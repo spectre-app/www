@@ -11,6 +11,8 @@
 
 :root {
     --body-fill-rgb: 14, 51, 69;
+    --body-contrast-rgb: 18, 55, 73;
+    --panel-fill-rgb: 23, 61, 80;
     --body-fill: /* #0E3345 */ rgb(var(--body-fill-rgb));
     --body-contrast: #123749;
     --body-text: #F0F8FF;
@@ -129,6 +131,7 @@ form input, form textarea, form select, form button {
     overflow: hidden;
     margin: 0.2em 0;
     font-size: larger;
+    background: rgba(var(--body-fill-rgb), 0.9);
 }
 
 input, textarea, select, button, a.btn {
@@ -149,7 +152,7 @@ input::placeholder, textarea::placeholder {
 
 input:hover, textarea:hover, select:hover {
     border-color: var(--control-contrast);
-    background: var(--highlight);
+    background: rgba(var(--panel-fill-rgb), 0.9);
 }
 
 textarea {
@@ -225,7 +228,7 @@ section {
 }
 
 section.lit {
-    background: var(--body-contrast);
+    background-color: var(--body-contrast);
 }
 
 @media (max-width: 768px) {
@@ -601,6 +604,14 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 /*=================================================================
+  SECTION: BETA
+ *================================================================*/
+
+#beta {
+    background: url("/images/iphone.png") no-repeat 105% 115%;
+}
+
+/*=================================================================
  SECTION: BLOG
  *================================================================*/
 
@@ -696,6 +707,8 @@ article h3 {
  *================================================================*/
 
 #footer {
+    position: relative;
+    overflow: hidden;
     padding-top: 4em;
     background: #083E55;
 }
