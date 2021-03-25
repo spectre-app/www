@@ -520,6 +520,12 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     background: url("/images/shield.svg") no-repeat center/contain;
 }
 
+#hero .demo .tryme {
+    position: absolute;
+    left: 96%;
+    top: -6%;
+}
+
 #hero .demo .box {
     border: 1px solid var(--panel-contrast);
     background: var(--panel-contrast);
