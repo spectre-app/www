@@ -694,18 +694,29 @@ article h3 {
     border-bottom: 1px solid var(--highlight);
 }
 
-#document ul:not(.list-inline), #document dl:not(.list-inline) {
-    padding: 1ex 4ex;
-    list-style: square;
+#document ol:not(.list-inline), #document ul:not(.list-inline), #document dl:not(.list-inline) {
+    padding: 1ex 3em;
     color: var(--active-text);
     border-radius: var(--internal-size);
     background: var(--panel-fill);
 }
 
+#document ul:not(.list-inline) {
+    list-style: square;
+}
+
+#document ol:not(.list-inline) li::marker {
+    font-family: "Source Code Pro", monospace;
+}
+
+#document dl:not(.list-inline) dt {
+    border-bottom: 1px solid var(--panel-contrast);
+}
+
 #document dl:not(.list-inline) dd {
     padding: 0 1ex;
     color: var(--body-text);
-    border-left: 0.2ex solid var(--panel-contrast);
+    border-left: var(--internal-size) solid var(--panel-contrast);
 }
 
 /*=================================================================

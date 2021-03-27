@@ -4,7 +4,7 @@ date: 2021-02-04T18:45:00-05:00
 author: Maarten Billemont
 image: images/blog/2021-02-04-cover.jpg
 description: >
-  A primer on passwords, their application, issues, and how to get the most out of them.
+  A primer on passwords, their application, issues, and how to do them right by going back to first principles.
 ---
 
 If we played Word Association and I said *password*, what would be your next thought?  
@@ -42,23 +42,25 @@ Since theoretically none other than yourself are able to provide this secret, th
 
 [![I don't know which is the robot and which is real! Quick! Say something only my husband would know!](https://static.tvtropes.org/pmwiki/pub/images/something_only_they_would_sa.jpg)](https://tvtropes.org/pmwiki/pmwiki.php/Main/SomethingOnlyTheyWouldSay)
 
-The concept of a password seems sound: a secret known only by your friend and yourself serves as a great tool for proof of authenticity.
+The concept of a password seems sound: a secret known only by the other party and yourself serves as a great tool for proof of authenticity.
 
 In practice, however, we are acutely aware of how we've stretched the concept far beyond its limitations.
 
 * We share our secrets with friends and family,
-* We re-use our secrets with all sorts of different sites,
+* We re-use our secrets across many sites,
 * We keep our secrets on paper or somewhere they can be easily found,
-* We use secrets that really aren't secret,
+* We use secrets that aren't really secret,
 * We use secrets and then we forget them ourselves,
 * We have way too many secrets to keep track of,
-* We trust a company we have no control over with all of our secrets,
-* We get completely locked out if we lose our secrets.
+* We hand our secrets over to a company that we have no control over,
+* We get locked out completely when we lose our secrets.
 
 Why does this happen? What has gone wrong?
 
 What's happened is that we've been forced to disregard the basic requirement:
 > The secret is known exclusively by you and the other party.
+
+We feel that we cannot realistically do what websites ask of us and still hold religiously to this principle, so we have allowed apps and companies to convince us that it's normal and okay to make sacrifices. 
 
 If we're going to find a *solution* and return to verifiable authenticity, we need to discover how password use in our modern lives can go wrong and propose a solution that manages to avoid each of those pitfalls.
 
@@ -70,7 +72,7 @@ Having the secret is quite crucial when you're in the position of needing to use
 
 The inevitable result is that we reach for short-cuts. We write down our passwords so we have a reference. We reuse our passwords so we reduce the amount of secrets we need to remember. We simplify our secrets or come up with "clever" derivation techniques such as spelling the site's name backwards.
 
-Afraid of losing our passwords, we save them in databases we can't read or on corporate clouds we have no real control over.
+Afraid of losing our passwords, we save them in databases that we can't read or send them to online clouds we have no authority over.
 
 In a clumsy balancing act, we either attempt to save the ability to *"know"* our passwords by sacrificing their *"exclusivity"*, or the other way around.
 
@@ -88,7 +90,7 @@ It's those kicks I want!
 
 Secrets are fine as a concept, but where should they come from? You don't want to offer up actual private secrets to arbitrary entities such as website owners. How should I come up with a new secret word that is also sufficiently exclusive that others won't be able to guess it if they tried?
 
-A good secret is a science, and you might not be surprized that humans aren't particularly great at it out of the box. The science tells us that the best secret is one that is entirely random within its domain. How random is your bank card's PIN code?
+A good secret is a science, and you might not be surprized that humans aren't particularly great at it out of the box. The science tells us that the best secret is one that is entirely random within its domain. How random is *your* bank card's PIN code?
 
 If you gave someone who really wanted to get in a full day to guess at it, would they? How exclusive is your password really?
 
@@ -104,16 +106,18 @@ Then write it down, save it in your Notes app and sync it to your browser's onli
 
 Whose secret is it now, though? Certainly not yours.
 
-With all of your passwords in the hands of a corporate entity, one that you don't have a contract with, exists outside of the bounds of your government's jurisdiction, whose datacenters are anywhere on the planet and with employees you have no reason to trust, how much control do you really have over your own online individuality?
+With all of your passwords in the hands of a corporate entity, an entity that you do not have a contract with, exists outside of the bounds of your government's jurisdiction, whose datacenters are anywhere on the planet and with employees you have no reason to trust, how much control do you really have over your own online individuality?
 
-## Forget your passwords.
+## Delete your passwords.
 
 Well, that was a bit of a downer.  It sounds like passwords are quite the chore – and of course, this is exactly the experience that we've all been having and coping with.
 
 Is there a way to escape this nightmare? Let's summarize a wishlist:
 * I don't want to have to remember a ton of things
 * I don't want anyone else having control over my passwords
-* I don't want to be dependant on anyone for access to my own passwords
+* I don't want to be dependent on anyone for access to my own passwords
+* I don't want to risk getting locked out of my passwords
+* I don't want passwords an authority or criminal could seize or lay siege to
 * I don't want anyone able to find, steal or discover my secrets
 * I don't want to have to do mental gymnastics to get to my secrets
 * I don't want to have to do any work when creating a new account
@@ -125,6 +129,8 @@ Is there a way to escape this nightmare? Let's summarize a wishlist:
 * Bonus: I want passwords ready for the apocalypse
 
 That sounds like a perfectly reasonable wishlist, wouldn't you agree?
+
+Take a moment to test it against the password solutions that you already know of.  I'll wait.
 
 ### One word: Statelessness
 
@@ -150,44 +156,57 @@ Try again; `7 * 14`? Yup, it's still `98`.
 
 ![Everything](https://64.media.tumblr.com/1ad96cc69a39c74a835795c65ed54cee/cf882d1e773b3db8-ba/s500x750/5dd21f5996b20e2968a8f096ef879df71944d889.gifv)
 
-Spectre was built extremely intentionally and has been securing people's lives since 2011. Its algorithm is cryptographically hardened at several stages.
+Spectre was built intentionally to be different. It has been securing people's lives since 2011. Its algorithm has cryptographical hardening at several stages.
 
-But what really matters is our wishlist.  Let's take an honest look:
+But what really matters is our wishlist.  
+So let's take an honest look:
 
 I don't want to have to remember a ton of things
 : Spectre asks you to remember one single personal secret. Oh, and, your name.
 
 I don't want anyone else having control over my passwords
-: Your passwords exist nowhere. They are pure math. A spectre, almost.
+: Your passwords exist nowhere. They are pure math. A spectre, you might say.  
+Control requires your personal secret. Tell no-one and you maintain sole control.
 
-I don't want to be dependant on anyone for access to my own passwords
-: Spectre is Free Software, its mathematical algorithm public and its code Open Source.  
-Trust us, or don't, it's up to you.
+I don't want to be dependent on anyone for access to my own passwords
+: Spectre is Free Software, its mathematical algorithm public and its code Open Source.
+You don't need us, you don't need backups, you don't need the cloud.
+You need your personal secret and you need the algorithm.  
+Trust us, or don't. Get someone you trust to verify the math and code for you.
+
+I don't want to risk getting locked out of my passwords
+: Since the bare minimum for getting any password is your personal secret and
+the algorithm, everything else may fail, but you can still derive your passwords.
+
+I don't want passwords an authority or criminal could seize or lay siege to
+: Seizing or sieging something requires that it exists in a certain place.
+Spectre's passwords don't exist - they are mathematical derivations.
+Don't give store or up your personal secret and no-one can access what comes from it.
 
 I don't want anyone able to find, steal or discover my secrets
-: Don't tell anyone your personal secret, done.  
-Since Spectre doesn't save or send your passwords anywhere, there's really nothing to steal or find.  
-Spectre uses extremely high entropy encoding algorithms making your passwords extremely resiliant to guesses, discovery or attacks.
+: Since Spectre doesn't save or send your passwords anywhere, there's really nothing to steal or find.
+Don't tell anyone your personal secret, done.
 
 I don't want to have to do mental gymnastics to get to my secrets
 : The algorithm may be a math formula, but we'll take care of the solving.  
-Just tell us the site you want a password for and we've got your password.
+Just tell us the site you want a password for, and we've got your password.
 
 I don't want to have to do any work when creating a new account
-: Same deal – tell us the name of the site, we tell you the password.  Simple and done.
+: Same deal – tell us the name of a site, we've got your password.  Simple and done.
 
 I don't want to worry about ever forgetting or losing my passwords again
 : It's math. The solution doesn't disappear just because you forgot it.  
-Even if you were to lose everything you have and hold, get Spectre, enter your full name and personal secret, and it's got your passwords, all of them, instantly, no Internet, just math.
-But uh – don't forget your personal secret. Without it, you're not you.  You're the clone.
+Even if you were to lose everything you have and hold: get a Spectre app, enter your full name and personal secret.
+All your passwords are there, instantly, no backups, no Internet, just math.  
+But uh – don't forget your personal secret. Without it, you may just be the clone.
 
 I want passwords that are *scientifically* good passwords
 : Spectre's passwords are cryptographically generated from uniform one-way hashing algorithms encoded into password policies designed to find the perfect balance between maximum entropy and maximum usability.
 
 I want passwords that are practically impossible to guess
-: There's two types of guessable passwords: prior knowledge and low entropy.  
+: There are two types of guessable passwords: prior knowledge and low entropy.  
 Spectre's passwords are immune to prior knowledge bases guesses since there is no trace of personal information on you in them.  
-Spectre's passwords are extremely high entropy, making them maximally hardened against random guesses.
+Spectre's passwords are high entropy, making them maximally hardened against random guesses.
 
 I want passwords that my relatives can inherit should anything happen to me
 : Pass your personal secret on in your last will and testament.
@@ -198,12 +217,12 @@ I want passwords known exclusively by myself and the site I use them for
 Bonus: I want passwords ready for the apocalypse
 : Hold that thought.
 
-### But what if...
+### But, what if...
 
 It's a fair question.  
 What if a dictatorial government ceased power and forced the police to search our homes? Confiscated our electronics, subpoenaed security companies to surrender our credentials?
 What if you were kidnapped and your belongings taken from you? What if you lost everything you had in a natural disaster?
 
-What if your country collapsed into chaos, Spectre was dissolved, an apocalypse raged and all you needed to save the world was to log into your reddit?
+What if your country collapsed into chaos, Spectre was dissolved, an apocalypse raged and all you needed to unite the world was to find a Starlink dish and patch into reddit, the only site left operational, run invite-only by a cabal of rebels?
 
-Spectre has you covered.  Maybe keep a paper copy of our algorithm whitepaper handy.
+Spectre has you covered.  Maybe keep a paper copy of our white paper handy.
