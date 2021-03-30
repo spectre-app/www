@@ -2,7 +2,8 @@
 {{ if .enable }}
 
 {{ $beta_js := resources.Get "js/beta.js" | minify | fingerprint }}
-<script defer src="{{ $beta_js.Permalink }}" integrity="{{ $beta_js.Data.Integrity }}"></script>
+<!--<script defer src="{{ $beta_js.Permalink }}" integrity="{{ $beta_js.Data.Integrity }}"></script>-->
+<script defer src="{{ $beta_js.Permalink }}"></script>
 
 <section id="beta">
     <div class="container">

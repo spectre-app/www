@@ -3,7 +3,8 @@
 
 {{ $mpw_js := resources.Get "js/mpw-js/mpw.js" | js.Build | minify | fingerprint }}
 {{ $hero_js := resources.Get "js/hero.js" | js.Build (dict "params" (dict "mpw" $mpw_js.Permalink)) | minify | fingerprint }}
-<script defer src="{{ $hero_js.Permalink }}" integrity="{{ $hero_js.Data.Integrity }}"></script>
+<!--<script defer src="{{ $hero_js.Permalink }}" integrity="{{ $hero_js.Data.Integrity }}"></script>-->
+<script defer src="{{ $hero_js.Permalink }}"></script>
 
 <section id="hero">
     <div id="hero-particles"></div>

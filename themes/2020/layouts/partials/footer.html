@@ -51,7 +51,8 @@
 <script defer src="{{ `plugins/magnific-popup/jquery.magnific-popup.min.js` | absURL }}"></script>
 
 {{ $script := resources.Get "js/script.js" | minify | fingerprint }}
-<script defer src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+<!--<script defer src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>-->
+<script defer src="{{ $script.Permalink }}"></script>
 
 {{ with site.Params.cloudflare_token }}
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>

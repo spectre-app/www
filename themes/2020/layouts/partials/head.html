@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="{{ `plugins/magnific-popup/magnific-popup.min.css` | absURL }}">
 
     {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen" integrity="{{ $style.Data.Integrity }}">
+<!--    <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen" integrity="{{ $style.Data.Integrity }}">-->
+    <link rel="stylesheet" href="{{ $style.Permalink }}" media="screen">
 
     <script defer src="{{ `plugins/jquery/jquery.min.js` | absURL }}"></script>
 </head>
