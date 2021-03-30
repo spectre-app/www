@@ -285,25 +285,38 @@ a.btn-transparent:focus {
     font-family: "Source Code Pro", monospace;
 }
 
-.error, .info {
+.info, .error {
     font-weight: 500;
-    color: #BB2D3B;
     border-radius: var(--internal-size);
 }
 
-p.error, p.info {
+p.info, p.error {
     padding: 0.2em;
     text-align: center;
-    background: #6A1A21;
 }
 
-.error:empty, .info:empty {
+.info:empty, .error:empty {
     display: none;
 }
 
-.info {
+.info, .safe {
     color: #198754;
+}
+
+p.info {
     background: #0C4128;
+}
+
+.error, .notice {
+    color: #FFECB5;
+}
+
+.error, .severe {
+    color: #BB2D3B;
+}
+
+p.error {
+    background: #6A1A21;
 }
 
 .box {
@@ -635,6 +648,7 @@ article img {
     border-radius: var(--join-size);
     object-fit: cover;
     object-position: center center;
+    background: var(--highlight);
 }
 
 article h3 {
@@ -664,6 +678,8 @@ article h3 {
     border: 1px solid var(--highlight);
     border-radius: var(--join-size);
     box-shadow: 0 0 8px var(--shadow);
+    padding: 2px;
+    background: var(--highlight);
 }
 
 #document header img {
