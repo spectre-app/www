@@ -20,7 +20,7 @@
         <div class="team-member">
           <div class="member-photo">
             {{"<!-- member photo -->" | safeHTML}}
-            <img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">
+            <img class="img-fluid" loading="lazy" src="{{ .image | absURL }}" alt="{{ .name }}">
 
             {{"<!-- member social profile -->" | safeHTML}}
             <div class="mask">

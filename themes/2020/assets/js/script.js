@@ -6,9 +6,6 @@ $(function() {
         $(".navbar-collapse").collapse('hide');
     });
 
-    /* Lazy load images. */
-    lozad().observe();
-
     /* Pop-up image zoom. */
     $('.image-popup').magnificPopup({
         type: 'image',

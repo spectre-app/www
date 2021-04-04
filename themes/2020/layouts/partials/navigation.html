@@ -5,7 +5,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}">
                 {{ if site.Params.logo }}
-                <img class="lozad" data-src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" height="42">
+                <img src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" height="42">
                 {{ end }}
                 {{ site.Params.name }}
             </a>
