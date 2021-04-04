@@ -4,22 +4,28 @@
 
 <section id="document">
     <div class="container">
+        <header>
+            {{ with .Title }}
+            <h1>{{ . }}</h1>{{ end }}
+
+            <ul class="list-inline mb-50">
+                {{ with .Params.Author }}
+                <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+                {{ with .Date }}
+                <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" . }}</li>{{ end }}
+            </ul>
+
+            {{ with .Params.Image }}<img class="lozad" data-src="{{ . | absURL }}">{{ end }}
+            {{ with .Params.Description }}<p class="caption">{{ . | markdownify }}</p>{{ end }}
+        </header>
+
         <div class="row">
-            <header>
-                {{ with .Title }}
-                <h1>{{ . }}</h1>{{ end }}
-
-                <ul class="list-inline mb-50">
-                    {{ with .Params.Author }}
-                    <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
-                    {{ with .Date }}
-                    <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" . }}</li>{{ end }}
-                </ul>
-
-                {{ with .Params.Image }}<img class="lozad" data-src="{{ . | absURL }}">{{ end }}
-                {{ with .Params.Description }}<p class="caption">{{ . | markdownify }}</p>{{ end }}
-            </header>
-
+            <div class="col-lg-8 offset-lg-2">
+        {{ .TableOfContents }}
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <div class="post-single-content">{{ .Content }}</div>
 
@@ -33,5 +39,9 @@
         </div>
     </div>
 </section>
+
+{{ with .Params.chat }}
+<iframe src="https://chat.spectre.app/embed/{{ . }}" />
+{{ end }}
 
 {{ end }}

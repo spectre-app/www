@@ -1,11 +1,12 @@
 ---
 draft: true
 title: Security of the Spectre Algorithm
-date: 2021-04-02T18:45:00-05:00
+date: 2021-04-10T18:45:00-05:00
 author: Maarten Billemont
 image: images/blog/2021-02-04-cover.jpg
 description: >
   Evaluating the Spectre algorithm from a security perspective to determine its trust boundaries.
+chat: 43
 ---
 
 ## What is trust?

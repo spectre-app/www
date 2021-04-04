@@ -1,10 +1,11 @@
 ---
-title: An Algorithm For Freedom
+title: An algorithm for freedom
 date: 2018-01-06T15:44:20-05:00
 author: Maarten Billemont
 image: images/blog/2018-01-06-cover.png
 description: >
   Exploring the Spectre algorithm, we find that at the core stands the principle of statelessness.
+chat: 40
 ---
 
 ## Statelessness
@@ -168,4 +169,4 @@ class characters by a chosen character from that character class.
 | a (alphabetic)  | `AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz`                     |
 | n (numeric)     | `123456789`                                                                |
 | o (other)       | `@&%?,=[]_:-+*$#!'^~;()/.`                                                 |
-| X (union set)   | `AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz0123456789!@#$%^&*()` |
+| x (union set)   | `AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz0123456789!@#$%^&*()` |

@@ -47,8 +47,24 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    position: relative;
     font: 1em "Poppins", sans-serif;
 
+    color: var(--active-text);
+}
+
+h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
+    font-weight: bold;
+}
+
+h1:target::before, h2:target::before, h3:target::before, h4:target::before, h5:target::before, h6:target::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: -1.5em;
+    font-family: "Font Awesome 6 Pro";
     color: var(--active-text);
 }
 
@@ -83,12 +99,11 @@ h5 {
 }
 
 a, a:focus, a:hover {
-    text-decoration: none;
-
     color: var(--body-focus);
 }
 
 a {
+    text-decoration: none;
     color: var(--active-text);
 }
 
@@ -221,6 +236,29 @@ blockquote *:first-child {
 
 strong, b, em, i {
     color: var(--active-text);
+    /*background: var(--highlight);*/
+    /*border-radius: var(--internal-size);*/
+    /*padding: 1px 2px;*/
+    /*border-bottom: 1px dotted var(--body-focus);*/
+}
+
+table {
+    min-width: 62%;
+    margin: 1.5em auto;
+    padding: 1ex;
+    border-collapse: separate;
+    color: var(--active-text);
+    border: 1px solid var(--panel-contrast);
+    border-radius: var(--join-size);
+    background: var(--panel-fill);
+}
+
+table th, table td {
+    padding: 0.5em 1ex;
+}
+
+table tbody tr:nth-child(2n+1) {
+    background: var(--panel-contrast);
 }
 
 section {
@@ -241,6 +279,13 @@ section.lit {
     .box {
         padding: 1em;
     }
+}
+
+iframe {
+    width: 100%;
+    height: 50em;
+    border: 0 solid var(--panel-contrast);
+    border-width: 1px 0;
 }
 
 /*=================================================================
@@ -535,8 +580,8 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 
 #hero .demo .tryme {
     position: absolute;
-    left: 96%;
     top: -6%;
+    left: 96%;
 }
 
 #hero .demo .box {
@@ -646,9 +691,9 @@ article img {
     width: 100%;
     height: 12em;
     border-radius: var(--join-size);
+    background: var(--highlight);
     object-fit: cover;
     object-position: center center;
-    background: var(--highlight);
 }
 
 article h3 {
@@ -658,10 +703,6 @@ article h3 {
 /*=================================================================
  SECTION: DOCUMENT
  *================================================================*/
-
-#document {
-    font-size: 1.1em;
-}
 
 #document header {
     margin: 1em auto 4em;
@@ -675,11 +716,11 @@ article h3 {
     max-width: 38%;
     max-height: 25em;
     margin: 0.2em 1em;
+    padding: 2px;
     border: 1px solid var(--highlight);
     border-radius: var(--join-size);
-    box-shadow: 0 0 8px var(--shadow);
-    padding: 2px;
     background: var(--highlight);
+    box-shadow: 0 0 8px var(--shadow);
 }
 
 #document header img {
@@ -710,6 +751,10 @@ article h3 {
     border-bottom: 1px solid var(--highlight);
 }
 
+#document a {
+    text-decoration: underline;
+}
+
 #document ol:not(.list-inline), #document ul:not(.list-inline), #document dl:not(.list-inline) {
     padding: 1ex 3em;
     color: var(--active-text);
@@ -733,6 +778,19 @@ article h3 {
     padding: 0 1ex;
     color: var(--body-text);
     border-left: var(--internal-size) solid var(--panel-contrast);
+}
+
+/*=================================================================
+  TABLE OF CONTENTS
+ *================================================================*/
+
+#document #TableOfContents {
+    background: var(--body-contrast);
+}
+
+#document #TableOfContents ul {
+    list-style: decimal;
+    background: transparent;
 }
 
 /*=================================================================

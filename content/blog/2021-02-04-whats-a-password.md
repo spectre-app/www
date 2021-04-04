@@ -2,9 +2,10 @@
 title: What's a password?
 date: 2021-02-04T18:45:00-05:00
 author: Maarten Billemont
-image: images/blog/2021-02-04-cover.jpg
+image: https://images.unsplash.com/photo-1571156425562-12341e7c9aae?auto=format&h=400&q=80
 description: >
   A primer on passwords, their application, issues, and how to do them right by going back to first principles.
+chat: 41
 ---
 
 If we played Word Association and I said *password*, what would be your next thought?  
@@ -14,7 +15,7 @@ Anxiety? Frustration? Incorrect? Reset? That one word you use to secure every ac
 
 What's going on with passwords? Why are they everywhere, and why are they *such a pain*?
 
-## You shall not pass.
+## You shall not pass
 
 Before we try to answer any of these questions, let's go back to the basics for some context.
 
@@ -38,7 +39,7 @@ Passwords are an extremely popular method of authentication primarily because th
 
 Since theoretically none other than yourself are able to provide this secret, the site believes you when you offer it up in proof of your identity.
 
-## But is it, though?
+## The promise that wasn't
 
 [![I don't know which is the robot and which is real! Quick! Say something only my husband would know!](https://static.tvtropes.org/pmwiki/pub/images/something_only_they_would_sa.jpg)](https://tvtropes.org/pmwiki/pmwiki.php/Main/SomethingOnlyTheyWouldSay)
 
@@ -108,7 +109,7 @@ Whose secret is it now, though? Certainly not yours.
 
 With all of your passwords in the hands of a corporate entity, an entity that you do not have a contract with, exists outside of the bounds of your government's jurisdiction, whose datacenters are anywhere on the planet and with employees you have no reason to trust, how much control do you really have over your own online individuality?
 
-## Delete your passwords.
+## First principles
 
 Well, that was a bit of a downer.  It sounds like passwords are quite the chore – and of course, this is exactly the experience that we've all been having and coping with.
 
@@ -132,7 +133,7 @@ That sounds like a perfectly reasonable wishlist, wouldn't you agree?
 
 Take a moment to test it against the password solutions that you already know of.  I'll wait.
 
-### One word: Statelessness
+### Statelessness
 
 The Internet is rife with "solutions" to our password problems. Pretty much every major Californian giant has the solution on offer, supposedly. And yet, here we are, still frustrated.  Why?
 
@@ -152,13 +153,16 @@ Until you need it again — just run the formula and out comes the same password
 Spectre is a calculator; `7 * 14 = 98`. `AC`  
 Try again; `7 * 14`? Yup, it's still `98`.
 
-### Yeah, but... really?
+### All the things?
 
 ![Everything](https://64.media.tumblr.com/1ad96cc69a39c74a835795c65ed54cee/cf882d1e773b3db8-ba/s500x750/5dd21f5996b20e2968a8f096ef879df71944d889.gifv)
 
-Spectre was built intentionally to be different. It has been securing people's lives since 2011. Its algorithm has cryptographical hardening at several stages.
+Spectre was built intentionally to be different.
+It has been securing people's lives since 2011.
+Its algorithm has cryptographical hardening at several stages, and we'll dive
+into the details of its security characteristics in a future post.
 
-But what really matters is our wishlist.  
+But, what really matters is our wishlist.  
 So let's take an honest look:
 
 I don't want to have to remember a ton of things
@@ -198,7 +202,7 @@ I don't want to worry about ever forgetting or losing my passwords again
 : It's math. The solution doesn't disappear just because you forgot it.  
 Even if you were to lose everything you have and hold: get a Spectre app, enter your full name and personal secret.
 All your passwords are there, instantly, no backups, no Internet, just math.  
-But uh – don't forget your personal secret. Without it, you may just be the clone.
+But, uh – don't forget your personal secret. Without it, you may just be the clone.
 
 I want passwords that are *scientifically* good passwords
 : Spectre's passwords are cryptographically generated from uniform one-way hashing algorithms encoded into password policies designed to find the perfect balance between maximum entropy and maximum usability.
