@@ -10,34 +10,29 @@ items:
       Use any *Spectre* app, on any device, from anywhere, online *or&nbsp;offline*, and access&nbsp;your&nbsp;passwords immediately.
       Zero setup required.
 
+      <sub>Don't have your phone or laptop? Borrow a friend's in incognito mode.</sub>
 
-      Don't have your phone or laptop on you?  
-      Borrow that of a friend or colleague, just for a second.
-
-  - title: Which password?
+  - title: Name a password
     partial: "usage-site.html"
     body: |
-      Tell&nbsp;*Spectre* which of your&nbsp;passwords you need and&nbsp;it's&nbsp;there, on&nbsp;the&nbsp;spot.
+      Type a domain name.  
+      *Spectre* already has your password ready, on the spot.
 
-
-      *Spectre*&nbsp;cryptographically derives your&nbsp;site's&nbsp;password from your&nbsp;sign-in.  
-      Think of a calculator; they all do math, all the same, `1 + 1 = 2`, every time.
+      <sub>Your site's password derives from your&nbsp;sign-in.  
+      Think of a calculator; `you + site = password`, like `1 + 1 = 2`, every time.</sub>
     break: true
 
   - title: Upgrade your account&nbsp;security
     partial: "usage-upgrade.html"
-    body: >
-      First time using *Spectre* for this&nbsp;site?\
-
+    body: |
+      First time using *Spectre* for this&nbsp;site?  
       Change your old account&nbsp;password into *Spectre*'s generated password.
-
-
-      From now on, forget your old password, your&nbsp;site is securely protected by&nbsp;*Spectre*.
+      
+      <sub>From now on, you don't need to save your password for this site anymore.</sub>
 
   - title: Log in securely
     partial: "usage-login.html"
-    body: >
-      Just log&nbsp;in with your site's *Spectre*&nbsp;password, that's&nbsp;it.
+    body: |
+      From now on, just log&nbsp;in with your site's *Spectre*&nbsp;password.
 
-
-      Don't worry about trying to remember&nbsp;it &mdash; just&nbsp;get&nbsp;it straight from&nbsp;*Spectre*.
+      <sub>No matter what happens, you can always get your password from any of our *Spectre* apps.</sub>

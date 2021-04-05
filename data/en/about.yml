@@ -8,21 +8,19 @@ items:
   - icon: fa-hand-fist
     title: Independence
     body: >
-      More than ever, online&nbsp;liberty requires breaking&nbsp;dependency on unreliable&nbsp;actors
-      or&nbsp;corporate and state entities.
-
-
       Your identity is safe only when its sole&nbsp;gatekeeper is you
       and it cannot be held&nbsp;hostage in a cloud&nbsp;account or behind a&nbsp;regulatory&nbsp;wall.
+      <hr>
+      More than ever, online&nbsp;liberty requires breaking&nbsp;dependency on unreliable&nbsp;actors
+      or&nbsp;corporate and state entities.
 
   - icon: fa-shield-cross
     title: Impervious
     body: >
       Sustainable security has no loopholes or caveats.
       It&nbsp;doesn't come with terms&nbsp;on&nbsp;use, require&nbsp;backups, or expect blind&nbsp;trust.
-
-
-      *Spectre* achieves stateless identity management, vastly reducing the attack&nbsp;surface,
+      <hr>
+      Stateless identity management vastly reduces your attack&nbsp;surface,
       making you immune to&nbsp;loss, confiscation, decryption and&nbsp;leaks.
 
   - icon: free-software.svg
@@ -30,6 +28,5 @@ items:
     body: >
       Free&nbsp;means&nbsp;freedom. Free&nbsp;means&nbsp;equality. Free&nbsp;means&nbsp;power to the people.
       Free&nbsp;means&nbsp;transparent and auditable. Free&nbsp;means&nbsp;available, always.
-
-
-      *Spectre* is open-source, licensed Free&nbsp;Software and available&nbsp;gratis, forever.
+      <hr>
+      Open-source, licensed Free&nbsp;Software, *Spectre* is available&nbsp;gratis, forever.

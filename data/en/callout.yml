@@ -3,24 +3,22 @@ enable: true
 name: Introduction
 
 callout: |
-  Your entire online personhood,  
-  gated behind a&nbsp;wall of passwords,  
-  trapped in a vault  
-  owned and controlled  
-  by remote cloud operators.
-  <hr>
-  
-  Disaster is just *that* day away.  
-  We delete our passwords.
+  *Spectre* is a password app  
+  that has no passwords.  
 
 body: |
-  *Spectre* is a completely novel approach to digital access control.
+  Tried keeping countless passwords safe  
+  in an app, keychain, cloud, vault, backup, or browser?  
   
-  Rather than trying to keep countless passwords safe in an app, keychain or browser,  
-  *Spectre* holds <u>no passwords</u> at all.  
+  <i class="fas fa-fw fa-face-laugh-beam" title="Haha"></i>  
+  We did too.  
   
-  When it's time to log in, *Spectre* calculates your site's password for you on‑demand,  
-  storing it nowhere, ensuring it can never be unavailable, lost, or stolen.
+  *Spectre* holds no passwords at all.  
+  When it's time to log in,  
+  it just calculates your site's password for you.
+  
+  Cryptographic passwords are never unavailable,  
+  lost, ransomed, confiscated or stolen.
   
   Is that even possible?  
   It is now.

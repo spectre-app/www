@@ -15,7 +15,7 @@
     --panel-fill-rgb: 23, 61, 80;
     --body-fill: /* #0E3345 */ rgb(var(--body-fill-rgb));
     --body-contrast: #123749;
-    --body-text: #F0F8FF;
+    --body-text: #C0C8CF;
     --body-focus: #41A0A0;
 
     --panel-fill: #173D50;
@@ -39,7 +39,7 @@
 
 body {
     /*font: 100 1em "Source Sans Pro", sans-serif;*/
-    font: 300 1em/1.4 "Montserrat", sans-serif;
+    font: 400 1em/1.4 "Montserrat", sans-serif;
 
     -webkit-font-smoothing: antialiased;
     color: var(--body-text);
@@ -109,7 +109,7 @@ a {
 
 hr {
     height: 1px;
-    margin: 0.5em 0;
+    margin: 1em auto;
     opacity: 1;
     border: none;
     background: var(--highlight);
@@ -392,8 +392,7 @@ p.error {
 }
 
 .box > hr {
-    margin-right: -2em;
-    margin-left: -2em;
+    width: 38%;
 }
 
 .box > i {
