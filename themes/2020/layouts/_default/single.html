@@ -41,7 +41,7 @@
 </section>
 
 {{ with .Params.chat }}
-<iframe src="https://chat.spectre.app/embed/{{ . }}" loading="lazy"></iframe>
+<iframe src="https://chat.spectre.app/embed/{{ . }}" loading="lazy" sandbox="allow-forms"></iframe>
 {{ end }}
 
 {{ end }}
