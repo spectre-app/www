@@ -7,10 +7,11 @@ items:
   - title: Sign in to Spectre
     partial: "usage-account.html"
     body: |
-      Use any *Spectre* app, on any device, from anywhere, online *or&nbsp;offline*, and access&nbsp;your&nbsp;passwords immediately.
-      Zero setup required.
+      Open any *Spectre* app, anywhere. Zero setup required.  
+      Sign in with your name and personal secret.
 
-      <sub>Don't have your phone or laptop? Borrow a friend's in incognito mode.</sub>
+      <sub>Personal secret pro-tip: consider using an absurd word combination.  
+      `wild berry yelling`, `freshly exhasperated kitten`. You try one.</sub>
 
   - title: Name a password
     partial: "usage-site.html"
@@ -35,4 +36,5 @@ items:
     body: |
       From now on, just log&nbsp;in with your site's *Spectre*&nbsp;password.
 
-      <sub>No matter what happens, you can always get your password from any of our *Spectre* apps.</sub>
+      <sub>Share your site passwords with friends, if you like.  
+      _Under no circumstances_ tell anyone else your personal secret.</sub>

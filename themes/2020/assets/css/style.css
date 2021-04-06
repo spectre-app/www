@@ -28,7 +28,7 @@
     --control-fill: #3E8989;
     --control-contrast: #57CBCC;
 
-    --active-text: #F0FFFF;
+    --active-text: #F6FFFF;
 
     --internal-size: 4px;
     --join-size: 8px;
@@ -638,6 +638,36 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 #features i {
     font-size: 3em;
     color: var(--control-contrast);
+}
+
+/*=================================================================
+  SECTION: BILLBOARD
+ *================================================================*/
+
+#billboard {
+    position: relative;
+    height: 80vh;
+
+    background: transparent no-repeat center center;
+    background-size: contain;
+}
+
+#billboard::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: repeating-linear-gradient(
+            315deg,
+            var(--body-text),
+            var(--body-text) 8px,
+            var(--active-text) 8px,
+            var(--active-text) 256px
+    );
 }
 
 /*=================================================================
