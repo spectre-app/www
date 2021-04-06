@@ -676,6 +676,14 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     );
 }
 
+@media (max-width: 768px) {
+    #billboard {
+        height: auto;
+        padding: 100% 0 0;
+    }
+}
+
+
 /*=================================================================
   SECTION: USAGE
  *================================================================*/
