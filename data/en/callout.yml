@@ -3,12 +3,12 @@ enable: true
 name: Introduction
 
 callout: |
-  *Spectre* is a password app  
-  that has no passwords.  
+  *Spectre* is a password&nbsp;app  
+  that has no&nbsp;passwords.  
 
 body: |
   Tried keeping countless passwords safe  
-  in an app, keychain, cloud, vault, backup, or browser?  
+  in an app, keychain, cloud, vault, backup, or&nbsp;browser?  
   
   <i class="fas fa-fw fa-face-laugh-beam" title="Haha"></i>  
   We did too.  

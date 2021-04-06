@@ -15,7 +15,7 @@ items:
     body: >
       *Spectre* cryptographically insulates your&nbsp;sites from each&nbsp;other.\
 
-      When online&nbsp;services fail and leak your&nbsp;login, this ensures the&nbsp;damage does&nbsp;not affect your other&nbsp;accounts.
+      When online&nbsp;services fail and leak your&nbsp;login, this ensures the&nbsp;damage does&nbsp;not affect your&nbsp;other&nbsp;accounts.
 
   - title: Stateless Algorithm
     icon: fa-function
@@ -34,4 +34,4 @@ items:
     icon: fa-universal-access
     body: >
       *Spectre*&nbsp;doesn't&nbsp;stop at&nbsp;passwords. Using&nbsp;our algorithm, you&nbsp;can eradicate the&nbsp;privacy&nbsp;invasion that is "security&nbsp;questions"
-      or&nbsp;isolate your&nbsp;identity with&nbsp;cryptographically generated&nbsp;login&nbsp;names.
+      or&nbsp;isolate your&nbsp;identity with&nbsp;cryptographically generated login&nbsp;names.

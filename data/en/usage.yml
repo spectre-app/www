@@ -7,20 +7,20 @@ items:
   - title: Sign in to Spectre
     partial: "usage-account.html"
     body: |
-      Open any *Spectre* app, anywhere. Zero setup required.  
+      Open any *Spectre* app, anywhere. Zero&nbsp;setup&nbsp;required.  
       Sign in with your name and personal secret.
 
-      <sub>Personal secret pro-tip: consider using an absurd word combination.  
-      `wild berry yelling`, `freshly exhasperated kitten`. You try one.</sub>
+      <sub>Personal secret pro-tip: consider using an absurd word&nbsp;combination.  
+      `wild berry yelling`, `freshly exhasperated kitten`. You&nbsp;try&nbsp;one.</sub>
 
   - title: Name a password
     partial: "usage-site.html"
     body: |
-      Type a domain name.  
-      *Spectre* already has your password ready, on the spot.
+      <code>https://mobile.<u><strong>twitter.com</strong></u>/spectre_app</code>  
+      Enter your website's domain name. *Spectre*&nbsp;already&nbsp;has&nbsp;your&nbsp;password.
 
-      <sub>Your site's password derives from your&nbsp;sign-in.  
-      Think of a calculator; `you + site = password`, like `1 + 1 = 2`, every time.</sub>
+      <sub>Your site's password derives from your&nbsp;sign-in&nbsp;information.  
+      Think of a calculator; `you + site = password`, like&nbsp;`1 + 1 = 2`&#65279;,&nbsp;every&nbsp;time.</sub>
     break: true
 
   - title: Upgrade your account&nbsp;security
@@ -29,7 +29,7 @@ items:
       First time using *Spectre* for this&nbsp;site?  
       Change your old account&nbsp;password into *Spectre*'s generated password.
       
-      <sub>From now on, you don't need to save your password for this site anymore.</sub>
+      <sub>From now on, you don't need to save your password for this&nbsp;site&nbsp;anymore.</sub>
 
   - title: Log in securely
     partial: "usage-login.html"
@@ -37,4 +37,4 @@ items:
       From now on, just log&nbsp;in with your site's *Spectre*&nbsp;password.
 
       <sub>Share your site passwords with friends, if you like.  
-      _Under no circumstances_ tell anyone else your personal secret.</sub>
+      _Under no circumstances_ tell anyone else your&nbsp;personal&nbsp;secret.</sub>

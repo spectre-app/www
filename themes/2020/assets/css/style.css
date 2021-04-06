@@ -584,6 +584,12 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     left: 96%;
 }
 
+@media (max-width: 768px) {
+    #hero .demo .tryme {
+        display: none;
+    }
+}
+
 #hero .demo .box {
     border: 1px solid var(--panel-contrast);
     background: var(--panel-contrast);

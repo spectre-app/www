@@ -12,7 +12,7 @@ items:
       and it cannot be held&nbsp;hostage in a cloud&nbsp;account or behind a&nbsp;regulatory&nbsp;wall.
       <hr>
       More than ever, online&nbsp;liberty requires breaking&nbsp;dependency on unreliable&nbsp;actors
-      or&nbsp;corporate and state entities.
+      or&nbsp;corporate and state&nbsp;entities.
 
   - icon: fa-shield-cross
     title: Impervious
@@ -26,7 +26,9 @@ items:
   - icon: free-software.svg
     title: Free Forever
     body: >
-      Free&nbsp;means&nbsp;freedom. Free&nbsp;means&nbsp;equality. Free&nbsp;means&nbsp;power to the people.
-      Free&nbsp;means&nbsp;transparent and auditable. Free&nbsp;means&nbsp;available for all.
+      Free&nbsp;means&nbsp;freedom. Free&nbsp;means&nbsp;equality.
+      Free&nbsp;means&nbsp;power&nbsp;to&nbsp;the&nbsp;people.
+      Free&nbsp;means&nbsp;transparent&nbsp;and&nbsp;auditable.
+      Free&nbsp;means&nbsp;available&nbsp;for&nbsp;all.
       <hr>
       Open-source, licensed Free&nbsp;Software, *Spectre* is available&nbsp;gratis, forever.
