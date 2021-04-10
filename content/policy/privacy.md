@@ -7,18 +7,19 @@ description: >
   information.
 ---
 
-Spectre was intentionally designed make access to sensitive personal information impossible.
-
-To achieve this, we have adopted a *zero-PII* (personally identifiable information)
-policy.
+Spectre has adopted a *zero-PII* (personally identifiable information) policy
+with the deliberate intent of making your sensitive personal information
+inaccessible to us.
 
 ---
+
+## In Short
 
 What motivates our dedication to your privacy?
 
 - Keeping zero user records reduces our internal and legal risk profile.
-- Trust is earned: we aim to prove our worth through transparency.
-- We believe statelessness fundamentally underpins privacy.
+- Trust is earned: we believe in proving our worth through transparency.
+- We hold statelessness as a core principle underpinning privacy control.
 
 Consequently, Spectre apps will never:
 
@@ -61,24 +62,28 @@ as soon as the app is quit.
 
 *These identifiers are available only to you, or via Diagnostics if enabled.*
 
-Spectre is determined to limit its own ability to correlate information with
-specific individual users. We do this by cryptographically severing the link between you and your identifiers.
+Spectre is determined to limit its own ability to correlate information with specific individual users.
+We do this by cryptographically severing the link between you and your identifiers.
+As a result, it is impossible to use the identifiers for tracking or tracing.
+
+The purpose of identifiers is to help diagnose information at your request.
+Since identifiers have been severed from your user information, they can only be
+used if you self-identify yourself to our support staff with your identifiers.
 
 #### User Identifier
 
 Spectre uses an authenticated identifier passed through a one-way cryptographic
 encoding algorithm to ensure that:
 
-1. It is impossible to derive user information from the identifier.
-2. It is impossible to derive the identifier for an individual without their
-   authorization.
+1. Having the identifier, it is impossible to deduce any user information from it.
+2. Having information on a user, it is impossible to deduce the user's identifier from it.
 
 #### Device Identifiers
 
-Spectre exclusively uses random identifiers to ensure that:
+Spectre exclusively uses random device identifiers to ensure that:
 
-1. It is impossible to derive user or device information from the identifier.
-2. It is impossible to derive the identifier for an individual or device.
+1. Having the identifier, it is impossible to determine the device that created it.
+2. Knowing the device, it is impossible to determine what its identifier would be.
 
 ### <i class="fa-duotone fa-car-crash fa-fw"></i> Crash Monitoring
 
@@ -88,7 +93,7 @@ It is important to us that your experience using the app is as flawless as
 possible. To that end, Spectre was designed with the ability to take action should
 the app crash for any reason.
 
-When the app crashes, the software will make a best-effort attempt to write to
+When the app crashes, the software can make a best-effort attempt to write to
 disk some information that will assist in determining the cause of the crash.
 This information is commonly referred to as a "crash report".
 
