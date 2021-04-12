@@ -20,7 +20,7 @@ items:
   - title: Stateless Algorithm
     icon: fa-function
     body: >
-      *Spectre*&nbsp;doesn't save&nbsp;any&nbsp;passwords: it&nbsp;computes them from&nbsp;nothing, on&nbsp;demand.
+      *Spectre*&nbsp;doesn't save any&nbsp;passwords: it&nbsp;computes them from your&nbsp;name, on&nbsp;demand.
       Independence&nbsp;from external&nbsp;control is only possible by eliminating&nbsp;data&nbsp;dependency.
 
   - title: Disaster Proof
