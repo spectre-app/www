@@ -35,7 +35,7 @@ It is for these reasons that:
 * We may require your collaboration when you report an issue.
 * We are unable to provide details to authorities on your use of Spectre.
 
-> Spectre has not been compelled to turn over personal information since Nov, 2011 (inception).
+> Spectre has not been compelled to turn over personal information since Nov, 2011 (inception), last updated 2021.
 
 ## Collection
 
