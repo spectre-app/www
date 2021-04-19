@@ -54,7 +54,7 @@ $(function() {
             let target = $(this.hash)[0] || $('[name=' + this.hash.slice(1) + ']')[0];
             if (target) {
                 $('html').animate({
-                    scrollTop: $(target).offset().top - $("#navigation").height() / 2
+                    scrollTop: $(target).offset().top - $("#navigation").height()
                 }, 600);
                 location.hash = this.hash
                 return false;
