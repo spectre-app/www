@@ -5,7 +5,7 @@ title: Not a password&nbsp;trap
 
 
 items:
-  - icon: fa-hand-fist
+  - icon: fa-duotone fa-fw fa-hand-fist
     title: Independence
     body: >
       Your identity is safe only when its sole&nbsp;gatekeeper is you
@@ -14,7 +14,7 @@ items:
       More than ever, online&nbsp;liberty requires breaking&nbsp;dependency on unreliable&nbsp;actors
       or&nbsp;corporate and state&nbsp;entities.
 
-  - icon: fa-shield-cross
+  - icon: fa-duotone fa-fw fa-shield-cross
     title: Impervious
     body: >
       Sustainable security has no loopholes or caveats.
@@ -23,7 +23,7 @@ items:
       Stateless identity management vastly reduces your attack&nbsp;surface,
       making you immune to&nbsp;loss, confiscation, ransoming, decryption and&nbsp;leaks.
 
-  - icon: free-software.svg
+  - icon: fa-brands fa-osi
     title: Free Forever
     body: >
       Free&nbsp;means&nbsp;freedom and&nbsp;equality.

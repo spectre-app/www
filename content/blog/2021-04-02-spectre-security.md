@@ -3,10 +3,10 @@ draft: true
 title: Security of the Spectre Algorithm
 date: 2021-04-10T18:45:00-05:00
 author: Maarten Billemont
-image: images/blog/2021-02-04-cover.jpg
+image: images/algorithm.svg
 description: >
-  Evaluating the Spectre algorithm from a security perspective to determine its trust boundaries.
-chat: 43
+  Diving into the Spectre Algorithm details to evaluate its security characteristics.
+chat: 46
 ---
 
 
