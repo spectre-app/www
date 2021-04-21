@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#3E8989">
     <meta name="color-scheme" content="dark">
+    {{ hugo.Generator }}
     {{ with site.Params.author }}
     {{ with .name }}<meta name="author" content="{{ . }}">{{ end }}
     {{ with .link }}<link rel="author" href="{{ . }}">{{ end }}
     {{ end }}
     <link rel="icon" href="{{ site.Params.icon | absURL }}">
-    {{ hugo.Generator }}
+    {{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }}" />
+    {{ end -}}
     
     <link rel="stylesheet" href="{{ `plugins/bootstrap/bootstrap.min.css` | absURL }}">
     <link rel="stylesheet" href="{{ `plugins/fontawesome/css/all.min.css` | absURL }}">
