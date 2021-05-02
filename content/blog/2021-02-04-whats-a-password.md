@@ -166,30 +166,30 @@ But, what really matters is our wishlist.
 So let's take an honest look:
 
 I don't want to have to remember a ton of things
-: Spectre asks you to remember one single personal secret. Oh, and, your name.
+: Spectre asks you to remember one single Spectre secret. Oh, and, your name.
 
 I don't want anyone else having control over my passwords
 : Your passwords exist nowhere. They are pure math. A spectre, you might say.  
-Control requires your personal secret. Tell no-one and you maintain sole control.
+Control requires your Spectre secret. Tell no-one and you maintain sole control.
 
 I don't want to be dependent on anyone for access to my own passwords
 : Spectre is Free Software, its mathematical algorithm public and its code Open Source.
 You don't need us, you don't need backups, you don't need the cloud.
-You need your personal secret and you need the algorithm.  
+You need your personal Spectre secret and you need the algorithm.  
 Trust us, or don't. Get someone you trust to verify the math and code for you.
 
 I don't want to risk getting locked out of my passwords
-: Since the bare minimum for getting any password is your personal secret and
+: Since the bare minimum for getting any password is your Spectre secret and
 the algorithm, everything else may fail, but you can still derive your passwords.
 
 I don't want passwords an authority or criminal could seize or lay siege to
 : Seizing or sieging something requires that it exists in a certain place.
 Spectre's passwords don't exist - they are mathematical derivations.
-Don't give store or up your personal secret and no-one can access what comes from it.
+Don't give store or up your personal Spectre secret and no-one can access what comes from it.
 
 I don't want anyone able to find, steal or discover my secrets
 : Since Spectre doesn't save or send your passwords anywhere, there's really nothing to steal or find.
-Don't tell anyone your personal secret, done.
+Don't tell anyone your Spectre secret, done.
 
 I don't want to have to do mental gymnastics to get to my secrets
 : The algorithm may be a math formula, but we'll take care of the solving.  
@@ -200,9 +200,9 @@ I don't want to have to do any work when creating a new account
 
 I don't want to worry about ever forgetting or losing my passwords again
 : It's math. The solution doesn't disappear just because you forgot it.  
-Even if you were to lose everything you have and hold: get a Spectre app, enter your full name and personal secret.
+Even if you were to lose everything you have and hold: get a Spectre app, enter your full name and Spectre secret.
 All your passwords are there, instantly, no backups, no Internet, just math.  
-But, uh – don't forget your personal secret. Without it, you may just be the clone.
+But, uh – don't forget your Spectre secret. Without it, you may just be the clone.
 
 I want passwords that are *scientifically* good passwords
 : Spectre's passwords are cryptographically generated from uniform one-way hashing algorithms encoded into password policies designed to find the perfect balance between maximum entropy and maximum usability.
@@ -213,7 +213,7 @@ Spectre's passwords are immune to prior knowledge bases guesses since there is n
 Spectre's passwords are high entropy, making them maximally hardened against random guesses.
 
 I want passwords that my relatives can inherit should anything happen to me
-: Pass your personal secret on in your last will and testament.
+: Pass your personal Spectre secret on in your last will and testament.
 
 I want passwords known exclusively by myself and the site I use them for
 : Exactly.

@@ -1,26 +1,26 @@
 ############################# usage ###################################
 enable: true
 name: Usage
-title: Your&nbsp;identity, no&nbsp;strings
+title: How does it work?
 
 items:
   - title: Sign in to Spectre
     partial: "usage-account.html"
     body: |
-      Open any *Spectre* app, anywhere. Zero&nbsp;setup&nbsp;required.  
-      Sign in with your name and personal secret.
+      Open the *Spectre* app, anywhere.  
+      Sign in with your full name and your personal *Spectre* secret.
 
-      <sub>Personal secret pro-tip: consider using an absurd word&nbsp;combination.  
+      <sub>Pro-tip for choosing a *Spectre* secret: absurd word&nbsp;combinations are great.  
       `wild berry yelling`, `freshly exhasperated kitten`. You&nbsp;try&nbsp;one.</sub>
 
-  - title: Name a password
+  - title: Name a website
     partial: "usage-site.html"
     body: |
-      <code>https://mobile.<u><strong>twitter.com</strong></u>/spectre_app</code>  
-      Enter your website's domain name. *Spectre*&nbsp;already&nbsp;has&nbsp;your&nbsp;password.
+      Use only the site's domain name, drop the rest:  
+      <code><s>https://mobile.</s><u><strong>twitter.com</strong></u><s>/spectre_app</s></code>  
 
-      <sub>Your site's password derives from your&nbsp;sign-in&nbsp;information.  
-      Think of a calculator; `you + site = password`, like&nbsp;`1 + 1 = 2`&#65279;,&nbsp;every&nbsp;time.</sub>
+      <sub>Your site password comes directly from your&nbsp;sign-in&nbsp;information in step [`1`].  
+      Think of a calculator; `you + site = password`, like&nbsp;`2 + 3 = 5`&#65279;,&nbsp;every&nbsp;time.</sub>
     break: true
 
   - title: Upgrade your account&nbsp;security

@@ -1,34 +1,36 @@
 ### ABOUT
 enable: true
 name: Key Principles
-title: Not a password&nbsp;trap
+title: It's all about <u>you</u>
 
 
 items:
   - icon: fa-duotone fa-fw fa-hand-fist
     title: Independence
-    body: >
+    body: |
       Your identity is safe only when its sole&nbsp;gatekeeper is you
-      and it cannot be held&nbsp;hostage in a cloud&nbsp;account or behind a&nbsp;regulatory&nbsp;wall.
+      and it cannot be held&nbsp;hostage in a cloud&nbsp;account or behind&nbsp;a&nbsp;regulatory&nbsp;wall.
       <hr>
       More than ever, online&nbsp;liberty requires breaking&nbsp;dependency on unreliable&nbsp;actors
       or&nbsp;corporate and state&nbsp;entities.
 
   - icon: fa-duotone fa-fw fa-shield-cross
     title: Impervious
-    body: >
+    body: |
       Sustainable security has no loopholes or caveats.
-      It&nbsp;doesn't come with terms&nbsp;on&nbsp;use, require&nbsp;backups, or expect blind&nbsp;trust.
+      It&nbsp;doesn't come with terms&nbsp;on&nbsp;use, require&nbsp;backups, or expect blind&nbsp;trust.  
+      It is algorithmically, mathematically, given.
       <hr>
-      Stateless identity management vastly reduces your attack&nbsp;surface,
-      making you immune to&nbsp;loss, confiscation, ransoming, decryption and&nbsp;leaks.
+      Stateless identity management reduces your attack&nbsp;surface,
+      making you immune to&nbsp;loss, confiscation, ransoming and&nbsp;leaks.
 
   - icon: fa-brands fa-osi
     title: Free Forever
-    body: >
+    body: |
       Free&nbsp;means&nbsp;freedom and&nbsp;equality.
       Free&nbsp;means&nbsp;power to&nbsp;the&nbsp;people.
       Free&nbsp;means&nbsp;transparent and&nbsp;auditable.
       Free&nbsp;means&nbsp;available for&nbsp;all.
       <hr>
-      Open-source, licensed Free&nbsp;Software, *Spectre* is available&nbsp;gratis, forever.
+      Open-source, licensed Free&nbsp;Software, <em>Spectre</em> is available&nbsp;gratis, forever &mdash;  
+      its&nbsp;code&nbsp;fully&nbsp;open and auditable.

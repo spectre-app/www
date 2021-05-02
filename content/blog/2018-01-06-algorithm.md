@@ -35,7 +35,7 @@ Your identity is defined by your user key. This key unlocks all of your doors. Y
 result of two components:
 
 1. Your full name: `user-name` (identification)
-2. Your personal secret: `user-secret` (authentication)
+2. Your Spectre secret: `user-secret` (authentication)
 
 Your secret is a personal mnemonic and your name scopes that secret to your identity. Together, they create a
 cryptographic identifier that is unique to your person.

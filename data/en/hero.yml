@@ -70,7 +70,7 @@ demo:
     placeholder: eg. Robert Lee Mitchell
 
   userSecret:
-    title: Your Personal Secret
+    title: Your Spectre Secret
     icon: fa-user-lock
     placeholder: eg. banana colored duckling
 

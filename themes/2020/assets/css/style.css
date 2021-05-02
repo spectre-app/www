@@ -69,6 +69,7 @@ h1:target::before, h2:target::before, h3:target::before, h4:target::before, h5:t
 }
 
 h1 {
+    margin-bottom: 1em;
     font-size: 1.2em;
     font-variant: all-small-caps;
     text-align: center;
@@ -414,6 +415,10 @@ p.error {
     background: var(--highlight);
 }
 
+.box input.lit {
+    background-color: var(--control-fill);
+}
+
 .caption {
     font-size: smaller;
     color: var(--body-focus);
@@ -433,6 +438,9 @@ p.error {
 .fa-fw::after {
     content: " ";
     white-space: pre;
+}
+.fa-xs {
+    vertical-align: baseline;
 }
 
 /*=================================================================

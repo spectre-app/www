@@ -4,11 +4,19 @@
     <div class="container">
         <h1>{{ .name | markdownify }}</h1>
 
+        {{ with .intro }}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">{{ . | markdownify }}</div>
+        </div>
+        {{ end }}
+
         <h2>{{ .callout | markdownify }}</h2>
 
+        {{ with .closing }}
         <div class="row justify-content-center">
-            <div class="col-lg-8">{{ .body | markdownify }}</div>
+            <div class="col-lg-8">{{ . | markdownify }}</div>
         </div>
+        {{ end }}
     </div>
 </section>
 {{ end }}

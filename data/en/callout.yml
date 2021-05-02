@@ -2,23 +2,28 @@
 enable: true
 name: Introduction
 
+intro: |
+  At *Spectre*,  
+  we believe saving passwords in an app,    
+  or uploading them to the cloud,  
+  is a recipe for disaster.
+  
+  Why?  
+  Your privacy is your life.  
+  To them, it's a risk assessment.
+
 callout: |
   *Spectre* is a password&nbsp;app  
   that has no&nbsp;passwords.  
 
-body: |
-  Tried keeping countless passwords safe  
-  in an app, keychain, cloud, vault, backup, or&nbsp;browser?  
-  
-  <i class="fas fa-fw fa-face-laugh-beam" title="Haha"></i>  
-  We did too.  
-  
-  *Spectre* holds no passwords at all.  
-  When it's time to log in,  
-  it just calculates your site's password for you.
+closing: |
+  *Spectre* is a password calculator:  
+  <code title="Sarah's full name">Sarah Sue</code> <i class="fa-solid fa-xs fa-xmark" title="combined with"></i>
+  <code title="Sarah's Spectre secret">piano strawberry blonde</code> <i class="fa-solid fa-xs fa-xmark" title="combined with"></i>
+  <code title="Sarah wants to log into Twitter">twitter.com</code> <i class="fa-solid fa-xs fa-equals" title="gives"></i>
+  <u title="Sarah's Twitter password!">`Reka3$PofyPemi`</u>
   
   Cryptographic passwords are never unavailable,  
   lost, ransomed, confiscated or stolen.
-  
-  Is that even possible?  
-  It is now.
+
+  We delete our passwords.
