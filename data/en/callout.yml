@@ -14,14 +14,15 @@ intro: |
 
 callout: |
   *Spectre* is a password&nbsp;app  
-  that has no&nbsp;passwords.  
+  that holds no&nbsp;passwords.  
 
 closing: |
   *Spectre* is a password calculator:  
   <code title="Sarah's full name">Sarah Sue</code> <i class="fa-solid fa-xs fa-xmark" title="combined with"></i>
   <code title="Sarah's Spectre secret">piano strawberry blonde</code> <i class="fa-solid fa-xs fa-xmark" title="combined with"></i>
   <code title="Sarah wants to log into Twitter">twitter.com</code> <i class="fa-solid fa-xs fa-equals" title="gives"></i>
-  <u title="Sarah's Twitter password!">`Reka3$PofyPemi`</u>
+  <u title="Sarah's Twitter password!">`Reka3$PofyPemi`</u>  
+  You remember one secret, let math do the rest.
   
   Cryptographic passwords are never unavailable,  
   lost, ransomed, confiscated or stolen.

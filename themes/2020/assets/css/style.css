@@ -85,6 +85,12 @@ h2 {
 
 h3 {
     font-size: 1.5em;
+    text-align: center;
+}
+
+h2 + h3 {
+    margin-top: -1.5em;
+    margin-bottom: 1.5em;
 }
 
 h4 {
@@ -233,6 +239,13 @@ blockquote *:last-child {
 
 blockquote *:first-child {
     margin-top: 0;
+}
+
+h1 blockquote, h2 blockquote, h3 blockquote {
+    padding: 0.2em 1em;
+    border-left-width: 0.2ex;
+    border-color: initial;
+    display: inline-block;
 }
 
 strong, b, em, i {
@@ -625,6 +638,23 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
   SECTION: CALLOUT
  *================================================================*/
 
+#callout::before {
+    content: " ";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    z-index: -1;
+    margin-top: -180px;
+    margin-left: -80px;
+    background: url("/images/iphone-flip.png") no-repeat;
+}
+
+@media (max-width: 992px) {
+    #callout::before {
+        display: none;
+    }
+}
+
 #callout * {
     text-align: center;
 }
@@ -645,8 +675,8 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
   SECTION: FEATURES
  *================================================================*/
 
-#features h1, #features h2 {
-    text-align: initial;
+#features h1, #features h2, #features h3 {
+    text-align: inherit;
 }
 
 #features i {
@@ -702,6 +732,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     color: var(--active-text);
 }
 
+#usage h3 {
+    text-align: inherit;
+}
+
 #usage .box {
     width: 320px;
     margin: 4em auto;
@@ -723,6 +757,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
   SECTION: BETA
  *================================================================*/
 
+#beta h3 {
+    text-align: inherit;
+}
+
 #beta {
     background: url("/images/iphone.png") no-repeat 105% 115%;
 }
@@ -731,8 +769,8 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
  SECTION: BLOG
  *================================================================*/
 
-#blog h1, #blog h2 {
-    text-align: initial;
+#blog h1, #blog h2, #blog h3 {
+    text-align: inherit;
 }
 
 article {

@@ -10,9 +10,13 @@
         </div>
         {{ end }}
 
-        <h2>{{ .callout | markdownify }}</h2>
+        {{ with .callout }}
+        <h2>{{ . | markdownify }}</h2>
+        {{ end }}
 
         {{ with .closing }}
+        <hr/>
+        
         <div class="row justify-content-center">
             <div class="col-lg-8">{{ . | markdownify }}</div>
         </div>
