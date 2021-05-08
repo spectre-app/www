@@ -485,7 +485,7 @@ p.error {
     transition: all .38s ease-in 0s;
 }
 
-#navigation .nav-item.active {
+#navigation .nav-item:hover, #navigation .nav-item.active {
     border-bottom-color: var(--control-contrast);
 }
 
@@ -645,8 +645,13 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     height: 600px;
     z-index: -1;
     margin-top: -180px;
-    margin-left: -80px;
-    background: url("/images/iphone-flip.png") no-repeat;
+    margin-left: -100px;
+    background: url("/images/product.png") no-repeat;
+}
+
+#callout hr {
+    z-index: -2;
+    position: relative;
 }
 
 @media (max-width: 992px) {
