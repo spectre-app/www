@@ -646,7 +646,7 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     z-index: -1;
     margin-top: -180px;
     margin-left: -100px;
-    background: url("/images/product.png") no-repeat;
+    background: url("/images/product.webp") no-repeat;
 }
 
 #callout hr {
