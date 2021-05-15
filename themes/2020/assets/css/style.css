@@ -297,9 +297,13 @@ section.lit {
 
 iframe {
     display: block;
+    margin: auto;
     width: 100%;
-    height: 80vh;
     border: 0 solid var(--panel-contrast);
+}
+
+#content > iframe {
+    height: 80vh;
     border-width: 1px 0;
 }
 
@@ -666,14 +670,14 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 /*=================================================================
-  SECTION: ABOUT
+  SECTION: PRINCIPLES
  *================================================================*/
 
-#about {
+#principles {
     background: var(--body-contrast);
 }
 
-#about .box {
+#principles .box {
     text-align: center;
 }
 
@@ -856,6 +860,7 @@ article h3 {
 
 #document ul:not(.list-inline) {
     list-style: square;
+    margin: 1rem 0;
 }
 
 #document ol:not(.list-inline) li::marker {

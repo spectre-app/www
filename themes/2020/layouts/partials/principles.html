@@ -1,6 +1,6 @@
-{{ with (index site.Data site.Language.Lang).about }}
+{{ with (index site.Data site.Language.Lang).principles }}
 {{ if .enable }}
-<section id="about">
+<section id="principles">
     <div class="container">
         <h1>{{ .name | markdownify }}</h1>
         <h2>{{ .title | markdownify }}</h2>
