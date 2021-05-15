@@ -767,10 +767,6 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     text-align: inherit;
 }
 
-#beta {
-    background: url("/images/iphone.png") no-repeat 105% 115%;
-}
-
 /*=================================================================
  SECTION: BLOG
  *================================================================*/
