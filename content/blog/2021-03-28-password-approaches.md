@@ -262,7 +262,7 @@ Software Algorithm
 Below, we'll explore each of these strategies in some detail to check them
 against our security parameters. The following table summarizes those findings:
 
-<div class="text-center">
+<p class="text-center">
 
 |          | Limitations | Requirements | Dependencies | Vulnerabilities |
 | -------- | -------- | -------- | -------- | -------- |
@@ -273,7 +273,7 @@ against our security parameters. The following table summarizes those findings:
 | Software Stored | [<i class="fas fa-fw fa-shield-exclamation safe"></i>](#crm-lims-4) | [<i class="fas fa-fw fa-triangle-exclamation notice"></i>](#crm-reqs-4) | [<i class="fas fa-fw fa-octagon-exclamation severe"></i>](#crm-deps-4) | [<i class="fas fa-fw fa-triangle-exclamation notice"></i>](#crm-vuls-4) |
 | Software Algorithm | [<i class="fas fa-fw fa-shield-exclamation safe"></i>](#crm-lims-5) | [<i class="fas fa-fw fa-triangle-exclamation notice"></i>](#crm-reqs-5) | [<i class="fas fa-fw fa-shield-exclamation safe"></i>](#crm-deps-5) | [<i class="fas fa-fw fa-triangle-exclamation notice"></i>](#crm-vuls-5) |
 
-</div>
+</p>
 
 From an overview of the different approaches to password security, we can draw
 some conclusions:
@@ -522,7 +522,7 @@ of how their implementation resolves against the security parameters you may
 want to consider.  
 Hover over each finding for details.
 
-<div class="text-center">
+<p class="text-center">
 
 |                  | Entropy | Requirements | Dependents | Vulnerabilities |
 | ---------------- | ------- | ------------ | ---------- | --------------- |
@@ -534,7 +534,7 @@ Hover over each finding for details.
 | LessPass         | <i title="~229&nbsp;bit&nbsp;max, ~104&nbsp;bit&nbsp;default" class="fas fa-fw fa-shield-exclamation safe"></i> | <i title="Free Software (GPLv3)" class="fas fa-fw fa-shield-exclamation safe"></i> | <i title="Algorithm&nbsp;(Open)" class="fas fa-fw fa-shield-exclamation safe"></i> | <i title="User&nbsp;Error, Reversal" class="fas fa-fw fa-octagon-exclamation severe"></i> |
 | Spectre          | <i title="~119&nbsp;bit&nbsp;max, ~55&nbsp;bit&nbsp;default" class="fas fa-fw fa-shield-exclamation safe"></i> | <i title="Free Software (GPLv3), Optional&nbsp;Subscription" class="fas fa-fw fa-shield-exclamation safe"></i> | <i title="Algorithm&nbsp;(Open)" class="fas fa-fw fa-shield-exclamation safe"></i> | <i title="User&nbsp;Error" class="fas fa-fw fa-shield-exclamation safe"></i> |
 
-</div>
+</p>
 
 You may not find it wholly surprising that an article on spectre.app finds the
 Spectre solution to be least problematic - that said, we hope we've given you

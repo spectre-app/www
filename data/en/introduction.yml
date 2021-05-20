@@ -1,10 +1,9 @@
-### CALLOUT
+### INTRODUCTION
 enable: true
 name: Introduction
 
 intro: |
-  At *Spectre*,  
-  we believe saving passwords in an app,    
+  We believe saving passwords in an app,    
   or uploading them to the cloud,  
   is a recipe for disaster.
   
@@ -14,7 +13,7 @@ intro: |
 
 callout: |
   *Spectre* is a password&nbsp;app  
-  that holds no&nbsp;passwords.  
+  that contains no&nbsp;passwords.  
 
 closing: |
   *Spectre* is a password cipher:  
@@ -24,7 +23,7 @@ closing: |
   <u title="Sarah's Twitter password!">`Reka3$PofyPemi`</u>  
   Remember one secret, math does the rest.
   
-  Cryptographic passwords are never lost,  
-  ransomed, confiscated or stolen.
+  Cryptographic passwords cannot be lost,  
+  stolen, seized, ransomed or left on the bus.
 
   We delete our passwords.

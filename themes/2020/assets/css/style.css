@@ -233,11 +233,11 @@ blockquote {
     background: var(--panel-fill);
 }
 
-blockquote *:last-child {
+*:last-child {
     margin-bottom: 0;
 }
 
-blockquote *:first-child {
+*:first-child {
     margin-top: 0;
 }
 
@@ -639,10 +639,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 /*=================================================================
-  SECTION: CALLOUT
+  SECTION: INTRODUCTION
  *================================================================*/
 
-#callout::before {
+#introduction::before {
     content: " ";
     position: absolute;
     width: 600px;
@@ -654,18 +654,23 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     background-size: contain;
 }
 
-#callout hr {
+#introduction h2 {
+    margin: 2rem 0;
+}
+
+#introduction hr {
     z-index: -2;
     position: relative;
+    margin: 3rem;
 }
 
 @media (max-width: 992px) {
-    #callout::before {
+    #introduction::before {
         display: none;
     }
 }
 
-#callout * {
+#introduction * {
     text-align: center;
 }
 

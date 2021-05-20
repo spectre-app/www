@@ -1,6 +1,6 @@
-{{ with (index site.Data site.Language.Lang).callout }}
+{{ with (index site.Data site.Language.Lang).introduction }}
 {{ if .enable }}
-<section id="callout">
+<section id="introduction">
     <div class="container">
         <h1>{{ .name | markdownify }}</h1>
 

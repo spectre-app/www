@@ -9,9 +9,8 @@ enable: true
 #    label: Notify Me
 #    link: ""
 
-title: >
-  Reclaim control,\
-
+title: |
+  Reclaim ownership,  
   delete your passwords
 content: >
   Goodbye password&nbsp;managers, hello digital&nbsp;independence.
