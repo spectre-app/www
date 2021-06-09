@@ -2,7 +2,7 @@
 {{ if .enable }}
 <section id="usage">
     <div class="container">
-        <h1>{{ .name | markdownify }}</h1>
+        <h1><a href="#usage">{{ .name | markdownify }}</a></h1>
         <h2>{{ .title | markdownify }}</h2>
 
         {{ range $index, $item := .items }}

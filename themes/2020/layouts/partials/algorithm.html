@@ -1,0 +1,8 @@
+{{ with (index site.Data site.Language.Lang).algorithm }}
+{{ if .enable }}
+<section id="algorithm">
+    <h1><a href="#algorithm">{{ .name | markdownify }}</a></h1>
+    <img loading="lazy" src="{{ .image | absURL }}">
+</section>
+{{ end }}
+{{ end }}

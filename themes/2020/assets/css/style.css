@@ -77,6 +77,15 @@ h1 {
     color: var(--body-focus);
 }
 
+h1 a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+h1:focus a, h1:hover a {
+    color: var(--active-text);
+}
+
 h2 {
     margin-bottom: 1em;
     font-size: 2.4em;
@@ -242,10 +251,10 @@ blockquote {
 }
 
 h1 blockquote, h2 blockquote, h3 blockquote {
-    padding: 0.2em 1em;
-    border-left-width: 0.2ex;
-    border-color: initial;
     display: inline-block;
+    padding: 0.2em 1em;
+    border-color: initial;
+    border-left-width: 0.2ex;
 }
 
 strong, b, em, i {
@@ -297,8 +306,8 @@ section.lit {
 
 iframe {
     display: block;
-    margin: auto;
     width: 100%;
+    margin: auto;
     border: 0 solid var(--panel-contrast);
 }
 
@@ -446,8 +455,7 @@ p.error {
     color: inherit;
 }
 
-.caption a:focus,
-.caption a:hover {
+.caption a:focus, .caption a:hover {
     color: var(--active-text);
 }
 
@@ -456,6 +464,7 @@ p.error {
     content: " ";
     white-space: pre;
 }
+
 .fa-xs {
     vertical-align: baseline;
 }
@@ -645,9 +654,9 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 #introduction::before {
     content: " ";
     position: absolute;
+    z-index: -1;
     width: 600px;
     height: 600px;
-    z-index: -1;
     margin-top: -180px;
     margin-left: -100px;
     background: url("/images/product.webp") no-repeat;
@@ -659,8 +668,8 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 #introduction hr {
-    z-index: -2;
     position: relative;
+    z-index: -2;
     margin: 3rem;
 }
 
@@ -700,26 +709,25 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 /*=================================================================
-  SECTION: BILLBOARD
+  SECTION: ALGORITHM
  *================================================================*/
 
-#billboard {
+#algorithm {
     position: relative;
-    height: 80vh;
-
-    background: transparent no-repeat center center;
-    background-size: contain;
+    height: 90vh;
+    padding-bottom: 0;
 }
 
-#billboard::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+@media (max-width: 768px) {
+    #algorithm {
+        height: auto;
+        padding: 100% 0 0;
+    }
+}
 
+#algorithm img {
+    width: 100%;
+    height: 100%;
     background: repeating-linear-gradient(
             315deg,
             var(--body-text),
@@ -727,13 +735,8 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
             var(--active-text) 8px,
             var(--active-text) 256px
     );
-}
 
-@media (max-width: 768px) {
-    #billboard {
-        height: auto;
-        padding: 100% 0 0;
-    }
+    object-fit: contain;
 }
 
 
@@ -864,8 +867,8 @@ article h3 {
 }
 
 #document ul:not(.list-inline) {
-    list-style: square;
     margin: 1rem 0;
+    list-style: square;
 }
 
 #document ol:not(.list-inline) li::marker {
