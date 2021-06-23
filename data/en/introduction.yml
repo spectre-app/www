@@ -4,12 +4,16 @@ name: Introduction
 
 intro: |
   We believe saving passwords in an app,    
-  or uploading them to the cloud,  
-  is a recipe for disaster.
+  or uploading them all to the cloud,  
+  is a recipe for personal disaster.
   
   Why?  
   Your privacy is your life.  
-  To them, it's a risk assessment.
+  For them, it's a risk assessment.
+
+  The only password that can't be lost,
+  stolen, seized, ransomed or left on the bus,  
+  is a password that doesn't exit.
 
 callout: |
   *Spectre* is a password&nbsp;app  
@@ -17,13 +21,14 @@ callout: |
 
 closing: |
   *Spectre* is a password cipher:  
+  Instead of saving and sending passwords across the internet,
+  Spectre calculates the password you need, only when you need it,
+  then throws it away again.
+
   <code title="Sarah's full name">Sarah Sue</code> <i class="fa-solid fa-xs fa-xmark" title="combined with"></i>
   <code title="Sarah's Spectre secret">piano strawberry blonde</code> <i class="fa-solid fa-xs fa-xmark" title="combined with"></i>
   <code title="Sarah wants to log into Twitter">twitter.com</code> <i class="fa-solid fa-xs fa-equals" title="gives"></i>
   <u title="Sarah's Twitter password!">`Reka3$PofyPemi`</u>  
   Remember one secret, math does the rest.
   
-  Cryptographic passwords cannot be lost,  
-  stolen, seized, ransomed or left on the bus.
-
   We delete our passwords.
