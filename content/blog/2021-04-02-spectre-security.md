@@ -6,7 +6,7 @@ author: Maarten Billemont
 image: images/algorithm.svg
 description: >
   Diving into the Spectre Algorithm details to evaluate its security characteristics.
-chat: 46
+chat: 56
 ---
 
 
