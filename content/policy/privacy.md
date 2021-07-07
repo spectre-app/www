@@ -69,24 +69,25 @@ The purpose of identifiers is to help diagnose information at your request.
 They can only be correlated if you choose to self-identify yourself to our
 support staff using your own identifiers.
 
-Spectre is determined to limit its own ability to correlate information with individuals.
-We do this by cryptographically severing the link between you and your identifiers.
-As a result, it is impossible to use the identifiers for tracking or tracing.
+Spectre is determined to limit its own ability to correlate information with individuals,
+intent on making it impossible to use its identifiers for tracking or tracing.
+We do this by severing the link between you and your identifiers. Consequently:
+
+1. Having an identifier, it is impossible to determine the user or device that it represents.
+2. Knowing the user or device, it is impossible to determine what their identifier would be.
 
 #### User Identifier
 
-Spectre uses an authenticated identifier passed through a one-way cryptographic
-encoding algorithm to ensure that:
-
-1. Having the identifier, it is impossible to deduce any user information from it.
-2. Having information on a user, it is impossible to deduce the user's identifier from it.
+Spectre's user identifiers are fully authenticated tokens passed through a
+one-way cryptographic encoding algorithm.
+This means a user's identifier can only be computed by that user and is
+effectively protected by the user's Spectre secret.
 
 #### Device Identifiers
 
-Spectre exclusively uses random device identifiers to ensure that:
-
-1. Having the identifier, it is impossible to determine the device that created it.
-2. Knowing the device, it is impossible to determine what its identifier would be.
+Spectre exclusively uses fully randomized device identifiers.
+As a result, there exists no discernible correlation between the identifier
+and the device that created it.
 
 ### <i class="fa-duotone fa-car-crash fa-fw"></i> Crash Monitoring
 
@@ -202,11 +203,32 @@ Any users that wish to have their personal account deleted may contact the enfor
 
 #### Personal Information
 
-To facilitate participation in Spectre's update e-mails, the following details
+To facilitate participation in Spectre's community forums, the following details
 are submitted to and retained by Spectre:
 
 * E-mail address
 * User-submitted content (optional)
+
+### <i class="fa-duotone fa-screwdriver-wrench fa-fw"></i> Support
+
+> *Our support staff is always ready to assist and advise on your request.*
+
+Spectre maintains several support channels.
+Your participation in these support channels is entirely opt-in.
+Spectre retains user information submitted through support requests for
+internal use, reference and training.
+
+Users who wish to have any of their information deleted may submit such a
+request through any of our official support channels and we will follow up promptly,
+deleting the information after sending out our final confirmation.
+
+#### Personal Information
+
+Communication with Spectre's support channels is a two-way street and therefore
+requires that Spectre retains the following details:
+
+* E-mail address
+* User-submitted content
 
 ### <i class="fa-duotone fa-circle-dollar fa-fw"></i> Payment
 
