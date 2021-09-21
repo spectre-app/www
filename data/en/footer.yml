@@ -32,6 +32,8 @@ items:
         link: "#"
       - title: "Press Kit"
         link: "#"
+      - title: "Usage Agreement"
+        link: "/policy/eula/"
       - title: "Privacy Policy"
         link: "/policy/privacy/"
       - title: "Community Guidelines"

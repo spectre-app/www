@@ -19,10 +19,8 @@ choose to use Spectre. We do not provide any guarantees with how Spectre
 operates or what the expectations are for using it.
 
 > You assume sole responsibility over any losses you suffer in your operations,
-> regardless of whether those operations involve the use of our product.
-
-This is the same disclaimer you'll find on any software product, with the
-exception that ours is written in such a way as to enable you to understand it.
+> regardless of whether those involve the use, misuse or failure of our products.  
+> Spectre disclaims any liability or warranty, whether expressly or implied by law.
 
 If you do not agree with our limited liability, absent guarantees and disclaimer
 of responsibility, we recommend you reach out to seek a custom SLA or find

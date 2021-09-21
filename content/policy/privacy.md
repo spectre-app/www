@@ -40,6 +40,10 @@ What motivates our dedication to your privacy?
 > Spectre has not been compelled to turn over any personal information since Nov, 2011 (inception).  
 > _Last update: Jul, 2021._
 
+## Data Protection Officer
+
+For any questions or requests about Spectre's handling of your personal data, please contact our [Data Protection Officer](mailto:dpo@spectre.app).
+
 ## Collection
 
 With the important bit out of the way, the Spectre app does collect or transmit
