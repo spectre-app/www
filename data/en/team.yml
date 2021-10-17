@@ -4,7 +4,7 @@ title: Our Team
 
 item:
   - name: Maarten Billemont
-    image: images/team/maarten.jpg
+    image: "/images/team/maarten.jpg"
     designation: Founder
     body: >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.

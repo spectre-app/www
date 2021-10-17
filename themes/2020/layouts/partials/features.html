@@ -13,7 +13,7 @@
                 <div class="row">
                 {{ range .items }}
                 <div class="col-sm-6">
-                    <i class="fa-duotone fa-fw fa-pull-left {{ .icon }}"></i>
+                    <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} fa-pull-left {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                     <h3 class="media-heading">{{ .title | markdownify }}</h3>
                     <p>{{ .body | markdownify }}</p>
                 </div>

@@ -13,7 +13,7 @@
     <div class="banner">
         <div class="container">
             <h4>{{ .title | markdownify }}</h4>
-            <p class="flex-grow-1 text-center">{{ .body | markdownify }}</p>
+            <p>{{ .body | markdownify }}</p>
             {{ with .button }}
             {{ if .enable }}
             <a href="{{ .link }}" class="btn btn-transparent">{{ .label }}</a>
@@ -63,18 +63,20 @@
             {{ with .demo }}
             <div class="col-lg-6 text-center demo">
                 <form class="box cta">
-                    <img class="tryme" loading="lazy" src="images/hero-tryme.svg" />
+                    <img class="tryme" loading="lazy" src="/images/hero-tryme.svg" />
                     <h5>{{ .note | markdownify }}</h5>
 
                     {{ with .userName }}
-                    <label id="userName"><i class="fa-duotone fa-fw {{ .icon }}"></i> {{ .title | markdownify }}
+                    <label id="userName">
+                        <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
+                        {{ .title | markdownify }}
                         <input type="text" placeholder="{{ .placeholder }}" autocomplete="name"/>
                     </label>
                     {{ end }}
                     <i class="fa-solid fa-xs fa-fw fa-xmark"></i>
                     {{ with .userSecret }}
                     <label id="userSecret">
-                        <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                        <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                         {{ .title | markdownify }}
                         <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
                         <input type="password" placeholder="{{ .placeholder }}" autocomplete="current-password"/>
@@ -86,7 +88,7 @@
 
                     {{ with .siteName }}
                     <label id="siteName">
-                        <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                        <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                         {{ .title | markdownify }}
                         <input type="text" placeholder="{{ .placeholder }}"/>
                     </label>
@@ -94,7 +96,7 @@
                     <i class="fa-solid fa-xs fa-fw fa-equals"></i>
                     {{ with .sitePassword }}
                     <label id="sitePassword">
-                        <i class="fa-duotone fa-fw {{ .icon }}"></i>
+                        <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                         {{ .title | markdownify }}
                         <i class="fa-duotone fa-fw fa-galaxy fa-spin"></i>
                         <button type="button" class="fa-solid fa-copy" title="Copy Password">

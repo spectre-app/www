@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
     font: 1em "Poppins", sans-serif;
 
     color: var(--active-text);
+    text-shadow: 2px 2px var(--body-fill);
 }
 
 h1:target, h2:target, h3:target, h4:target, h5:target, h6:target {
@@ -64,15 +65,14 @@ h1:target::before, h2:target::before, h3:target::before, h4:target::before, h5:t
     align-items: center;
     height: 100%;
     margin-left: -1.5em;
-    font-family: "Font Awesome 6 Pro";
+    font-family: "Font Awesome 6 Pro", monospace;
     color: var(--active-text);
 }
 
 h1 {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     font-size: 1.2em;
     font-variant: all-small-caps;
-    text-align: center;
 
     color: var(--body-focus);
 }
@@ -129,6 +129,8 @@ hr {
     opacity: 1;
     border: none;
     background: var(--highlight);
+    flex-basis: 100%;
+    clear: both;
 }
 
 label {
@@ -234,6 +236,14 @@ input, textarea, select, button, a, label, :target, :focus, :hover, :active {
     transition: all .38s ease-in 0s;
 }
 
+input[type=checkbox] {
+    width: initial;
+}
+
+li input[type=checkbox] {
+    margin-left: -1em;
+}
+
 blockquote {
     padding: 1em;
     color: var(--active-text);
@@ -285,6 +295,7 @@ table tbody tr:nth-child(2n+1) {
 }
 
 section {
+    position: relative;
     padding: 6em 0;
 }
 
@@ -302,6 +313,29 @@ section.lit {
     .box {
         padding: 1em;
     }
+}
+
+aside {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+aside .btn {
+    text-align: initial;
+}
+
+aside .btn i {
+    width: 3em;
+    height: 3em;
+    vertical-align: middle;
 }
 
 iframe {
@@ -392,13 +426,37 @@ p.error {
     background: #6A1A21;
 }
 
+.flex {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 1em auto;
+}
+
 .box {
     position: relative;
-    margin: auto;
+    margin: 0 auto;
     padding: 2em;
     border-radius: var(--join-size);
-    background: var(--panel-fill);
     box-shadow: 0 0 var(--join-size) var(--shadow);
+    background: rgba(var(--panel-fill-rgb), 0.9);
+    transition: all .38s ease-in 0s;
+    overflow: hidden;
+}
+
+.box::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: var(--bg) var(--panel-fill) no-repeat center/cover;
+}
+
+label.box:hover, label.box[checked] {
+    background: rgba(var(--panel-fill-rgb), 0.6);
 }
 
 @media (max-width: 576px) {
@@ -434,6 +492,10 @@ p.error {
     line-height: 1.2;
 }
 
+.box > h3, .box > h4 {
+    text-align: center;
+}
+
 .box input {
     padding: 0.5em 1.5em;
     border: none;
@@ -443,6 +505,12 @@ p.error {
 
 .box input.lit {
     background-color: var(--control-fill);
+}
+
+.box > input[type=checkbox] {
+    display: block;
+    margin: 1em auto;
+    transform: scale(1.8);
 }
 
 .caption {
@@ -554,6 +622,8 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 #hero .banner .container {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 1em;
 }
 
 #hero .banner .container > * {
@@ -679,7 +749,7 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     }
 }
 
-#introduction * {
+#introduction div {
     text-align: center;
 }
 
@@ -689,6 +759,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 
 #principles {
     background: var(--body-contrast);
+}
+
+#principles h1 {
+    text-align: center;
 }
 
 #principles .box {
@@ -725,6 +799,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     }
 }
 
+#algorithm h1 {
+    text-align: center;
+}
+
 #algorithm img {
     width: 100%;
     height: 100%;
@@ -748,6 +826,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     font: 600 3em/1.2 "Poppins", sans-serif;
     opacity: 8%;
     color: var(--active-text);
+}
+
+#usage h1 {
+    text-align: center;
 }
 
 #usage h3 {
@@ -810,6 +892,7 @@ article h3 {
 
 #document header {
     margin: 1em auto 4em;
+    padding: 1em;
     text-align: center;
     border-radius: var(--internal-size);
     background: var(--body-contrast);
@@ -827,20 +910,29 @@ article h3 {
     box-shadow: 0 0 8px var(--shadow);
 }
 
+#document img[data-background=false] {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#document header h1 {
+    margin: 0;
+}
 #document header img {
     float: none;
     max-width: 100%;
 }
 
-#document h1 {
+#document h1:not(.box *) {
     font-size: 3em;
 }
 
-#document h2 {
+#document h2:not(.box *) {
     margin: 1em 0 0.5em;
 }
 
-#document h2::after {
+#document h2:not(.box *)::after {
     content: "";
     display: block;
     width: 4ex;
@@ -849,13 +941,13 @@ article h3 {
     background: var(--control-contrast);
 }
 
-#document h3 {
+#document h3:not(.box *) {
     margin: 1em 0 0.5em;
     padding: 0.2em 2ex;
     border-bottom: 1px solid var(--highlight);
 }
 
-#document a {
+#document a:not(.btn) {
     text-decoration: underline;
 }
 
@@ -883,6 +975,28 @@ article h3 {
     padding: 0 1ex;
     color: var(--body-text);
     border-left: var(--internal-size) solid var(--panel-contrast);
+}
+
+/*=================================================================
+  SPECTRE COLLECTOR
+ *================================================================*/
+
+#spectre-collector {
+    position: relative;
+}
+#spectre-sink {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 5em;
+}
+#spectre-sink img {
+    max-width: 100%;
+    margin: 1em;
+    float: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 /*=================================================================

@@ -3,7 +3,7 @@ draft: true
 title: Security of the Spectre Algorithm
 date: 2021-04-10T18:45:00-05:00
 author: Maarten Billemont
-image: images/algorithm.svg
+image: "/images/algorithm.svg"
 description: >
   Diving into the Spectre Algorithm details to evaluate its security characteristics.
 chat: 56

@@ -1,13 +1,13 @@
 ### HERO
 enable: true
 
-#banner:
-#  title: "Release Notification"
-#  body: "Excited for a free and privacy-first future that puts you in control? Sign up to find out first when we launch!"
-#  button:
-#    enable: true
-#    label: Notify Me
-#    link: ""
+banner:
+  title: "Release Notification"
+  body: "Spectre is coming to iPhone and iPad on October 31st! [Pre-order](https://apps.apple.com/us/app/password-spectre/id1526402806#?platform=iphone) now for *free* and Spectre will install automatically on launch day."
+  button:
+    enable: false
+    label: Notify Me
+    link: https://c98682eb.sibforms.com/serve/MUIEAALK5a-qHeuTFFRibFOHGFbHswQwku9o1vZPLa7V9KgVtKTSrHf-uo86mZCfwVfEX4cfwkjcsRsFIfB6YDaez_aygD-hOTtUSeuXXmxdDz9XR4yiRf1qPbVF2WiAZ-BM30nn5gtd4h5RQLjmrlxjhU_0ZfDR53T5lVpIXU-rlAy1nwoc0ERv4t7fp_S4bg8suuuNUdchV_os
 
 title: |
   Reclaim ownership,  
@@ -15,12 +15,12 @@ title: |
 content: >
   Goodbye password&nbsp;managers, hello&nbsp;digital&nbsp;independence.
 cta:
-  title: Join Beta
-  icon: fa-flask
-  link: /#beta
+  title: Pre-order Now
+  icon: fa-download
+  link: https://apps.apple.com/us/app/password-spectre/id1526402806#?platform=iphone
   alternative:
-    title: Want to find out when free privacy-first security goes live?
-    label: Notify me!
+    title: Want to stay up-to-date on privacy-first password security?
+    label: Sign me up!
     link: https://c98682eb.sibforms.com/serve/MUIEAALK5a-qHeuTFFRibFOHGFbHswQwku9o1vZPLa7V9KgVtKTSrHf-uo86mZCfwVfEX4cfwkjcsRsFIfB6YDaez_aygD-hOTtUSeuXXmxdDz9XR4yiRf1qPbVF2WiAZ-BM30nn5gtd4h5RQLjmrlxjhU_0ZfDR53T5lVpIXU-rlAy1nwoc0ERv4t7fp_S4bg8suuuNUdchV_os
 
 #platforms:
@@ -80,5 +80,5 @@ demo:
 
   sitePassword:
     title: Site Password
-    icon: fa-lock
+    icon: spectre.svg
     placeholder: PozoLalv0_Yelo

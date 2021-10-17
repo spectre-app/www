@@ -4,6 +4,7 @@
 
 <section id="document">
     <div class="container">
+        {{ if or (.Title) (.Params.Author) (.Params.Image) (.Params.Description) }}
         <header>
             {{ with .Title }}
             <h1>{{ . }}</h1>{{ end }}
@@ -15,15 +16,20 @@
                 <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" . }}</li>{{ end }}
             </ul>
 
-            {{ with .Params.Image }}<img loading="lazy" src="{{ . | absURL }}">{{ end }}
+            {{ if .Params.Image }}
+            <img loading="lazy"
+                 data-background="{{ .Params.image_bg }}"
+                 {{ with .Params.image_size }}height="{{ . }}"{{ end }}
+                 src="{{ .Params.Image | absURL }}">{{ end }}
             {{ with .Params.Description }}<p class="caption">{{ . | markdownify }}</p>{{ end }}
         </header>
+        {{ end }}
 
+        {{ if .Params.toc | default true }}
         <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-        {{ .TableOfContents }}
-            </div>
+            <div class="col-lg-8 offset-lg-2">{{ .TableOfContents }}</div>
         </div>
+        {{ end }}
         
         <div class="row">
             <div class="col-lg-8 offset-lg-2">

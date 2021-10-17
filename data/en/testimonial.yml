@@ -1,10 +1,10 @@
 ### TESTIMONIAL
 enable: false
-background: images/backgrounds/bg-testimonial.jpg
+background: "/images/backgrounds/bg-testimonial.jpg"
 
 items:
   - name: Maarten Billemont
-    image: images/client/client-1.jpg
+    image: "/images/client/client-1.jpg"
     date: Dec 26, 2018
     body: >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.

@@ -10,11 +10,7 @@
             {{ range .items }}
             <div class="col-md-6 col-lg-4 my-1 my-lg-0">
                 <div class="box">
-                    {{ if in .icon "." }}
-                    <i style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
-                    {{ else }}
-                    <i class="{{ .icon }}"></i>
-                    {{ end }}
+                    <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                     <h3>{{ .title | markdownify }}</h3>
                     <p>{{ .body | markdownify }}</p>
                 </div>

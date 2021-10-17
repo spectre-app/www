@@ -9,7 +9,7 @@ intro: |
   
   Why?  
   Your privacy is your life.  
-  For them, it's a risk assessment.
+  To them, it's a risk assessment.
 
   The only password that can't be lost,
   stolen, seized, ransomed or left on the bus,  
@@ -32,3 +32,11 @@ closing: |
   Remember one secret, math does the rest.
   
   We delete our passwords.
+
+aside:
+  - icon: spectre-light.svg
+    title: Why get a password pocket ghost?
+    link: why/spectre
+  - icon: enterprise-light.svg
+    title: Why lock down your infrastructure?
+    link: why/enterprise

@@ -20,7 +20,7 @@ items:
       - icon: "fa-comments"
         title: "Community"
         link: "https://chat.spectre.app"
-      - title: "History"
+      - title: "About"
         link: "/about"
 
   - title: "Resources"

@@ -2,7 +2,7 @@
 title: About Spectre
 date: 2021-05-08T11:58:20-05:00
 author: Maarten Billemont
-image: images/spectre.webp
+image: /images/spectre.webp
 description: >
   An overview of Spectre's history
 ---

@@ -1,0 +1,7 @@
+<label class="box" style="--bg: url('{{ .Get `background` }}')">
+    {{ with .Get "check" }}<input name="{{ . }}" type="checkbox" />{{ end }}
+    {{ with .Get "icon" }}<i class='{{ if not (in . " ") }}fa-duotone fa-fw{{ end }} {{ . }}' style='background: url("/images/{{ . }}") no-repeat center/contain'></i>{{ end }}
+    {{ with .Get "title" }}<h3>{{ . }}</h3>{{ end }}
+    {{ with .Get "subtitle" }}<h4>{{ . }}</h4>{{ end }}
+    {{ .Inner }}
+</label>

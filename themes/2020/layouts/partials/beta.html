@@ -19,7 +19,7 @@
                 <div>
                     {{ range .links }}
                     <div class="con-info clearfix">
-                        <i class="fa-solid fa-fw {{ .icon }}"></i>
+                        <i class='{{ if not (in .icon " ") }}fa-solid fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                         <label>{{ .label | markdownify }}</label>
                         <a href="{{ .link }}">{{ .title | markdownify }}</a>
                     </div>

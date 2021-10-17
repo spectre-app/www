@@ -2,7 +2,7 @@
 title: An algorithm for freedom
 date: 2018-01-06T15:44:20-05:00
 author: Maarten Billemont
-image: images/blog/2018-01-06-cover.png
+image: /images/blog/2018-01-06-cover.png
 description: >
   Exploring the Spectre algorithm, we find that at the core stands the principle of statelessness.
 chat: 40
