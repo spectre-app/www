@@ -9,8 +9,8 @@ markup:
       unsafe: true
 
 params:
-  logo: "/images/logo.png"
-  icon: "/images/icon.png"
+  logo: "/images/spectre-light.png"
+  icon: "/images/spectre.png"
   name: "Spectre"
   description: "Password manager and secure identity platform. Spectre is a free and offline strong random password generator. Privacy-first. Coming to web, iOS, Android, Windows, macOS, Linux."
   keywords: "password manager,password generator,passwords,free,secure,strong,random,online,offline,privacy,ios,iphone,android,windows,macos,linux"

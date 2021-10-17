@@ -1,10 +1,12 @@
 ---
 toc: false
+logo: "/images/enterprise-light.png"
+icon: "/images/enterprise.png"
 ---
 
 <img data-background="false" height="256" src="/images/enterprise-light.svg">
 
-# Zero Trust, Zero Risk.
+# Zero&nbsp;Trust, Zero&nbsp;Risk.
 
 In managing a corporate infrastructure, risk is everything.  
 Every question a business responds to ultimately boils down to accurately
