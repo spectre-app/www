@@ -10,6 +10,17 @@
         </div>
         {{ end }}
 
+        {{ with .aside }}
+        <aside>
+            {{ range . }}
+            <a href="{{ .link }}" class="btn btn-transparent">
+                <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
+                {{ .title }}
+            </a>
+            {{ end }}
+        </aside>
+        {{ end }}
+
         {{ with .callout }}
         <h2>{{ . | markdownify }}</h2>
         {{ end }}
@@ -22,16 +33,6 @@
         </div>
         {{ end }}
     </div>
-    {{ with .aside }}
-    <aside>
-        {{ range . }}
-        <a href="{{ .link }}" class="btn btn-transparent">
-            <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
-            {{ .title }}
-        </a>
-        {{ end }}
-    </aside>
-    {{ end }}
 </section>
 {{ end }}
 {{ end }}

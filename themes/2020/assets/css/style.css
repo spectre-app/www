@@ -107,8 +107,6 @@ h4 {
 }
 
 h5 {
-    margin: 0.5em;
-
     font: 200 80%/1.2 "Poppins", sans-serif;
 
     color: inherit;
@@ -297,6 +295,7 @@ table tbody tr:nth-child(2n+1) {
 section {
     position: relative;
     padding: 6em 0;
+    overflow: hidden;
 }
 
 section.lit {
@@ -316,11 +315,10 @@ section.lit {
 }
 
 aside {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
+    float: right;
+    position: relative;
     display: flex;
+    z-index: 1;
     flex-direction: column;
     align-content: center;
     justify-content: center;
@@ -714,9 +712,14 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 #hero .demo .box .caption {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 0.2em;
     left: 0;
-    margin: 0.2em;
+}
+
+@media (max-width: 768px) {
+    #hero .demo .box .caption {
+        bottom: -0.2em;
+    }
 }
 
 /*=================================================================
@@ -729,7 +732,7 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     z-index: -1;
     width: 600px;
     height: 600px;
-    margin-top: -180px;
+    margin-top: -190px;
     margin-left: -100px;
     background: url("/images/product.webp") no-repeat;
     background-size: contain;

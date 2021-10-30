@@ -63,7 +63,7 @@ cta:
 demo:
   notes:
     heading: "Try out the *Spectre* algorithm:"
-    footer: "This information never leaves your computer."
+    footer: "This information never leaves this page."
 
   userName:
     title: Your Full Name
