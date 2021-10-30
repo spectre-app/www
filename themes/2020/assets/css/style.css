@@ -107,7 +107,7 @@ h4 {
 }
 
 h5 {
-    margin-bottom: 1.5em;
+    margin: 0.5em;
 
     font: 200 80%/1.2 "Poppins", sans-serif;
 
@@ -677,6 +677,7 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 #hero .demo {
+    position: relative;
     margin: 3em 0;
     padding: 5% 10%;
     background: url("/images/shield.svg") no-repeat center/contain;
@@ -684,8 +685,9 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 
 #hero .demo .tryme {
     position: absolute;
-    top: -6%;
-    left: 96%;
+    top: 16%;
+    right: 8%;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -709,12 +711,12 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
     /*backdrop-filter: blur(15px);*/
 }
 
-#hero .demo .box h5 {
+#hero .demo .box .caption {
     position: absolute;
     right: 0;
-    bottom: 100%;
+    bottom: 0;
     left: 0;
-    margin: 0.5em;
+    margin: 0.2em;
 }
 
 /*=================================================================
@@ -926,6 +928,12 @@ article h3 {
 
 #document h1:not(.box *) {
     font-size: 3em;
+}
+
+@media (max-width: 576px) {
+    #document h1:not(.box *) {
+        font-size: 2.4em;
+    }
 }
 
 #document h2:not(.box *) {

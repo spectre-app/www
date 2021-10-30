@@ -10,6 +10,7 @@
     <div id="hero-particles"></div>
     
     {{ with .banner }}
+    {{ if .enable }}
     <div class="banner">
         <div class="container">
             <h4>{{ .title | markdownify }}</h4>
@@ -21,6 +22,7 @@
             {{ end }}
         </div>
     </div>
+    {{ end }}
     {{ end }}
 
     <div class="container">
@@ -62,10 +64,10 @@
 
             {{ with .demo }}
             <div class="col-lg-6 text-center demo">
-                <form class="box cta">
-                    <img class="tryme" loading="lazy" src="/images/hero-tryme.svg" />
-                    <h5>{{ .note | markdownify }}</h5>
+                <!--img class="tryme" loading="lazy" src="/images/hero-tryme.svg" /-->
+                <h5>{{ .notes.heading | markdownify }}</h5>
 
+                <form class="box cta">
                     {{ with .userName }}
                     <label id="userName">
                         <i class='{{ if not (in .icon " ") }}fa-duotone fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
@@ -107,6 +109,7 @@
 
                     <p class="info"></p>
                     <p class="error"></p>
+                    <p class="caption">{{ .notes.footer | markdownify }}</p>
                 </form>
             </div>
             {{ end }}
