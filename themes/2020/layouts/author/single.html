@@ -4,36 +4,39 @@
 
 <section id="document" class="author">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <div class="title text-center">
-                    <h2>{{ i18n "aboutAuthor" }}</h2>
-                </div>
-                <div class="content text-center">
-                    <figure>
-                        {{ if .Params.Image }}
-                        <img class="rounded-circle img-fluid" loading="lazy" src="{{.Params.Image | relURL }}">
-                        {{else if .Params.Email}}
-                        <img class="rounded-circle img-fluid" loading="lazy" src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon">
-                        {{ end }}
-                        <figcaption>
-                            <h5 class="font-weight-bold">
-                                {{ .Title }}
-                            </h5>
-                        </figcaption>
-                    </figure>
-                    <hr>
-                    {{ .Content }}
-                    <hr>
-                    <ul class="list-inline">
-                        {{ range .Params.Social }}
-                        <li class="list-inline-item"><a class="simple-icon" href="{{ .link | safeURL}}"><i
-                                class="{{ .icon }}"></i></a></li>
-                        {{ end }}
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <header>
+            <h2>Introducing</h2>
+            <figure>
+                {{ if .Params.Image }}
+                <img loading="lazy"
+                     class="rounded-circle"
+                     data-background="{{ .Params.image_bg }}"
+                     {{ with .Params.image_size }}height="{{ . }}"{{ end }}
+                     src="{{ .Params.Image | absURL }}">
+                {{else if .Params.Email}}
+                <img loading="lazy"
+                     class="rounded-circle"
+                     data-background="{{ .Params.image_bg }}"
+                     {{ with .Params.image_size }}height="{{ . }}"{{ end }}
+                     src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon">
+                {{ end }}
+                <figcaption>
+                    <h3 class="font-weight-bold">
+                        {{ .Title }}
+                    </h3>
+                </figcaption>
+            </figure>
+            {{ with .Params.Description }}<p class="caption">{{ . | markdownify }}</p>{{ end }}
+            {{ with .Params.Social }}
+            <ul class="list-inline">
+                {{ range . }}
+                <li class="list-inline-item"><a href="{{ .link | safeURL}}">
+                    <i class='{{ if not (in .icon " ") }}fa-solid fa-fw{{ end }} {{ .icon }}' style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
+                </a></li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </header>
     </div>
 </section>
 

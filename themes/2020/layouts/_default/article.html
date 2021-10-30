@@ -1,5 +1,9 @@
 <article class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="500ms">
-    <a href="{{ .Permalink }}"><img loading="lazy" src="{{ .Params.image | absURL }}"></a>
+    <a href="{{ .Permalink }}">
+        {{ if .Params.image }}<img loading="lazy" src="{{ .Params.image | absURL }}">
+        {{ else }}<img loading="lazy" src="/images/product/environment/spectre-dark-desk.jpg">
+        {{ end }}
+    </a>
 
     <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     <ul class="list-inline mb-50">

@@ -2,7 +2,7 @@
 title: About Spectre
 date: 2021-05-08T11:58:20-05:00
 author: Maarten Billemont
-image: /images/spectre.webp
+image: /images/product/environment/spectre-dark-chess.jpg
 description: >
   An overview of Spectre's history
 ---
@@ -103,9 +103,11 @@ src="http://player.vimeo.com/video/108192090?title=0&amp;byline=0&amp;portrait=0
 
 - On February 10th, 2018 began the major effort of rewriting and modernizing
   the solution, forming the foundation for scaling up the product.
-
+  
 - November 2019, the product was rebranded and major internal effort was put
   into bringing the original `Master Password` solution to the mass market.
   
 - The first alpha version of `Spectre` was made available to beta testers on
   November 21th, 2020.
+  
+- As the first public launch, `Spectre` comes to iPhone and iPad on October 31st, 2021.
