@@ -13,7 +13,7 @@ description: >
 In 2010, I began work on an algorithm for addressing my own personal password needs.
 
 Frustrated with the constant demand for passwords from every new website and
-unsatisfied with the existing proposals for how to address this need in by the
+unsatisfied with the existing proposals for how to address this need by the
 market, I had the benefit of being a software engineer and a background in
 security applications development.
 
@@ -68,6 +68,10 @@ possible for you:
 - Tap the message and enter your master password to export your user from Master Password into Spectre,
 - Spectre should now open and your user should be imported and ready for use,
 - Just sign in to your new Spectre user and find all of your old Master Password sites with all of their details intact.
+
+With Spectre now available on iPhone and iPad, it will soon be coming to the
+other platforms. The goal is still to make Spectre available from any of your
+devices, so you can get to your passwords no matter what, where or why.
 
 ## What's new?
 
