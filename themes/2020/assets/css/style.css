@@ -122,13 +122,13 @@ a {
 }
 
 hr {
+    clear: both;
+    flex-basis: 100%;
     height: 1px;
     margin: 1em auto;
     opacity: 1;
     border: none;
     background: var(--highlight);
-    flex-basis: 100%;
-    clear: both;
 }
 
 label {
@@ -294,8 +294,8 @@ table tbody tr:nth-child(2n+1) {
 
 section {
     position: relative;
-    padding: 6em 0;
     overflow: hidden;
+    padding: 6em 0;
 }
 
 section.lit {
@@ -315,15 +315,15 @@ section.lit {
 }
 
 aside {
-    float: right;
     position: relative;
-    display: flex;
     z-index: 1;
-    flex-direction: column;
+    display: flex;
+    float: right;
     align-content: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 1em;
     padding: 1em;
+    gap: 1em;
 }
 
 aside .btn {
@@ -427,29 +427,29 @@ p.error {
 .flex {
     display: flex;
     justify-content: center;
-    gap: 1em;
     margin: 1em auto;
+    gap: 1em;
 }
 
 .box {
     position: relative;
+    overflow: hidden;
     margin: 0 auto;
     padding: 2em;
     border-radius: var(--join-size);
-    box-shadow: 0 0 var(--join-size) var(--shadow);
     background: rgba(var(--panel-fill-rgb), 0.9);
+    box-shadow: 0 0 var(--join-size) var(--shadow);
     transition: all .38s ease-in 0s;
-    overflow: hidden;
 }
 
 .box::before {
-    position: absolute;
     content: "";
+    position: absolute;
+    z-index: -1;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    left: 0;
     background: var(--bg) var(--panel-fill) no-repeat center/cover;
 }
 
@@ -683,9 +683,9 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 
 #hero .demo .tryme {
     position: absolute;
+    z-index: 1;
     top: 16%;
     right: 8%;
-    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -805,7 +805,10 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 }
 
 #algorithm h1 {
+    position: absolute;
+    width: 100%;
     text-align: center;
+    text-shadow: none;
 }
 
 #algorithm img {
@@ -924,8 +927,8 @@ article h3 {
 }
 
 #document img[data-background=false] {
-    background: transparent;
     border: none;
+    background: transparent;
     box-shadow: none;
 }
 
@@ -995,18 +998,20 @@ article h3 {
 #spectre-collector {
     position: relative;
 }
+
 #spectre-sink {
     position: absolute;
     top: 0;
     left: 100%;
     width: 5em;
 }
+
 #spectre-sink img {
+    float: none;
     max-width: 100%;
     margin: 1em;
-    float: none;
-    background: transparent;
     border: none;
+    background: transparent;
     box-shadow: none;
 }
 
