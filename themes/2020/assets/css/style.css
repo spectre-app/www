@@ -652,7 +652,7 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 
 #hero .btn.cta {
     margin-top: 2em;
-    padding: 1em 4em;
+    padding: 1em 3em;
     font-weight: 600;
     letter-spacing: 1px;
 }
