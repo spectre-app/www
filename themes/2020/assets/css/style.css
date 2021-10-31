@@ -265,7 +265,7 @@ h1 blockquote, h2 blockquote, h3 blockquote {
     border-left-width: 0.2ex;
 }
 
-strong, b, em, i {
+strong, b, em {
     color: var(--active-text);
     /*background: var(--highlight);*/
     /*border-radius: var(--internal-size);*/

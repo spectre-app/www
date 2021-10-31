@@ -33,12 +33,15 @@
                 <p>{{ .content | markdownify }}</p>
 
                 {{ with .cta }}
-                <p><a href="{{ .link }}" class="btn cta"><span class="fa-solid fa-lg {{ .icon }}"></span> {{ .title }}</a></p>
+                <p><a href="{{ .link }}" class="btn cta">
+                    {{ with .icon }}<i class='fa-lg {{ if not (in . " ") }}fa-duotone fa-fw{{ end }} {{ . }}' style='background: url("/images/{{ . }}") no-repeat center/contain'></i>{{ end }}
+                    {{ .title }}
+                </a></p>
                 {{ with .alternative }}
                 <p class="caption">
                     {{ .title | markdownify }}
                     <a href="{{ .link }}">
-                        {{ with .icon }}<span class="fa-solid fa-lg {{ . }}"></span>{{ end }}
+                        {{ with .icon }}<i class='{{ if not (in . " ") }}fa-duotone fa-fw{{ end }} {{ . }}' style='background: url("/images/{{ . }}") no-repeat center/contain'></i>{{ end }}
                         {{ .label }}
                     </a>
                 </p>
