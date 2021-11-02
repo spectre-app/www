@@ -891,6 +891,7 @@ article img {
 }
 
 article h3 {
+    text-align: initial;
     margin: 1em 0 1ex;
 }
 

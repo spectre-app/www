@@ -3,8 +3,8 @@ enable: true
 name: Introduction
 
 intro: |
-  We believe saving passwords in an app,    
-  or uploading them all to the cloud,  
+  We believe **saving passwords** in an app,    
+  or **uploading** them all to the cloud,  
   is a recipe for personal disaster.
   
   Why?  
@@ -31,7 +31,7 @@ closing: |
   <u title="Sarah's Twitter password!">`Reka3$PofyPemi`</u>  
   Remember one secret, math does the rest.
   
-  We delete our passwords.
+  We **delete** our passwords.
 
 aside:
   - icon: spectre-light.svg
