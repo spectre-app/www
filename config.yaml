@@ -42,9 +42,9 @@ languages:
           name: "Community"
           url: "https://chat.spectre.app"
           weight: 5
-        - name: "Beta"
-          url: "/#beta"
-          weight: 6
+#       - name: "Beta"
+#         url: "/#beta"
+#         weight: 6
         - name: "About"
           url: "/about"
           weight: 7

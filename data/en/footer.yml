@@ -21,7 +21,7 @@ items:
         title: "Community"
         link: "https://chat.spectre.app"
       - title: "About"
-        link: "/about"
+        link: "/about/"
 
   - title: "Resources"
     twelfths: 3
@@ -29,9 +29,9 @@ items:
       - title: "White Paper"
         link: "/spectre-algorithm.pdf"
       - title: "Knowledgebase"
-        link: "#"
+        link: "https://support.spectre.app"
       - title: "Press Kit"
-        link: "#"
+        link: "/about/"
       - title: "Usage Agreement"
         link: "/policy/eula/"
       - title: "Privacy Policy"

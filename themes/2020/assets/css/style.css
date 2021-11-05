@@ -794,7 +794,7 @@ html[data-scroll]:not([data-scroll="hero"]) #navigation .cta {
 #algorithm {
     position: relative;
     height: 90vh;
-    padding-bottom: 0;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
