@@ -82,5 +82,5 @@ demo:
 
   sitePassword:
     title: Site Password
-    icon: spectre.svg
+    icon: spectre-light-glyph.svg
     placeholder: PozoLalv0_Yelo

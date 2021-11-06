@@ -260,6 +260,10 @@ blockquote {
     margin-top: 0;
 }
 
+.row {
+    row-gap: 1em;
+}
+
 h1 blockquote, h2 blockquote, h3 blockquote {
     display: inline-block;
     padding: 0.2em 1em;
