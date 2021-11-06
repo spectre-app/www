@@ -28,6 +28,8 @@ items:
     links:
       - title: "White Paper"
         link: "/spectre-algorithm.pdf"
+      - title: "Source Code"
+        link: "https://gitlab.com/spectre.app/"
       - title: "Knowledgebase"
         link: "https://support.spectre.app"
       - title: "Press Kit"
