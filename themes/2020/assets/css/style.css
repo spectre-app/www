@@ -10,6 +10,8 @@
  *================================================================*/
 
 :root {
+    color-scheme: dark;
+
     --body-fill-rgb: 14, 51, 69;
     --body-contrast-rgb: 18, 55, 73;
     --panel-fill-rgb: 23, 61, 80;
@@ -341,6 +343,7 @@ iframe {
     width: 100%;
     margin: auto;
     border: 0 solid var(--panel-contrast);
+    color-scheme: initial;
 }
 
 #content > iframe {
