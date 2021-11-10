@@ -229,4 +229,4 @@ What if you were kidnapped and your belongings taken from you? What if you lost 
 
 What if your country collapsed into chaos, Spectre was dissolved, an apocalypse raged and all you needed to unite the world was to find a Starlink dish and patch into reddit, the only site left operational, run invite-only by a cabal of rebels?
 
-Spectre has you covered.  Maybe keep a paper copy of our white paper handy.
+Spectre has you covered.  Maybe keep a paper copy of our algorithm handy.
