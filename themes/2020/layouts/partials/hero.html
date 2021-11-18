@@ -50,14 +50,22 @@
 
                 {{ with .platforms }}
                 {{ range .links }}
+                {{ if .cta }}
                 <p class="os-{{ .platform }}"><a href="{{ .link }}" class="btn cta">
                     <span class="fa-brands fa-lg {{ .icon }}"></span> {{ .cta }}</a></p>
+                {{ end }}
                 {{ end }}
 
                 <div class="caption">
                     <ul class="list-inline">
                         {{ range .links }}
-                        <li><a href="{{ .link }}" class="fa-brands fa-xl {{ .icon }}" title="{{ .title }}"></a></li>
+                        <li>
+                            {{ if .icon }}<a href="{{ .link }}">
+                                <i title="{{ .title }}"
+                                   class='fa-xl fa-fw {{ if not (in .icon " ") }}fa-brands{{ end }} {{ .icon }}'
+                                   style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
+                            </a>{{ end }}
+                        </li>
                         {{ end }}
                     </ul>
                     {{ .note | markdownify }}

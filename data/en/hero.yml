@@ -24,41 +24,52 @@ cta:
     label: Sign me up!
     link: https://c98682eb.sibforms.com/serve/MUIEAALK5a-qHeuTFFRibFOHGFbHswQwku9o1vZPLa7V9KgVtKTSrHf-uo86mZCfwVfEX4cfwkjcsRsFIfB6YDaez_aygD-hOTtUSeuXXmxdDz9XR4yiRf1qPbVF2WiAZ-BM30nn5gtd4h5RQLjmrlxjhU_0ZfDR53T5lVpIXU-rlAy1nwoc0ERv4t7fp_S4bg8suuuNUdchV_os
 
-#platforms:
-#  note: >
-#    Available across multiple platforms.
-#
-#  links:
-#    - platform: windows
-#      cta: Download Spectre
-#      title: Windows
-#      icon: fa-windows
-#      link: https://masterpassword.app/masterpassword-gui.jar
-#
-#    - platform: macos
-#      cta: Download Spectre
-#      title: macOS
-#      icon: fa-apple
-#      link: https://apps.apple.com/app/master-password/id662763204?ls=1&ct=homepage
-#
-#    - platform: linux
-#      cta: Download Spectre
-#      title: Linux
-#      icon: fa-linux
-#      link: https://masterpassword.app/masterpassword-gui.jar
-#
-#    - platform: ios
-#      cta: Download Spectre
-#      title: iPhone / iPad
-#      icon: fa-app-store-ios
-#      link: https://apps.apple.com/app/master-password/id510296984?ls=1&ct=homepage
-#
-#    - platform: android
-#      cta: Download Spectre
-#      title: Android
-#      icon: fa-android
-#      link: https://masterpassword.app/masterpassword-android.apk
+platforms:
+  note: >
+    Coming soon to these other platforms.
 
+  links:
+    - platform: web
+#     cta: Download Spectre
+      title: Web
+      icon: fa-globe
+      link: https://gitlab.com/spectre.app/web
+
+    - platform: desktop
+#     cta: Download Spectre
+      title: Desktop
+      icon: fa-windows
+      link: https://gitlab.com/spectre.app/desktop
+
+    - platform: macos
+#     cta: Download Spectre
+      title: macOS
+      icon: fa-apple
+      link: https://gitlab.com/spectre.app/macos
+
+    - platform: terminal
+#     cta: Download Spectre
+      title: Terminal (POSIX)
+      icon: fa-terminal
+      link: https://gitlab.com/spectre.app/cli
+
+    - platform: ios
+#     cta: Download Spectre
+      title: iPhone / iPad
+      icon: fa-app-store-ios
+      link: https://apps.apple.com/app/apple-store/id1526402806?pt=153897&ct=homepage&mt=8&platform=iphone
+
+    - platform: android
+#     cta: Download Spectre
+      title: Android
+      icon: fa-android
+      link: https://gitlab.com/spectre.app/android
+
+    - platform: api
+#     cta: Download Spectre
+      title: Development
+      icon: fa-code
+      link: https://gitlab.com/spectre.app/api
 
 demo:
   notes:
