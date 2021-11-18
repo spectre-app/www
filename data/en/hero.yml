@@ -38,13 +38,13 @@ platforms:
     - platform: desktop
 #     cta: Download Spectre
       title: Desktop
-      icon: fa-windows
+      icon: fa-brands fa-windows
       link: https://gitlab.com/spectre.app/desktop
 
     - platform: macos
 #     cta: Download Spectre
       title: macOS
-      icon: fa-apple
+      icon: fa-brands fa-apple
       link: https://gitlab.com/spectre.app/macos
 
     - platform: terminal
@@ -56,13 +56,13 @@ platforms:
     - platform: ios
 #     cta: Download Spectre
       title: iPhone / iPad
-      icon: fa-app-store-ios
+      icon: fa-brands fa-app-store-ios
       link: https://apps.apple.com/app/apple-store/id1526402806?pt=153897&ct=homepage&mt=8&platform=iphone
 
     - platform: android
 #     cta: Download Spectre
       title: Android
-      icon: fa-android
+      icon: fa-brands fa-android
       link: https://gitlab.com/spectre.app/android
 
     - platform: api

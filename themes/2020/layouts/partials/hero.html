@@ -62,7 +62,7 @@
                         <li>
                             {{ if .icon }}<a href="{{ .link }}">
                                 <i title="{{ .title }}"
-                                   class='fa-xl fa-fw {{ if not (in .icon " ") }}fa-brands{{ end }} {{ .icon }}'
+                                   class='fa-xl fa-fw {{ if not (in .icon " ") }}fa-solid{{ end }} {{ .icon }}'
                                    style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
                             </a>{{ end }}
                         </li>
