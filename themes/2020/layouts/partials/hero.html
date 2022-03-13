@@ -32,12 +32,30 @@
                 <h2>{{ .title | markdownify }}</h2>
                 <p>{{ .content | markdownify }}</p>
 
-                {{ with .cta }}
-                <p><a href="{{ .link }}" class="btn cta">
-                    {{ with .icon }}<i class='fa-lg {{ if not (in . " ") }}fa-duotone fa-fw{{ end }} {{ . }}' style='background: url("/images/{{ . }}") no-repeat center/contain'></i>{{ end }}
-                    {{ .title }}
-                </a></p>
-                {{ with .alternative }}
+                <div class="align-middle cta">
+                    {{ with .cta }}
+                    <a href="{{ .link }}" class="btn">
+                        {{ with .icon }}<i class='fa-lg {{ if not (in . " ") }}fa-duotone fa-fw{{ end }} {{ . }}' style='background: url("/images/{{ . }}") no-repeat center/contain'></i>{{ end }}
+                        {{ .title }}
+                    </a>
+                    {{ end }}
+
+                    <ul class="list-inline aside">
+                        {{ range .platforms.links }}
+                        {{ if .released }}
+                        <li>
+                            {{ if .icon }}<a href="{{ .link }}">
+                            <i title="{{ .title }}"
+                               class='fa-xl fa-fw {{ if not (in .icon " ") }}fa-solid{{ end }} {{ .icon }}'
+                               style='background: url("/images/{{ .icon }}") no-repeat center/contain'></i>
+                        </a>{{ end }}
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+
+                {{ with .cta.alternative }}
                 <p class="caption">
                     {{ .title | markdownify }}
                     <a href="{{ .link }}">
@@ -45,7 +63,6 @@
                         {{ .label }}
                     </a>
                 </p>
-                {{ end }}
                 {{ end }}
 
                 {{ with .platforms }}
@@ -57,8 +74,9 @@
                 {{ end }}
 
                 <div class="caption">
-                    <ul class="list-inline">
+                    <ul>
                         {{ range .links }}
+                        {{ if not .released }}
                         <li>
                             {{ if .icon }}<a href="{{ .link }}">
                                 <i title="{{ .title }}"
@@ -67,8 +85,9 @@
                             </a>{{ end }}
                         </li>
                         {{ end }}
+                        {{ end }}
                     </ul>
-                    {{ .note | markdownify }}
+                    Coming soon to these other platforms.
                 </div>
                 {{ end }}
             </div>

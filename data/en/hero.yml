@@ -25,15 +25,13 @@ cta:
     link: https://c98682eb.sibforms.com/serve/MUIEAALK5a-qHeuTFFRibFOHGFbHswQwku9o1vZPLa7V9KgVtKTSrHf-uo86mZCfwVfEX4cfwkjcsRsFIfB6YDaez_aygD-hOTtUSeuXXmxdDz9XR4yiRf1qPbVF2WiAZ-BM30nn5gtd4h5RQLjmrlxjhU_0ZfDR53T5lVpIXU-rlAy1nwoc0ERv4t7fp_S4bg8suuuNUdchV_os
 
 platforms:
-  note: >
-    Coming soon to these other platforms.
-
   links:
     - platform: web
 #     cta: Download Spectre
       title: Web
       icon: fa-globe
-      link: https://gitlab.com/spectre.app/web
+      released: true
+      link: https://spectre.pw
 
     - platform: desktop
 #     cta: Download Spectre

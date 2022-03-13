@@ -1,0 +1,440 @@
+/*=================================================================
+  SECTION: HERO
+ *================================================================*/
+
+#hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: none,
+    radial-gradient(62vh 150vh at 0 -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    radial-gradient(62vh 150vh at 100% -50vh, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+    url("/images/hero.svg") no-repeat center/contain;
+}
+
+#hero .banner {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0.5em;
+    font-size: smaller;
+}
+
+#hero .banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+#hero .banner .container > * {
+    margin: 0;
+}
+
+#hero button * {
+    pointer-events: none;
+}
+
+#hero button input[readonly] {
+    width: calc(100% - 3ex);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+#hero #hero-particles {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#hero .cta {
+    margin-top: 2em;
+}
+
+#hero .cta .btn {
+    padding: 1em 3em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#hero h1, #hero h2 {
+    margin-bottom: 0.2em;
+    text-align: initial;
+}
+
+#hero ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#hero ul.list-inline {
+    display: inline-flex;
+}
+
+#hero ul li a {
+    display: inline-block;
+    padding: var(--join-size);
+}
+
+#hero .demo {
+    position: relative;
+    margin: 3em 0;
+    padding: 5% 10%;
+    background: url("/images/shield.svg") no-repeat center/contain;
+}
+
+#hero .demo .tryme {
+    position: absolute;
+    z-index: 1;
+    top: 16%;
+    right: 8%;
+}
+
+@media (max-width: 768px) {
+    #hero .demo .tryme {
+        display: none;
+    }
+}
+
+#hero .demo .box {
+    border: 1px solid var(--panel-contrast);
+    background: var(--panel-contrast);
+
+    /* Firefox-compatible blur through SVG */
+    background: none,
+    linear-gradient(to right, rgba(42, 73, 89, 0.4), rgba(42, 73, 89, 0.4)),
+    url("/images/shield-blur.svg") no-repeat center/168% 135%, var(--body-fill);
+
+    /* Generic background blur */
+    /*background: rgba(42, 73, 89, 0.4);*/
+    /*-webkit-backdrop-filter: blur(15px);*/
+    /*backdrop-filter: blur(15px);*/
+}
+
+#hero .demo .box .caption {
+    position: absolute;
+    right: 0;
+    bottom: 0.2em;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    #hero .demo .box .caption {
+        bottom: -0.2em;
+    }
+}
+
+/*=================================================================
+  SECTION: INTRODUCTION
+ *================================================================*/
+
+#introduction::before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    width: 600px;
+    height: 600px;
+    margin-top: -190px;
+    margin-left: -100px;
+    background: url("/images/product.webp") no-repeat;
+    background-size: contain;
+}
+
+#introduction h2 {
+    margin: 2rem 0;
+}
+
+#introduction hr {
+    position: relative;
+    z-index: -2;
+    margin: 3rem;
+}
+
+@media (max-width: 992px) {
+    #introduction::before {
+        display: none;
+    }
+}
+
+#introduction div {
+    text-align: center;
+}
+
+/*=================================================================
+  SECTION: PRINCIPLES
+ *================================================================*/
+
+#principles {
+    background: var(--body-contrast);
+}
+
+#principles h1 {
+    text-align: center;
+}
+
+#principles .box {
+    text-align: center;
+}
+
+/*=================================================================
+  SECTION: FEATURES
+ *================================================================*/
+
+#features h1, #features h2, #features h3 {
+    text-align: inherit;
+}
+
+#features i {
+    font-size: 3em;
+    color: var(--control-contrast);
+}
+
+/*=================================================================
+  SECTION: ALGORITHM
+ *================================================================*/
+
+#algorithm {
+    position: relative;
+    height: 90vh;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    #algorithm {
+        height: auto;
+        padding: 100% 0 0;
+    }
+}
+
+#algorithm h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-shadow: none;
+}
+
+#algorithm img {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+            315deg,
+            var(--body-text),
+            var(--body-text) 8px,
+            var(--active-text) 8px,
+            var(--active-text) 256px
+    );
+
+    object-fit: contain;
+}
+
+
+/*=================================================================
+  SECTION: USAGE
+ *================================================================*/
+
+#usage header {
+    font: 600 3em/1.2 "Poppins", sans-serif;
+    opacity: 8%;
+    color: var(--active-text);
+}
+
+#usage h1 {
+    text-align: center;
+}
+
+#usage h3 {
+    text-align: inherit;
+}
+
+#usage .box {
+    width: 320px;
+    margin: 4em auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #usage .box {
+        width: auto;
+        margin: 1em;
+    }
+}
+
+#usage .end {
+    text-align: end;
+}
+
+/*=================================================================
+  SECTION: BETA
+ *================================================================*/
+
+#beta h3 {
+    text-align: inherit;
+}
+
+/*=================================================================
+ SECTION: BLOG
+ *================================================================*/
+
+#blog h1, #blog h2, #blog h3 {
+    text-align: inherit;
+}
+
+article {
+    margin-bottom: 4em;
+}
+
+article img {
+    width: 100%;
+    height: 12em;
+    border-radius: var(--join-size);
+    background: var(--highlight);
+    object-fit: cover;
+    object-position: center center;
+}
+
+article h3 {
+    text-align: initial;
+    margin: 1em 0 1ex;
+}
+
+/*=================================================================
+ SECTION: DOCUMENT
+ *================================================================*/
+
+#document header {
+    margin: 1em auto 4em;
+    padding: 1em;
+    text-align: center;
+    border-radius: var(--internal-size);
+    background: var(--body-contrast);
+}
+
+#document header h1 {
+    margin: 0;
+}
+
+#document header img {
+    float: none;
+}
+
+#document img {
+    float: right;
+    max-width: 38%;
+    max-height: 25em;
+    margin: 0.2em 1em;
+    padding: 2px;
+    border: 1px solid var(--highlight);
+    border-radius: var(--join-size);
+    background: var(--highlight);
+    box-shadow: 0 0 8px var(--shadow);
+}
+
+#document img[data-background=false] {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+#document h1:not(.box *) {
+    font-size: 3em;
+}
+
+@media (max-width: 576px) {
+    #document h1:not(.box *) {
+        font-size: 2.4em;
+    }
+}
+
+#document h2:not(.box *) {
+    margin: 1em 0 0.5em;
+}
+
+#document h2:not(.box *)::after {
+    content: "";
+    display: block;
+    width: 4ex;
+    height: 2px;
+    margin: 0.2em auto 0;
+    background: var(--control-contrast);
+}
+
+#document h3:not(.box *) {
+    margin: 1em 0 0.5em;
+    padding: 0.2em 2ex;
+    border-bottom: 1px solid var(--highlight);
+}
+
+#document a:not(.btn) {
+    text-decoration: underline;
+}
+
+#document ol:not(.list-inline), #document ul:not(.list-inline), #document dl:not(.list-inline) {
+    padding: 1ex 3em;
+    color: var(--active-text);
+    border-radius: var(--internal-size);
+    background: var(--panel-fill);
+}
+
+#document ul:not(.list-inline) {
+    margin: 1rem 0;
+    list-style: square;
+}
+
+#document ol:not(.list-inline) li::marker {
+    font-family: "Source Code Pro", monospace;
+}
+
+#document dl:not(.list-inline) dt {
+    border-bottom: 1px solid var(--panel-contrast);
+}
+
+#document dl:not(.list-inline) dd {
+    padding: 0 1ex;
+    color: var(--body-text);
+    border-left: var(--internal-size) solid var(--panel-contrast);
+}
+
+/*=================================================================
+  SPECTRE COLLECTOR
+ *================================================================*/
+
+#spectre-collector {
+    position: relative;
+}
+
+#spectre-sink {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 5em;
+}
+
+#spectre-sink img {
+    float: none;
+    max-width: 100%;
+    margin: 1em;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+/*=================================================================
+  TABLE OF CONTENTS
+ *================================================================*/
+
+#document #TableOfContents {
+    background: var(--body-contrast);
+}
+
+#document #TableOfContents ul {
+    list-style: decimal;
+    background: transparent;
+}

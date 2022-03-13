@@ -61,7 +61,7 @@ $(function() {
     })
     
     /* Tooltips. */
-    $('[title]').tooltip()
+    // $('[title]').tooltip()
 
     /* Enable checkboxes. */
     $('li input[type=checkbox]').prop("disabled", false)
