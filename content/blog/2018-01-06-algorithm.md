@@ -167,6 +167,6 @@ class characters by a chosen character from that character class.
 | c (consonants)  | `bcdfghjklmnpqrstvwxyz`                                                    |
 | A (alphabetic)  | `AEIOUBCDFGHJKLMNPQRSTVWXYZ`                                               |
 | a (alphabetic)  | `AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz`                     |
-| n (numeric)     | `123456789`                                                                |
+| n (numeric)     | `0123456789`                                                               |
 | o (other)       | `@&%?,=[]_:-+*$#!'^~;()/.`                                                 |
 | x (union set)   | `AEIOUaeiouBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz0123456789!@#$%^&*()` |
