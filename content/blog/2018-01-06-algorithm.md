@@ -72,7 +72,7 @@ site-key = HMAC-SHA-25612( key, seed )
   seed   = scope . LEN( site-name ) . site-name . site-counter
 ```
 
-We employ the HMAC-SHA-256 cryptographic function to derive a 64-byte cryptographic site key from the site name
+We employ the HMAC-SHA-256 cryptographic function to derive a 32-byte cryptographic site key from the site name
 and user key scoped to a given counter value.
 
 ### Phase 3: Your site password
