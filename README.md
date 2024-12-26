@@ -28,7 +28,7 @@ As an example:
 
     user-name = Robert Lee Mitchell
     user-secret = banana colored duckling
-    site-name = twitter.com
+    site-name = wikipedia.org
     site-counter = 1
     site-template = Long Password
     site-password = PozoLalv0_Yelo

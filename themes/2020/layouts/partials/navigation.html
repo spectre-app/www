@@ -26,21 +26,6 @@
                     {{ end }}
                 </ul>
 
-                {{- if site.IsMultiLingual }}
-                <select id="select-language" onchange="location = this.value;">
-                    {{ $siteLanguages := site.Languages}}
-                    {{ $pageLang := .Page.Lang}}
-                    {{ range .Page.AllTranslations }}
-                    {{ $translation := .}}
-                    {{ range $siteLanguages }}
-                    {{ if eq $translation.Lang .Lang }}
-                    {{ $selected := false }}
-                    <option id="{{ $translation.Language }}" value="{{ $translation.Permalink }}" {{ if eq $pageLang .Lang}}selected{{end}}>{{ .LanguageName }}</option>
-                    {{ end }}
-                    {{ end }}
-                    {{ end }}
-                </select>
-                {{ end }}
                 <a class="btn cta page-scroll" href="#hero">{{ .cta | markdownify }}</a>
             </div>
         </nav>

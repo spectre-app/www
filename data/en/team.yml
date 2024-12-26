@@ -7,8 +7,15 @@ item:
     image: "/images/team/maarten.jpg"
     designation: Founder
     body: >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur necessitatibus ullam, culpa odio.
+      The founder and developer of Spectre's algorithm and applications.
     social:
-      - icon: fa-twitter
-        link: "#"
-
+      - icon: fa-brands fa-mastodon
+        link: https://mastodon.social/@lhunath
+      - icon: fa-brands fa-bluesky
+        link: https://bsky.app/profile/lhunath.com
+      - icon: fa-brands fa-gitlab
+        link: https://gitlab.com/lhunath
+      - icon: fa-brands fa-github
+        link: https://github.com/lhunath
+      - icon: fa-globe
+        link: https://lhunath.com

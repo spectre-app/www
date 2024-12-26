@@ -17,7 +17,7 @@ items:
     partial: "usage-site.html"
     body: |
       Use only the site's domain name, drop the rest:  
-      <code><s>https://mobile.</s><u><strong>twitter.com</strong></u><s>/spectre_app</s></code>  
+      <code><s>https://en.</s><u><strong>wikipedia.org</strong></u><s>/wiki/Master_Password_(algorithm)</s></code>
 
       <sub>Your site password comes directly from your&nbsp;sign-in&nbsp;information in step [`1`].  
       Think of a calculator; `you + site = password`, like&nbsp;`2 + 3 = 5`&#65279;,&nbsp;every&nbsp;time.</sub>

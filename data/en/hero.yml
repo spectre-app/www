@@ -87,7 +87,7 @@ demo:
   siteName:
     title: Site Domain
     icon: fa-globe
-    placeholder: eg. twitter.com
+    placeholder: eg. wikipedia.org
 
   sitePassword:
     title: Site Password

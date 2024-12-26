@@ -52,7 +52,15 @@ items:
     links:
       - title: "Blog"
         link: "/blog"
-      - title: "Twitter"
-        link: "https://twitter.com/lhunath"
+      - title: "Mastodon"
+        link: "https://mastodon.social/@lhunath"
+        rel: me
+      - title: "Bluesky"
+        link: "https://bsky.app/profile/lhunath.com"
+        rel: external
+      - title: "X"
+        link: "https://x.com/spectre_app"
+        rel: external
       - title: "E-mail"
         link: "mailto:support@spectre.app"
+        rel: author
