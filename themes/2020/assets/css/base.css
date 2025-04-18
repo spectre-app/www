@@ -478,7 +478,7 @@ label.box:hover, label.box[checked] {
 .box p.error, .box p.info {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     left: 0;
     margin: 0.5em;
     font-size: smaller;
